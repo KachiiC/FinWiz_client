@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
+@use './sassVariables/fonts.scss' as fonts;
 
 * {
   margin: 0;
@@ -6,5 +6,5 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: fonts.$primary-font, sans-serif;
 }
