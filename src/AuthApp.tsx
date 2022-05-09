@@ -11,8 +11,8 @@ import './App.scss';
 const AuthApp = () => {
   return (
     <div className="App">
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         { AuthPages }
       </BrowserRouter>
     </div>
