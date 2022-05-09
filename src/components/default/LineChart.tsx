@@ -1,43 +1,79 @@
 // Imports
 import { Chart as ChartJS, registerables } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import { Chart, Line } from 'react-chartjs-2';
 ChartJS.register(...registerables);
 
 // local imports
 import { User } from 'mockData/user';
-console.log(User);
-// styles
 
+// styles
+import './styles/Charts.scss';
 
 const LineChart = () => {
+  console.log(User);
 
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top' as const,
+        display: false
       },
       title: {
-        display: true,
+        display: true, // probably hide this and add our own title
         text: 'Portfolio Over Time',
+        color: 'white',
       },
+    },
+    scales: {
+      x: {
+        grid: {
+          // display: false,
+          color: 'rgba(235, 235, 235, 0.6)' // changes the color of the axis grid lines
+        },
+        ticks: {
+          color: 'rgb(235, 235, 235)' // changes the color of the axis labels
+        },
+        title: {
+          display: true, // title of axis
+          text: 'Date',
+          color: 'rgb(235, 235, 235)',
+        },
+      },
+      y: {
+        grid: {
+          display: true,
+          color: 'rgb(75, 75, 75)'
+        },
+        ticks: {
+          color: 'rgb(235, 235, 235)',
+          // maxRotation: 90, // rotate the ticks
+          // minRotation: 90
+        },
+        title: {
+          display: true, 
+          text: 'Value',
+          color: 'rgb(235, 235, 235)',
+        },
+      }
     },
   };
 
   const data = {
-    labels: [],
+    labels: User.investments.investmentValues,
     datasets: [
       {
-        label: 'Dataset 1',
-        data: [1,2,3,4],
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        label: 'Total',
+        data: User.investments.investmentValues,        
+        borderColor: 'rgb(84, 182, 227)', // line color
+        backgroundColor: 'rgb(255, 255, 255)', // line dot color
       },
     ],
   };
 
   return (
-    <h1>line chart</h1>
+    <div className="chartWrapper">
+      <Line options={options} data={data} />
+    </div>
   );
 };
 
