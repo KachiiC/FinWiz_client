@@ -1,6 +1,6 @@
 // Imports
 import { Chart as ChartJS, registerables } from 'chart.js';
-import { Chart, Line } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 ChartJS.register(...registerables);
 
 // local imports
@@ -10,7 +10,7 @@ import { User } from 'mockData/user';
 import './styles/Charts.scss';
 
 const LineChart = () => {
-  console.log(User);
+
 
   const options = {
     responsive: true,
