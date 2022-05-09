@@ -1,11 +1,11 @@
 // Imports
 import { Table, Input, Button, Space, Tabs } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import BrowseImg from '../../../assets/icons/search.svg';
 const { TabPane } = Tabs;
 
 // Local Import
-import { Stocks } from '../../../mockdata/stocks';
-import { Cryptos } from '../../../mockdata/cryptos';
+import { Stocks } from '../../../mockData/stocks';
+import { Cryptos } from '../../../mockData/cryptos';
 
 // Styles
 import './profile.scss';
@@ -43,14 +43,6 @@ const Profile = () => {
       sorter: (a, b) => a.markeValuePerShare - b.markeValuePerShare,
     },
     {
-      title: 'First Bought',
-      dataIndex: 'firstBought',
-    },
-    {
-      title: 'Last Bought',
-      dataIndex: 'lastBought',
-    },
-    {
       title: 'Total Value Of Shares',
       dataIndex: 'totalValueOfShares',
       sorter: (a, b) => a.totalValueOfShares - b.totalValueOfShares,
@@ -85,14 +77,6 @@ const Profile = () => {
       sorter: (a, b) => a.quantityOfCrypto - b.quantityOfCrypto,
     },
     {
-      title: 'First Bought',
-      dataIndex: 'firstBought',
-    },
-    {
-      title: 'Last Bought',
-      dataIndex: 'lastBought',
-    },
-    {
       title: 'totalCryptoValue',
       dataIndex: 'totalCryptoValue',
       sorter: (a, b) => a.totalCryptoValue - b.totalCryptoValue,
@@ -106,16 +90,18 @@ const Profile = () => {
   }
 
   return (
-    <>
-      <Tabs type="card">
-        <TabPane tab="Stocks" key="1">
-          <Table  dataSource={stocksData} columns={stocksColumns} onChange={onChange}/>
-        </TabPane>
-        <TabPane tab="Cryptos" key="2">
-          <Table  dataSource={cryptoData} columns={cryptoColumns} />
-        </TabPane>
-      </Tabs>
-    </>
+    <div className='profileContainer'>
+      <div className='profileTableContainer'>
+        <Tabs type="card">
+          <TabPane tab="Stocks" key="1">
+            <Table  dataSource={stocksData} columns={stocksColumns} onChange={onChange}/>
+          </TabPane>
+          <TabPane tab="Cryptos" key="2">
+            <Table  dataSource={cryptoData} columns={cryptoColumns} />
+          </TabPane>
+        </Tabs>
+      </div>
+    </div>
   );
 };
 

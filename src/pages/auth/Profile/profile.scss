@@ -1,0 +1,30 @@
+@use '../../../sassVariables/colors.scss' as colors;
+@use '../../../sassVariables/spacing.scss' as spacing;
+@use '../../../sassVariables//fonts.scss' as fonts;
+
+.profileContainer {
+  background-color: colors.$backgroundDark2;
+  // display: flex;
+  // align-items: flex-end;
+  // justify-content: center;
+  // height: 90vh;
+    
+  .profileTableContainer {
+      width: 95%;
+      border: none;
+      margin: 0;
+    }
+}
+
+//overwrite ant design styles
+.ant-tabs-nav:before {
+ border: none !important;
+}
+
+.ant-tabs-top {
+  flex-direction: column-reverse !important;
+}
+
+.ant-tabs-nav {
+  background-color: red;
+}
