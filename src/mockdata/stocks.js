@@ -55,7 +55,7 @@ const Google = {
 };
 
 const Stocks = {
-  stocksList: [Apple, Facebook, Tesla, Microsoft, Google, Apple, Facebook, Tesla, Microsoft, Google, Apple, Facebook, Tesla, Microsoft, Google],
+  stocksList: [Apple, Facebook, Tesla, Microsoft, Google],
   totalValueOfStocks: 11463.38,
   numberOfDifferentStocks: 5,
   oldestStock: Facebook,
