@@ -18,7 +18,7 @@ const BarChart = () => {
   const marketPrice: number[] = [];
 
   User.investments.stock.stocksList.forEach(stock => {
-    labels.push(stock.name);
+    labels.push(stock.symbol);
     entryPrice.push(stock.entryValuePerShare);
     marketPrice.push(stock.markeValuePerShare);
   });
