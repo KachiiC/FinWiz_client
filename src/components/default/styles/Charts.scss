@@ -1,0 +1,19 @@
+@use '../../../sassVariables/colors.scss' as colors;
+
+.chartWrapper {
+  width: 50%;
+  border: 1px solid lightgray;
+  padding: 50px;
+  margin: 50px;
+  background-color: colors.$backgroundDark1;
+  box-shadow: colors.$container-shadow;
+}
+
+.pieWrapper {
+  width: 40%;
+  border: 1px solid lightgray;
+  padding: 50px;
+  margin: 50px;
+  background-color: colors.$backgroundDark1;
+  box-shadow: colors.$container-shadow;
+}
