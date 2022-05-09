@@ -5,6 +5,7 @@ import { Table } from 'antd';
 import { Stocks } from 'mockdata/stocks';
 
 // Styles
+import './profile.scss';
 
 const Profile = () => {
 
