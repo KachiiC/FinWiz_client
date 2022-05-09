@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const Apple = {
   name: 'Apple Inc',
   markeValuePerShare: 157.28,

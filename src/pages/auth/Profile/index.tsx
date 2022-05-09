@@ -2,7 +2,7 @@
 import { Table } from 'antd';
 
 // Local Import
-import { Stocks } from '../../../mockdata/stocks';
+import { Stocks } from '../../../mockData/stocks';
 
 // Styles
 import './profile.scss';
