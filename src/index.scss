@@ -1,4 +1,10 @@
+@use './sassVariables/fonts.scss' as fonts;
+
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: fonts.$primary-font, sans-serif;
 }
