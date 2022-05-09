@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const BitCoin = {
   name: 'BitCoin',
   marketValuePerCrypto: 33625.62,

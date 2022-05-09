@@ -4,8 +4,8 @@ import { SearchOutlined } from '@ant-design/icons';
 const { TabPane } = Tabs;
 
 // Local Import
-import { Stocks } from '../../../mockdata/stocks';
-import { Cryptos } from '../../../mockdata/cryptos';
+import { Stocks } from '../../../mockData/stocks';
+import { Cryptos } from '../../../mockData/cryptos';
 
 // Styles
 import './profile.scss';
