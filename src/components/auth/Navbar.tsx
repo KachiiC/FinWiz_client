@@ -90,8 +90,7 @@ const Navbar = () => {
                   <img className="navIcon" src={AddImg} alt="add-investment" />
                 Add
                 </a>
-              </li>
-            
+              </li>          
             </Dropdown>   
 
             <li className='navLink'>
