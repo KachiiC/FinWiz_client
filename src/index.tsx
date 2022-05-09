@@ -12,7 +12,7 @@ import 'antd/dist/antd.min.css';
 
 const root = document.getElementById('root');
 // todo - set this value in context api
-const auth = true;
+const auth = false;
 
 render(
   <StrictMode>
