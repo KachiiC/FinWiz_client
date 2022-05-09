@@ -1,0 +1,16 @@
+//! text colors
+$textHeadline: rgb(255, 255, 255);
+$textPrimary: rgb(235, 235, 235);
+$textSecondary: rgba(235, 235, 235, 0.6);
+
+//! background colors
+$backgroundDark1: #09111A;
+$backgroundDark2: #111D2C;
+$backgroundDark3: #152538;
+
+//! border colors
+$headerFooterBorder: solid 1px lightgray;
+
+//! shadow color
+$headerShadow: 0 2px 10px -1px #3333;
+$container-shadow: 0 2px 10px -1px rgb(84, 178, 228);

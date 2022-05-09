@@ -7,8 +7,8 @@ import App from './App';
 import AuthApp from 'AuthApp';
 
 // Styles
-import './index.scss';
 import 'antd/dist/antd.min.css';
+import './index.scss';
 
 const root = document.getElementById('root');
 // todo - set this value in context api
