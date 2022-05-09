@@ -1,7 +1,7 @@
 
 const AddInvestments = () => {
   return (
-    <h1>AddInvestments</h1>
+    <h1>Add Investments</h1>
   );
 };
 
