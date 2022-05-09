@@ -1,7 +1,16 @@
+// Imports
+
+// Local Import
+
+// Styles
+import './styles/landing.scss';
 
 const Landing = () => {
+
   return (
-    <h1>Landing</h1>
+    <div className='bodyContainer'>
+      <h1>Landing Page</h1>
+    </div>
   );
 };
 
