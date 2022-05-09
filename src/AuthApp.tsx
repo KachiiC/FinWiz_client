@@ -1,9 +1,11 @@
-// COMPONENTS
+// Imports
 import { BrowserRouter } from 'react-router-dom';
-// CSS
-import './App.css';
-// PAGES
+
+// Local Imports
 import { AuthPages } from 'pages';
+
+// Styles
+import './App.scss';
 
 const AuthApp = () => {
   return (

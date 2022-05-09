@@ -1,4 +1,7 @@
+// Imports
 import { Routes } from 'react-router-dom';
+
+// Local imports
 import { defaultPageRoutes, authPageRoutes } from './pageRoutes';
 
 const Pages = (

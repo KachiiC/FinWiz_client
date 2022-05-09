@@ -1,5 +1,8 @@
-import pagesData from './pagesData';
+// Imports
 import { Route } from 'react-router-dom';
+
+// Local Imports
+import pagesData from './pagesData';
 
 
 const defaultPageRoutes = pagesData

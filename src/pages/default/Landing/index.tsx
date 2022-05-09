@@ -1,8 +1,7 @@
-import React from 'react';
 
 const Landing = () => {
   return (
-    <div>Landing page</div>
+    <h1>Landing</h1>
   );
 };
 

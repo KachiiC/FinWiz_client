@@ -1,9 +1,11 @@
-// COMPONENTS
+// Imports
 import { BrowserRouter } from 'react-router-dom';
-// CSS
-import './App.css';
-// PAGES
+
+// Local imports
 import { Pages } from 'pages';
+
+// Styles
+import './App.scss';
 
 const App = () => {
   return (

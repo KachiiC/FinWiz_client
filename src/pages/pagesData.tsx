@@ -1,8 +1,9 @@
+// Local Imports
 import Landing from './default/Landing';
 
 const pagesData = [
   {
-    title: 'Home',
+    title: 'Landing',
     path: '/',
     element: <Landing />,
     showAuth: true,
