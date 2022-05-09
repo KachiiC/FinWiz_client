@@ -1,20 +1,20 @@
 // Imports
 import { BrowserRouter } from 'react-router-dom';
 
-// Local imports
-import { Pages } from 'pages';
+// Local Imports
+import { AuthPages } from 'pages';
 
 // Styles
 import './App.scss';
 
-const App = () => {
+const AuthApp = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        {Pages}
+        { AuthPages }
       </BrowserRouter>
     </div>
   );
 };
 
-export default App;
+export default AuthApp;
