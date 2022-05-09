@@ -31,6 +31,7 @@
         "no-duplicate-imports": "error",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
         "semi": [2, "always"],
-        "indent": ["error", 2]
+        "indent": ["error", 2],
+        "object-curly-spacing": ["error", "always"]
     }
 }

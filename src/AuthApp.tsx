@@ -1,9 +1,16 @@
+// COMPONENTS
+import { BrowserRouter } from 'react-router-dom';
+// CSS
 import './App.css';
+// PAGES
+import { AuthPages } from 'pages';
 
 const AuthApp = () => {
   return (
     <div className="App">
-      <h1>FinWiz Auth</h1>
+      <BrowserRouter>
+        { AuthPages }
+      </BrowserRouter>
     </div>
   );
 };

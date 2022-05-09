@@ -1,9 +1,16 @@
+// COMPONENTS
+import { BrowserRouter } from 'react-router-dom';
+// CSS
 import './App.css';
+// PAGES
+import { Pages } from 'pages';
 
 const App = () => {
   return (
     <div className="App">
-      <h1>FinWiz</h1>
+      <BrowserRouter>
+        {Pages}
+      </BrowserRouter>
     </div>
   );
 };
