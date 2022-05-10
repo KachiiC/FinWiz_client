@@ -40,7 +40,7 @@ const StocksTable = () => {
   const stocksData = Stocks.stocksList;
 
   return (
-    <Table  pagination={{ pageSize: 5 }} dataSource={stocksData} columns={stocksColumns} />
+    <Table  pagination={{ pageSize: 5 }} dataSource={stocksData} columns={stocksColumns} rowKey="symbol"/>
   );
 };
 
