@@ -1,7 +1,6 @@
 // Imports
 import { useAuth0 } from '@auth0/auth0-react';
 import { Tabs } from 'antd';
-const { TabPane } = Tabs;
 
 // Local Import
 import StocksTable from 'components/antdComponents/StocksTable';
@@ -12,17 +11,18 @@ import { userApi } from 'redux/store';
 import './profile.scss';
 
 const Profile = () => {
+  const { TabPane } = Tabs;
 
   // get user data from auth0
-  const { user } = useAuth0();
-  console.log('user info: ', user);
-
-  // can destructure loading, status etc. from here also
-  const { data: userObject } = userApi.useGetUserIdQuery('123');
-  // console.log('received: ', userObject);
+  const { user, isLoading } = useAuth0();
+  if(!isLoading && user?.sub){
+    // can destructure loading, status etc. from here also
+    const { data: userInfo } = userApi.useGetUserQuery(user.sub);
+    console.log('received: ', userInfo);
+  }
 
   return (
-    <div className='genericContainer '>
+    <div className='genericContainer'>
       <div className='genericInnerContainer'>
 
         {/* portfolio tables */}

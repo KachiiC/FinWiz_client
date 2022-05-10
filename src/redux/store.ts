@@ -4,16 +4,13 @@ const userApi = createApi({
   reducerPath: 'userApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/' }),
   tagTypes: ['User'],
-  endpoints: (builder) => ({
-    // ! example get request
-    // getUser: builder.query<any, void>({
-    //   query: () => 'user',
-    //   providesTags: [{ type: 'User', id: 'LIST' }]
-    // }),
-    getUserId: builder.query<any, string>({
+  refetchOnMountOrArgChange: 300,
+  endpoints: (builder) => ({    
+    getUser: builder.query<any, string>({
       query(id) {
         return {
-          url: `user/${id}`
+          url: `user/${id}`,
+          method: 'PUT'
         };
       },
       providesTags: [{ type: 'User', id: 'LIST' }]
