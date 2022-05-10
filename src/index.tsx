@@ -1,23 +1,24 @@
 // Imports
-import { StrictMode } from 'react';
 import { render } from 'react-dom';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 // Local imports
 import App from './App';
-import AuthApp from 'AuthApp';
 
 // Styles
 import 'antd/dist/antd.min.css';
 import './index.scss';
 
 const root = document.getElementById('root');
-// todo - set this value in context api
-const auth = true;
 
 render(
-  <StrictMode>
-    {auth ? <AuthApp /> : <App />}
-  </StrictMode>,
+  <Auth0Provider
+    domain={process.env.REACT_APP_AUTH0_DOMAIN!}
+    clientId={process.env.REACT_APP_AUTH0_CLIENT_ID!}
+    redirectUri={window.location.origin}
+  >
+    <App />
+  </Auth0Provider>,
   root
 );
 

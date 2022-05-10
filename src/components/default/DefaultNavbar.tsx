@@ -1,10 +1,10 @@
 import './styles/Navbar.scss';
 
-const Navbar = () => {
+const DefaultNavbar = () => {
   
   return (
     <h1>Default Navbar</h1>
   );
 };
 
-export default Navbar;
+export default DefaultNavbar;
