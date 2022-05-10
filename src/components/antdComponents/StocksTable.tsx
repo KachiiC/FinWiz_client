@@ -6,7 +6,7 @@ import { Stocks } from 'mockData/stocks';
 
 const StocksTable = () => {
   
-  const stocksColumns: any = [ // Has to be any because of ant design ColumnGroupType TODO check when real data comes across
+  const stocksColumns = [ // Has to be any because of ant design ColumnGroupType TODO check when real data comes across
     {
       title: 'Name',
       dataIndex: 'name',

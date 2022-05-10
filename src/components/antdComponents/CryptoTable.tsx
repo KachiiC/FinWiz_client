@@ -6,7 +6,7 @@ import { Cryptos } from 'mockData/cryptos';
 
 const CryptoTable = () => {
 
-  const cryptoColumns: any = [
+  const cryptoColumns = [
     {
       title: 'Name',
       dataIndex: 'name',

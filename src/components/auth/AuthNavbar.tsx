@@ -12,9 +12,9 @@ import BurgerImg from '../../assets/icons/menu.svg';
 // Styles
 import './styles/Navbar.scss';
 
-const Navbar = () => {
+const AuthNavbar = () => {
 
-  const handleClickAdd = ({ key }: any) => {
+  const handleClickAdd = ({ key }) => {
     // todo - route to add investments page
     console.log(key, 'clicked!');
   };
@@ -145,4 +145,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default AuthNavbar;

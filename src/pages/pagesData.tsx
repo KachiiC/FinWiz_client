@@ -12,6 +12,8 @@ import BrowseNFT from './default/BrowseNFT';
 import Profile from './auth/Profile';
 import Investments from './auth/Investments';
 import AddInvestments from './auth/AddInvestment';
+import LoginButton from 'components/default/LoginButton';
+import LogoutButton from 'components/auth/LogoutButton';
 
 const pagesData = [
   {
@@ -62,6 +64,20 @@ const pagesData = [
     element: <BrowseNFT />,
     showAuth: true,
     showDefault: true
+  },
+  {
+    title: 'Login',
+    path: '/login',
+    element: <LoginButton />,
+    showAuth: true,
+    showDefault: true
+  },
+  {
+    title: 'Logout',
+    path: '/logout',
+    element: <LogoutButton />,
+    showAuth: true,
+    showDefault: false
   },
   {
     title: 'Profile',
