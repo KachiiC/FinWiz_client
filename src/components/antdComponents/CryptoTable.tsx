@@ -2,7 +2,7 @@
 import { Table } from 'antd';
 
 // Local Import
-import { Cryptos } from 'mockData/cryptos';
+import { Cryptos } from 'data/cryptos';
 
 const CryptoTable = () => {
 

@@ -2,7 +2,7 @@
 import { Table } from 'antd';
 
 // Local Import
-import { Stocks } from 'mockData/stocks';
+import { Stocks } from 'data/stocks';
 
 const StocksTable = () => {
   
