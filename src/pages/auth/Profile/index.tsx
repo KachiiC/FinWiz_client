@@ -12,8 +12,8 @@ import './profile.scss';
 const Profile = () => {
 
   return (
-    <div className='profileContainer'>
-      <div className='profileTableContainer'>
+    <div className='genericContainer '>
+      <div className='genericInnerContainer'>
         <Tabs type="card">
           <TabPane tab="Stocks" key="1">
             <StocksTable />

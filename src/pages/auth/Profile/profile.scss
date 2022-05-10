@@ -1,22 +1,6 @@
 @use '../../../sassVariables/colors.scss' as colors;
-@use '../../../sassVariables/spacing.scss' as spacing;
-@use '../../../sassVariables//fonts.scss' as fonts;
 
-.profileContainer {
-  background-color: colors.$backgroundDark2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  height: 90vh;
-    
-  .profileTableContainer {
-      width: 95%;
-      height: 100px;
-    }
-}
-
-//overwrite ant design styles
-
+//! overwrite ant design styles
 //tabs
 //move tabs onto the top of table
 .ant-tabs-nav {
@@ -24,8 +8,19 @@
 }
 
 .ant-tabs-tab {
+  color: colors.$textSecondary !important;
+  background-color: colors.$backgroundDark1 !important;
+  border-bottom: 1px solid white !important;
+  width: 200px !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
   color: colors.$textPrimary !important;
-  background-color: colors.$backgroundDark2 !important;
+  background-color: colors.$backgroundDark1 !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active {
+  background-color: colors.$backgroundDark1 !important;
   border-bottom: 0px !important;
 }
 
@@ -49,17 +44,16 @@
 }
 
 .ant-table-cell {
-
-  background-color: colors.$backgroundDark2 !important;
+  background-color: colors.$backgroundDark1 !important;
   color: colors.$textPrimary !important;
 }
 
 .ant-table-cell-row-hover {
-  background-color: colors.$backgroundDark1 !important;
+  background-color: colors.$backgroundDark2 !important;
 }
 
 .ant-table-column-sort {
-  background-color: colors.$backgroundDark1 !important;
+  background-color: colors.$backgroundDark2 !important;
 }
 
 //pagination buttons 

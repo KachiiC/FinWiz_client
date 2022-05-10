@@ -1,4 +1,7 @@
-@use './sassVariables/fonts.scss' as fonts;
+@use 'sassVariables/fonts.scss' as fonts;
+@use 'sassVariables/colors.scss' as colors;
+@use 'sassVariables/spacing.scss' as spacing;
+
 
 * {
   margin: 0;
@@ -8,4 +11,53 @@
 body {
   font-family: fonts.$primary-font, sans-serif;
   background-color: #111D2C;
+}
+
+//! generic container 
+.genericContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: spacing.$desktopContainerPadding;
+    
+  .genericInnerContainer {
+      width: spacing.$desktopContainerWidth;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+  .genericContainer {
+    padding: spacing.$mobileContainerPadding;
+      
+    .genericInnerContainer {
+        width: spacing.$mobileContainerWidth;
+      }
+  }
+}
+
+//! background color classes
+.bgPrimary {
+  background-color: colors.$backgroundDark1;
+}
+
+.bgSecondary {
+  background-color: colors.$backgroundDark2;
+}
+
+.bgTertiary {
+  background-color: colors.$backgroundDark3;
+}
+
+//! text color classes
+.textHeadline {
+  color: colors.$textHeadline;
+}
+
+.textPrimary {
+  color: colors.$textPrimary;
+}
+
+.textSecondary {
+  color: colors.$textSecondary;
 }
