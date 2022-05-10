@@ -1,0 +1,90 @@
+@use '../../../sassVariables/colors.scss' as colors;
+@use '../../../sassVariables/spacing.scss' as spacing;
+@use '../../../sassVariables//fonts.scss' as fonts;
+
+.profileContainer {
+  background-color: colors.$backgroundDark2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 90vh;
+    
+  .profileTableContainer {
+      width: 95%;
+      height: 100px;
+    }
+}
+
+//overwrite ant design styles
+
+//tabs
+//move tabs onto the top of table
+.ant-tabs-nav {
+  margin: 0 !important;
+}
+
+.ant-tabs-tab {
+  color: colors.$textPrimary !important;
+  background-color: colors.$backgroundDark2 !important;
+  border-bottom: 0px !important;
+}
+
+//tables
+.ant-table-container, .ant-table-container table>thead>tr:first-child th:first-child {
+  border-top-left-radius: 0px !important;
+}
+
+.ant-table-container, .ant-table-container table>thead>tr:first-child {
+  border-left: 1px solid white;
+}
+
+.ant-table-container, .ant-table-container table>thead>tr:last-child {
+  border-right: 1px solid white;
+}
+
+.ant-table-container {
+  border-radius: 0% !important;
+  background-color: colors.$backgroundDark2;
+  color: colors.$textPrimary;
+}
+
+.ant-table-cell {
+
+  background-color: colors.$backgroundDark2 !important;
+  color: colors.$textPrimary !important;
+}
+
+.ant-table-cell-row-hover {
+  background-color: colors.$backgroundDark1 !important;
+}
+
+.ant-table-column-sort {
+  background-color: colors.$backgroundDark1 !important;
+}
+
+//pagination buttons 
+.ant-pagination-item {
+  border-color: colors.$textPrimary !important;
+}
+
+.ant-pagination-item a {
+  background-color: colors.$backgroundDark2 !important;
+  color: colors.$textPrimary !important;
+}
+
+.ant-pagination-item-active a {
+  color: #1890ff!important;
+}
+
+.ant-pagination-disabled .ant-pagination-item-link {
+  background-color: colors.$backgroundDark2 !important;
+  color: colors.$textSecondary !important;
+  border-color: colors.$textSecondary !important;
+  cursor: not-allowed;
+}
+
+button.ant-pagination-item-link {
+  background-color: colors.$backgroundDark2 !important;
+  border-color: colors.$textPrimary !important;
+  color: colors.$textPrimary !important;
+}
