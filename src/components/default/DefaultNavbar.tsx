@@ -1,9 +1,17 @@
-import './styles/Navbar.scss';
+// Local imports
+import DesktopNavbarDefault from './DesktopNavbarDefault';
+import MobileNavbarDefault from './MobileNavbarDefault';
+
+// Styles
+import './styles/DefaultNavbar.scss';
 
 const DefaultNavbar = () => {
   
   return (
-    <h1>Default Navbar</h1>
+    <>
+      <MobileNavbarDefault />
+      <DesktopNavbarDefault />
+    </>
   );
 };
 

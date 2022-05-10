@@ -4,7 +4,7 @@ import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(...registerables);
 
 // local imports
-import { User } from 'mockData/user';
+import { User } from 'data/user';
 
 // styles
 import './styles/Charts.scss';
