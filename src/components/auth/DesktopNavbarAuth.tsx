@@ -71,7 +71,7 @@ const DesktopNavbarAuth = () => {
               <li className="navLink">
                 <a className='drop' onClick={e => e.preventDefault()}>
                   <img className="navIcon" src={AddImg} alt="add-investment" />
-                  Add
+                  Investments
                 </a>
               </li>          
             </Dropdown>   

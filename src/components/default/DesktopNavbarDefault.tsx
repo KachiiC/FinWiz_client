@@ -3,8 +3,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
 
 // Local Imports
-import BrowseImg from '../../assets/icons/search.svg';
-import LogoutImg from '../../assets/icons/logout.svg';
+import BrowseImg from 'assets/icons/search.svg';
+import LoginImg from 'assets/icons/login.svg';
 
 const DesktopNavbarDefault = () => {
 
@@ -28,8 +28,8 @@ const DesktopNavbarDefault = () => {
 
           <li className="navLink" onClick={loginWithRedirect}>
             <Link to="/" className='link' >
-              <img className="navIcon" src={LogoutImg} alt="logout" />
-               Login  
+              <img className="navIcon" src={LoginImg} alt="login" />
+                Login  
             </Link>
           </li>
         </ul>
