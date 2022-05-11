@@ -28,6 +28,7 @@ const Profile = () => {
     const { data: userProfile, isLoading: profileLoading } = userApi.useGetTestUserQuery();
     if(!profileLoading) {
       profile = userProfile;
+      console.log(profile);
     }
   }
 
