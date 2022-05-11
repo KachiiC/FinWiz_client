@@ -1,6 +1,6 @@
-@use '../../../sassVariables/colors.scss' as colors;
-@use '../../../sassVariables/spacing.scss' as spacing;
-@use '../../../sassVariables//fonts.scss' as fonts;
+@use 'sassVariables/colors.scss' as colors;
+@use 'sassVariables/spacing.scss' as spacing;
+@use 'sassVariables/fonts.scss' as fonts;
 
 .mainHeader {
   background-color: colors.$backgroundDark1;
