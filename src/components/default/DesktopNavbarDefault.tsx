@@ -3,8 +3,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
 
 // Local Imports
-import BrowseImg from '../../assets/icons/search.svg';
-import LoginImg from '../../assets/icons/login.svg';
+import BrowseImg from '/assets/icons/search.svg';
+import LoginImg from '/assets/icons/login.svg';
 
 const DesktopNavbarDefault = () => {
 
