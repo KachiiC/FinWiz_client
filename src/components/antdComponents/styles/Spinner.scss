@@ -1,0 +1,19 @@
+@use 'sassVariables/colors.scss' as colors;
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.ant-spin-lg .ant-spin-dot i {
+  width: 15px;
+  height: 15px;
+}
+
+.ant-spin-dot > .ant-spin-dot-item {
+  background-color: colors.$textPrimary;
+  transform: scale(1);
+}

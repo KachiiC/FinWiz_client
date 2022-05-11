@@ -2,10 +2,14 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { Tabs } from 'antd';
 
-// Local Import
+// Local Imports
 import StocksTable from 'components/antdComponents/StocksTable';
 import CryptoTable from 'components/antdComponents/CryptoTable';
 import { userApi } from 'redux/store';
+import GraphContainer from 'components/default/GraphContainer';
+import Spinner from 'components/antdComponents/Spinner';
+import UserDetails from 'components/authenticatedComponents/UserDetails';
+import { IUserProfile } from 'interfaces/user/IUserProfile';
 
 // Styles
 import './profile.scss';
@@ -15,24 +19,37 @@ const Profile = () => {
 
   // get user data from auth0
   const { user, isLoading } = useAuth0();
+
+  // get the user profile
+  let profile: IUserProfile | undefined;
   if(!isLoading && user?.sub){
-    // can destructure loading, status etc. from here also
-    const { data: userInfo } = userApi.useGetUserQuery(user.sub);
-    console.log('received: ', userInfo);
+    const { data: userProfile, isLoading: profileLoading } = userApi.useGetTestUserQuery();
+    if(!profileLoading) {
+      profile = userProfile;
+    }
   }
+
+  // if user or profile is loading display the spinner
+  if(!user || !profile) return (<Spinner />);
 
   return (
     <div className='genericContainer'>
-      <div className='genericInnerContainer'>        
-        {/* portfolio tables */}
+      <div className='genericInnerContainer'>  
+        {/* user details */}
+        <UserDetails user={user} profile={profile}/>
+
+        {/* tables */}
         <Tabs type="card">
           <TabPane tab="Stocks" key="1">
-            <StocksTable />
+            <StocksTable stockData={profile.stocks}/>
           </TabPane>
           <TabPane tab="Cryptos" key="2">
             <CryptoTable />
           </TabPane>
         </Tabs>
+
+        {/* graphs */}
+        <GraphContainer stocks={profile.stocks} crypto={profile.cryptos} investmentValues={profile.investmentValues}  />
       </div>
     </div>
   );

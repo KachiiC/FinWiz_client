@@ -3,24 +3,23 @@ import { Chart as ChartJS, registerables } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 ChartJS.register(...registerables);
 
-// local imports
-import { User } from 'data/user';
+// Local imports
+import { IUserStock } from 'interfaces/stocks/IStocks';
+import { IGenericChart } from './interfaces/ICharts';
 
 // styles
 import './styles/Charts.scss';
 
-const BarChart = () => {
-  console.log(User.investments);
+const BarChart = ({ stocks }: IGenericChart) => {
 
   const labels: string[] = [];
-
   const entryPrice: number[] = [];
   const marketPrice: number[] = [];
 
-  User.investments.stock.stocksList.forEach(stock => {
+  stocks.forEach((stock: IUserStock): void => {
     labels.push(stock.symbol);
     entryPrice.push(stock.entryValuePerShare);
-    marketPrice.push(stock.markeValuePerShare);
+    marketPrice.push(stock.details.marketValuePerShare);
   });
 
   const data = {

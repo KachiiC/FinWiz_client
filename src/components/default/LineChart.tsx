@@ -3,14 +3,13 @@ import { Chart as ChartJS, registerables } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 ChartJS.register(...registerables);
 
-// local imports
-import { User } from 'data/user';
+// Local imports
+import { ILineChart } from './interfaces/ILineChart';
 
 // styles
 import './styles/Charts.scss';
 
-const LineChart = () => {
-
+const LineChart = ({ investmentValues }: ILineChart) => {
 
   const options = {
     responsive: true,
@@ -59,11 +58,11 @@ const LineChart = () => {
   };
 
   const data = {
-    labels: User.investments.investmentValues,
+    labels: investmentValues.map(data => new Date(data.dateTime).toLocaleDateString()),
     datasets: [
       {
         label: 'Total',
-        data: User.investments.investmentValues,        
+        data: investmentValues.map(data => data.value),      
         borderColor: 'rgb(84, 182, 227)', // line color
         backgroundColor: 'rgb(255, 255, 255)', // line dot color
       },
