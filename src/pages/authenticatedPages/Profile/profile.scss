@@ -37,6 +37,14 @@
   border-right: 1px solid white;
 }
 
+.ant-table-container, .ant-table-container table>tbody>tr>td {
+  cursor: pointer;
+}
+
+.ant-table-container, .ant-table-container table>thead>tr>td {
+  cursor: default;
+}
+
 .ant-table-container {
   border-radius: 0% !important;
   background-color: colors.$backgroundDark2;

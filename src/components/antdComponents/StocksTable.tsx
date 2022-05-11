@@ -47,7 +47,17 @@ const StocksTable = ({ stockData }: IStocksTable) => {
   ];
 
   return (
-    <Table pagination={{ pageSize: 5 }} dataSource={stocksData} columns={stocksColumns} rowKey="symbol"/>
+    <Table 
+      pagination={{ pageSize: 5 }} 
+      dataSource={stocksData} 
+      columns={stocksColumns} 
+      rowKey="symbol"
+      onRow={(record) => {
+        return {
+          onClick: () => {console.log(record);}
+        };
+      }}
+    />
   );
 };
 
