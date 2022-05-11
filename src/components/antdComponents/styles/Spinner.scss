@@ -1,0 +1,21 @@
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.spinner {
+  width: 500px;
+}
+
+.ant-spin-lg .ant-spin-dot i {
+  width: 15px;
+  height: 15px;
+}
+
+.ant-spin-dot > .ant-spin-dot-item {
+  background-color: pink;
+  transform: scale(1);
+}

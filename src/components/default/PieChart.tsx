@@ -3,24 +3,20 @@ import { Chart as ChartJS, registerables } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(...registerables);
 
-// local imports
-import { User } from 'data/user';
-
 // styles
 import './styles/Charts.scss';
 
-const PieChart = () => {  
-
+const PieChart = ({ stocks, cryptos }: any) => {  
   const labels: string[] = [];
   const quantities: number[] = [];
 
-  // todo - do for top 5 - not just stock or crypto
-  User.investments.stock.stocksList.forEach(stock => {
-    labels.push(stock.name);
+  stocks.forEach((stock): any => {
+    labels.push(stock.symbol);
     quantities.push(stock.totalValueOfShares);
   });
 
-  // User.investments.crypto.cryptoList.forEach(crypto => {
+  // todo - make this up of stocks and crypto
+  // crypto.forEach(crypto => {
   //   labels.push(crypto.name);
   //   quantities.push(crypto.totalCryptoValue);
   // });
@@ -29,7 +25,7 @@ const PieChart = () => {
     labels,
     datasets: [
       {
-        label: 'Top 5',
+        label: 'Makeup of Portfolio',
         data: quantities,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',

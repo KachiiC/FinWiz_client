@@ -1,10 +1,15 @@
 // Imports
 import { Table } from 'antd';
 
-// Local Import
-import { Stocks } from 'data/stocks';
-
-const StocksTable = () => {
+const StocksTable = ({ stockData }: any) => {
+  console.log('stock table: ', stockData);
+  const stocksData = stockData.map((stock): any => {
+    return {
+      ...stock,
+      name: stock.details.name,
+      marketValuePerShare: stock.details.marketValuePerShare,
+    };
+  });
   
   const stocksColumns = [ // Has to be any because of ant design ColumnGroupType TODO check when real data comes across
     {
@@ -27,8 +32,8 @@ const StocksTable = () => {
     },
     {
       title: 'Market Value Per Share',
-      dataIndex: 'markeValuePerShare',
-      sorter: (a, b) => a.markeValuePerShare - b.markeValuePerShare,
+      dataIndex: 'marketValuePerShare',
+      sorter: (a, b) => a.marketValuePerShare - b.marketValuePerShare,
     },
     {
       title: 'Total Value Of Shares',
@@ -36,8 +41,6 @@ const StocksTable = () => {
       sorter: (a, b) => a.totalValueOfShares - b.totalValueOfShares,
     },
   ];
-
-  const stocksData = Stocks.stocksList;
 
   return (
     <Table  pagination={{ pageSize: 5 }} dataSource={stocksData} columns={stocksColumns} rowKey="symbol"/>
