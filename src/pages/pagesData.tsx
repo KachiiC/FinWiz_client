@@ -9,9 +9,9 @@ import BrowseCrypto from './default/BrowseCrypto';
 import BrowseNFT from './default/BrowseNFT';
 
 // auth
-import Profile from './auth/Profile';
-import Investments from './auth/Investments';
-import AddInvestments from './auth/AddInvestment';
+import Profile from './authenticatedPages/Profile';
+import Investments from './authenticatedPages/Investments';
+import AddInvestments from './authenticatedPages/AddInvestment';
 
 const pagesData = [
   {

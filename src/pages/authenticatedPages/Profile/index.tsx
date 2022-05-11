@@ -23,8 +23,7 @@ const Profile = () => {
 
   return (
     <div className='genericContainer'>
-      <div className='genericInnerContainer'>
-
+      <div className='genericInnerContainer'>        
         {/* portfolio tables */}
         <Tabs type="card">
           <TabPane tab="Stocks" key="1">
