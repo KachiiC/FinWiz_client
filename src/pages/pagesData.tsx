@@ -4,13 +4,10 @@ import Landing from './default/Landing';
 import About from './default/About';
 import Details from './default/Details';
 import Contact from './default/Contact';
-import BrowseStock from './default/BrowseStock';
-import BrowseCrypto from './default/BrowseCrypto';
-import BrowseNFT from './default/BrowseNFT';
+import Browse from './default/Browse';
 
 // auth
 import Profile from './authenticatedPages/Profile';
-import Investments from './authenticatedPages/Investments';
 import AddInvestments from './authenticatedPages/AddInvestment';
 
 const pagesData = [
@@ -43,23 +40,9 @@ const pagesData = [
     showDefault: true
   },
   {
-    title: 'BrowseStock',
-    path: '/browseStock',
-    element: <BrowseStock />,
-    showAuth: true,
-    showDefault: true
-  },
-  {
-    title: 'BrowseCrypto',
-    path: '/browseCrypto',
-    element: <BrowseCrypto />,
-    showAuth: true,
-    showDefault: true
-  },
-  {
-    title: 'BrowseNFT',
-    path: '/browseNFT',
-    element: <BrowseNFT />,
+    title: 'Browse',
+    path: '/browse',
+    element: <Browse />,
     showAuth: true,
     showDefault: true
   },
@@ -67,13 +50,6 @@ const pagesData = [
     title: 'Profile',
     path: '/profile',
     element: <Profile />,
-    showAuth: true,
-    showDefault: false
-  },
-  {
-    title: 'Investments',
-    path: '/investments',
-    element: <Investments />,
     showAuth: true,
     showDefault: false
   },
