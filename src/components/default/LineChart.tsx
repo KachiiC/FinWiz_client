@@ -3,10 +3,13 @@ import { Chart as ChartJS, registerables } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 ChartJS.register(...registerables);
 
+// Local imports
+import { ILineChart } from './interfaces/ILineChart';
+
 // styles
 import './styles/Charts.scss';
 
-const LineChart = ({ investmentValues }: any) => {
+const LineChart = ({ investmentValues }: ILineChart) => {
 
   const options = {
     responsive: true,
