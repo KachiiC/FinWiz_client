@@ -3,23 +3,24 @@
 @use 'sassVariables/fonts.scss' as fonts;
 
 .genericContainer {
-  color: colors.$textPrimary;
-
-  .genericInnerContainer {
+  .genericInnerContainer{
     .antdFormSpacing {
       border: 1px solid white;
       padding: 5%;
       margin: 5% 0;
     }
-  }
 
-  .ant-form-item-label>label {
-    color: colors.$textPrimary !important
+    .ant-form-item-label>label {
+      color: colors.$textPrimary !important
+    }
   }
-
- 
 }
+
 .ant-form-item-control-input-content {
   display: flex;
   justify-content: center !important;
+}
+
+.ant-input-number, .ant-picker{
+  width: 100% !important;
 }
