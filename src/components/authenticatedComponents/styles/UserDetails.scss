@@ -8,16 +8,17 @@
   h1 {
     color: colors.$textHeadline;
     font-size: fonts.$sizeTitle;
-    margin-bottom: 0;
+    margin-bottom: 5px;
+
   }
 
   p {
-    color: colors.$textPrimary;
+    color: colors.$textSecondary;
     font-size: fonts.$sizeSubTitle;
-    margin-bottom: 0;
+    margin-bottom: 3px;
   }
 
   span {
-    color: colors.$textSecondary;
+    color: colors.$textPrimary;
   }
 }

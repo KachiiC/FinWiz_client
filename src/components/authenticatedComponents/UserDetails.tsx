@@ -1,10 +1,10 @@
+// Local imports
+import { IUserDetails } from './interfaces/IUserDetails';
+
 // Styles 
 import './styles/UserDetails.scss';
 
-
-const UserDetails = ({ user, profile }: any) => {
-  console.log('profile:', profile);
-  console.log('auth0:', user);
+const UserDetails = ({ user, profile }: IUserDetails) => {
   return (
     <div className="userDetailsContainer">
       <h1>{user.given_name}&apos;s Portfolio</h1>

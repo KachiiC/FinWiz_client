@@ -26,11 +26,24 @@ interface ISingleStock {
   name: string;
   symbol: string;
   marketValuePerShare: number;
+}
 
+interface ICombinedStock {
+  id: number;
+  sub: string;
+  symbol: string; 
+  entryValuePerShare: number;
+  numberOfShares: number;
+  totalValueOfShares: number;
+  firstBought: string;
+  lastBought: string;
+  name: string;
+  marketValuePerShare: number;
 }
 
 export type {
   IStockSummary,
   IUserStock,
-  ISingleStock
+  ISingleStock,
+  ICombinedStock
 };
