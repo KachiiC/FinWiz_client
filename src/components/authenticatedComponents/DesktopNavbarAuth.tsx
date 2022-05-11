@@ -67,21 +67,21 @@ const DesktopNavbarAuth = () => {
               </Link>
             </li>
 
+            <li className='navLink'>
+              <Link to="/addInvestments" className='link' >
+                <img className="navIcon" src={AddImg} alt="add" />
+                Add
+              </Link>
+            </li>
+
             <Dropdown overlay={menu}>
               <li className="navLink">
                 <a className='drop' onClick={e => e.preventDefault()}>
-                  <img className="navIcon" src={AddImg} alt="add-investment" />
-                  Investments
+                  <img className="navIcon" src={BrowseImg} alt="browse" />
+                  Browse
                 </a>
               </li>          
             </Dropdown>   
-
-            <li className='navLink'>
-              <Link to="/browse" className='link' >
-                <img className="navIcon" src={BrowseImg} alt="browse" />
-                Browse
-              </Link>
-            </li>
 
             <li className="navLink" onClick={handleLogout}>
               <Link to="/" className='link' >
