@@ -3,17 +3,20 @@ import { Chart as ChartJS, registerables } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 ChartJS.register(...registerables);
 
+// Local imports
+import { IUserStock } from 'interfaces/stocks/IStocks';
+import { IBarChart } from './interfaces/IBarChart';
+
 // styles
 import './styles/Charts.scss';
 
-const BarChart = ({ stocks, crypto }: any) => {
+const BarChart = ({ stocks, crypto }: IBarChart) => {
 
   const labels: string[] = [];
-
   const entryPrice: number[] = [];
   const marketPrice: number[] = [];
 
-  stocks.forEach((stock): any => {
+  stocks.forEach((stock: IUserStock): void => {
     labels.push(stock.symbol);
     entryPrice.push(stock.entryValuePerShare);
     marketPrice.push(stock.details.marketValuePerShare);
