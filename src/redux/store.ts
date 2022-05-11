@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const userApi = createApi({
   reducerPath: 'userApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://finwiz-server.herokuapp.com/' }),
   tagTypes: ['User'],
   refetchOnMountOrArgChange: 300,
   endpoints: (builder) => ({    

@@ -1,3 +1,5 @@
+@use 'sassVariables/colors.scss' as colors;
+
 .spinnerContainer {
   display: flex;
   justify-content: center;
@@ -6,16 +8,12 @@
   width: 100vw;
 }
 
-.spinner {
-  width: 500px;
-}
-
 .ant-spin-lg .ant-spin-dot i {
   width: 15px;
   height: 15px;
 }
 
 .ant-spin-dot > .ant-spin-dot-item {
-  background-color: pink;
+  background-color: colors.$textPrimary;
   transform: scale(1);
 }

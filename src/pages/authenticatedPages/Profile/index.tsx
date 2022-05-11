@@ -9,6 +9,8 @@ import { userApi } from 'redux/store';
 import LineChart from 'components/default/LineChart';
 import PieChart from 'components/default/PieChart';
 import Spinner from 'components/antdComponents/Spinner';
+import UserDetails from 'components/authenticatedComponents/UserDetails';
+import { IUserProfile } from 'interfaces/user/IUserProfile';
 
 // Styles
 import './profile.scss';
@@ -21,13 +23,11 @@ const Profile = () => {
   const { user, isLoading } = useAuth0();
 
   // get the user profile
-  let profile: any | undefined;
+  let profile: IUserProfile | undefined;
   if(!isLoading && user?.sub){
     const { data: userProfile, isLoading: profileLoading } = userApi.useGetTestUserQuery();
     if(!profileLoading) {
       profile = userProfile;
-      console.log(user);
-      console.log('profile: ', userProfile);
     }
   }
 
@@ -39,12 +39,9 @@ const Profile = () => {
       <div className='genericContainer'>
         <div className='genericInnerContainer'>  
 
-          <h1 className='textPrimary'>{user.given_name}&apos;s Portfolio</h1> 
-
-          
+          <UserDetails user={user} profile={profile}/>
 
           {/* portfolio tables */}
-          {profile && 
           <Tabs type="card">
             <TabPane tab="Stocks" key="1">
               <StocksTable stockData={profile.stocks}/>
@@ -53,20 +50,16 @@ const Profile = () => {
               <CryptoTable />
             </TabPane>
           </Tabs>
-          }
+
         </div>
       </div>
 
+      {/* graphs*/}
       <div className='genericContainer'>
         <div className='genericInnerContainer'>  
-          {/* graphs*/}
-          {profile && 
-          <>
-            <LineChart investmentValues={profile.investmentValues}/>
-            <PieChart stocks={profile.stocks} crypto={profile.crypto}/>
-            <BarChart stocks={profile.stocks} crypto={profile.crypto}/>
-          </>
-          }
+          <LineChart investmentValues={profile.investmentValues}/>
+          <PieChart stocks={profile.stocks} crypto={profile.cryptos}/>
+          <BarChart stocks={profile.stocks} crypto={profile.cryptos}/>
         </div>
       </div>
     </>

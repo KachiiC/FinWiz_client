@@ -1,0 +1,23 @@
+@use 'sassVariables/colors.scss' as colors;
+@use 'sassVariables/spacing.scss' as spacing;
+@use 'sassVariables/fonts.scss' as fonts;
+
+.userDetailsContainer {
+  margin-bottom: spacing.$desktopContainerMargin;
+
+  h1 {
+    color: colors.$textHeadline;
+    font-size: fonts.$sizeTitle;
+    margin-bottom: 0;
+  }
+
+  p {
+    color: colors.$textPrimary;
+    font-size: fonts.$sizeSubTitle;
+    margin-bottom: 0;
+  }
+
+  span {
+    color: colors.$textSecondary;
+  }
+}
