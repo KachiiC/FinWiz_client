@@ -1,14 +1,9 @@
 // Imports
-import { Input, InputNumber, DatePicker, Select } from 'antd';
+import { InputNumber, DatePicker, Select } from 'antd';
 // Local Imports
-import AntdForm from 'components/antdComponents/AntdForm';
+import AntdForm from 'components/antdComponents/antdform/AntdForm';
 
 const stocksFormData = [
-  {
-    name: 'symbol',
-    rules: [{ required: true, message: 'Please input symbol!' }],
-    content: <Input placeholder='Please enter a symbol'/>,
-  },
   {
     name:'typeselector', // this needs to be selector
     rules:[{ required: true, message: 'Please input the date purchased' }],

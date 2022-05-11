@@ -1,6 +1,10 @@
 // Imports
 import { useAuth0 } from '@auth0/auth0-react';
 import { Form, Button } from 'antd';
+import AutoCompleteInput from './AutoCompleteForm';
+// Local Imports
+
+
 interface AntdFormProps {
   data: {
     name: string;
@@ -37,6 +41,9 @@ const AntdForm = (props: AntdFormProps) => {
       >
         <div className='genericInnerContainer'>
           <div className='antdFormSpacing'>
+            <Form.Item  name='symbol' rules={[{ required: true, message: 'Please input symbol!' }]} >
+              <AutoCompleteInput />
+            </Form.Item>
             {displayForm}
           </div>
         </div>
