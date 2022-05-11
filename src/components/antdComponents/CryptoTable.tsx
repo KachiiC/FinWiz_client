@@ -40,7 +40,17 @@ const CryptoTable = () => {
   const cryptoData = Cryptos.cryptoList;
 
   return (
-    <Table pagination={{ pageSize: 5 }}  dataSource={cryptoData} columns={cryptoColumns} rowKey="symbol"/>
+    <Table 
+      pagination={{ pageSize: 5 }}  
+      dataSource={cryptoData} 
+      columns={cryptoColumns} 
+      rowKey="symbol"
+      onRow={(record) => {
+        return {
+          onClick: () => {console.log(record);}
+        };
+      }}
+    />
   );
 };
 
