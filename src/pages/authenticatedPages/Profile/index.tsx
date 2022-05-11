@@ -6,15 +6,13 @@ import { Tabs } from 'antd';
 import StocksTable from 'components/antdComponents/StocksTable';
 import CryptoTable from 'components/antdComponents/CryptoTable';
 import { userApi } from 'redux/store';
-import LineChart from 'components/default/LineChart';
-import PieChart from 'components/default/PieChart';
+import GraphContainer from 'components/default/GraphContainer';
 import Spinner from 'components/antdComponents/Spinner';
 import UserDetails from 'components/authenticatedComponents/UserDetails';
 import { IUserProfile } from 'interfaces/user/IUserProfile';
 
 // Styles
 import './profile.scss';
-import BarChart from 'components/default/BarChart';
 
 const Profile = () => {
   const { TabPane } = Tabs;
@@ -28,7 +26,6 @@ const Profile = () => {
     const { data: userProfile, isLoading: profileLoading } = userApi.useGetTestUserQuery();
     if(!profileLoading) {
       profile = userProfile;
-      console.log(profile);
     }
   }
 
@@ -36,34 +33,25 @@ const Profile = () => {
   if(!user || !profile) return (<Spinner />);
 
   return (
-    <>
-      <div className='genericContainer'>
-        <div className='genericInnerContainer'>  
+    <div className='genericContainer'>
+      <div className='genericInnerContainer'>  
+        {/* user details */}
+        <UserDetails user={user} profile={profile}/>
 
-          <UserDetails user={user} profile={profile}/>
+        {/* tables */}
+        <Tabs type="card">
+          <TabPane tab="Stocks" key="1">
+            <StocksTable stockData={profile.stocks}/>
+          </TabPane>
+          <TabPane tab="Cryptos" key="2">
+            <CryptoTable />
+          </TabPane>
+        </Tabs>
 
-          {/* portfolio tables */}
-          <Tabs type="card">
-            <TabPane tab="Stocks" key="1">
-              <StocksTable stockData={profile.stocks}/>
-            </TabPane>
-            <TabPane tab="Cryptos" key="2">
-              <CryptoTable />
-            </TabPane>
-          </Tabs>
-
-        </div>
+        {/* graphs */}
+        <GraphContainer stocks={profile.stocks} crypto={profile.cryptos} investmentValues={profile.investmentValues}  />
       </div>
-
-      {/* graphs*/}
-      <div className='genericContainer'>
-        <div className='genericInnerContainer'>  
-          <LineChart investmentValues={profile.investmentValues}/>
-          <PieChart stocks={profile.stocks} crypto={profile.cryptos}/>
-          <BarChart stocks={profile.stocks} crypto={profile.cryptos}/>
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 

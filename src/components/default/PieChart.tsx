@@ -3,14 +3,18 @@ import { Chart as ChartJS, registerables } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(...registerables);
 
+// Local imports
+import { IGenericChart } from './interfaces/ICharts';
+import { IUserStock } from 'interfaces/stocks/IStocks';
+
 // styles
 import './styles/Charts.scss';
 
-const PieChart = ({ stocks, cryptos }: any) => {  
+const PieChart = ({ stocks }: IGenericChart) => {  
   const labels: string[] = [];
   const quantities: number[] = [];
 
-  stocks.forEach((stock): any => {
+  stocks.forEach((stock: IUserStock): void => {
     labels.push(stock.symbol);
     quantities.push(stock.totalValueOfShares);
   });

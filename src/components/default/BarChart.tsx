@@ -5,12 +5,12 @@ ChartJS.register(...registerables);
 
 // Local imports
 import { IUserStock } from 'interfaces/stocks/IStocks';
-import { IBarChart } from './interfaces/IBarChart';
+import { IGenericChart } from './interfaces/ICharts';
 
 // styles
 import './styles/Charts.scss';
 
-const BarChart = ({ stocks, crypto }: IBarChart) => {
+const BarChart = ({ stocks }: IGenericChart) => {
 
   const labels: string[] = [];
   const entryPrice: number[] = [];
