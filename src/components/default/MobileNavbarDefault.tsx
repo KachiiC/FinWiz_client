@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // Local Imports
 import BrowseImg from 'assets/icons/search.svg';
-import LogoutImg from 'assets/icons/logout.svg';
+import LoginImg from 'assets/icons/login.svg';
 import BurgerImg from 'assets/icons/menu.svg';
 import handleMenuClick from 'helpers/handleMenuClick';
 
@@ -28,7 +28,7 @@ const MobileNavbarDefault = () => {
         </Link>
 
         <Link to="/" className="mobileLink" onClick={loginWithRedirect}>
-          <img className="navIcon" src={LogoutImg} alt="logout" />
+          <img className="navIcon" src={LoginImg} alt="login" />
           Login
         </Link>
       </div>
