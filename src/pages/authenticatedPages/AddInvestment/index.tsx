@@ -1,10 +1,13 @@
 // Local imports
-import AddStocks from './AddStocks';
+
+import AddInvestmentForm from './AddInvestmentForm';
 import './styles/AddInvestment.scss';
 
 const AddInvestments = () => {
   return (
-    <AddStocks />
+    <>
+      <AddInvestmentForm />
+    </>
   );
 };
 

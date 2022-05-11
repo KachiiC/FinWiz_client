@@ -1,8 +1,10 @@
+// Imports
+import { useAuth0 } from '@auth0/auth0-react';
 import { Form, Button } from 'antd';
-
 interface AntdFormProps {
   data: {
     name: string;
+    // eslint-disable-next-line
     rules: any[];
     content: JSX.Element;
   }[];
@@ -10,12 +12,14 @@ interface AntdFormProps {
 
 const AntdForm = (props: AntdFormProps) => {
 
-  const onSubmit = (values: any) => {
-    console.log('Success:', values);
+  const { user } = useAuth0();
+
+  const onSubmit = (values) => {
+    console.log('Success:', values, user?.sub);
   };
 
-  const onSubmitFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
+  const onSubmitFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo, user?.sub);
   };
 
   const displayForm = props.data.map((form) => (
@@ -23,6 +27,7 @@ const AntdForm = (props: AntdFormProps) => {
       {form.content}
     </Form.Item>
   ));
+  
   return (
     <div className='genericContainer'>
       <Form 
