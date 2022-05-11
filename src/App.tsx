@@ -5,12 +5,12 @@ import { ApiProvider } from '@reduxjs/toolkit/dist/query/react';
 
 // Local imports
 import { Pages, AuthPages } from 'pages';
-import AuthNavbar from 'components/auth/AuthNavbar';
+import AuthNavbar from 'components/authenticatedComponents/AuthNavbar';
 import DefaultNavbar from 'components/default/DefaultNavbar';
 import { userApi } from 'redux/store';
 
 // Styles
-import './App.scss';
+import './sassVariables/App.scss';
 
 const App = () => {
 

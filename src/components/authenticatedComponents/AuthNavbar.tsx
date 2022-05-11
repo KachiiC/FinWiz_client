@@ -1,6 +1,6 @@
 // Local imports
 import DesktopNavbarAuth from './DesktopNavbarAuth';
-import MobileNavbarAuth from 'components/auth/MobileNavbarAuth';
+import MobileNavbarAuth from 'components/authenticatedComponents/MobileNavbarAuth';
 
 const AuthNavbar = () => {
   return (
