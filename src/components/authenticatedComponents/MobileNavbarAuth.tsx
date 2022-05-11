@@ -35,7 +35,7 @@ const MobileNavbarAuth = () => {
         Profile
         </Link>
 
-        <Link to="/projects" className="mobileLink subLink" onClick={handleMenuClick}>
+        <Link to="/addInvestments" className="mobileLink subLink" onClick={handleMenuClick}>
           <img className="navIcon" src={AddImg} alt="add-investment" />
         Add
         </Link>

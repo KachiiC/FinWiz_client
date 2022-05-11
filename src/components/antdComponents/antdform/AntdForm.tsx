@@ -3,8 +3,6 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Form, Button } from 'antd';
 import AutoCompleteInput from './AutoCompleteForm';
 // Local Imports
-
-
 interface AntdFormProps {
   data: {
     name: string;
