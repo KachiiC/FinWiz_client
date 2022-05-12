@@ -40,7 +40,6 @@ const GraphContainer = ({ stocks, crypto, investmentValues }: IGraphContainer ) 
 
         <div className="pieGraphDetails">
           <h1>What are you made of?</h1>
-          
         </div>
 
         <div className="graphDetailsContainer">

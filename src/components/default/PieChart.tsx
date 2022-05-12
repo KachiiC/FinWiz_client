@@ -13,9 +13,6 @@ import './styles/Charts.scss';
 const PieChart = ({ stocks, crypto, title }: IGenericChart) => {  
   
   const { labels, quantities } = getPieLabelsAndData(stocks!, crypto!);
-
-  let display = true;
-  if(quantities.length === 0) display = false;
   
   const data = {
     labels,
@@ -51,10 +48,11 @@ const PieChart = ({ stocks, crypto, title }: IGenericChart) => {
     }
   };
 
-  const showChart = !display ? 
-    (<p>You are not currently holding any of this asset!</p>)
+  // dont show graph if user not holding asset
+  const showChart = quantities.length === 0 ? 
+    <p>You are not currently holding any of this asset!</p>
     :
-    (<Doughnut data={data} options={options}/>);
+    <Doughnut data={data} options={options}/>;
       
 
   return (
