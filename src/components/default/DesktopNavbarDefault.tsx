@@ -7,33 +7,35 @@ import BrowseImg from 'assets/icons/search.svg';
 import LoginImg from 'assets/icons/login.svg';
 
 const DesktopNavbarDefault = () => {
-
   const { loginWithRedirect } = useAuth0();
 
   return (
-    <header className="mainHeader">
-      <nav className="topNavbar">
-        <Link to="/">
-          <h1 className="logo">FinWiz</h1>
+    <header className='mainHeader'>
+      <nav className='topNavbar'>
+        <Link to='/'>
+          <h1 className='logo'>FinWiz</h1>
         </Link>
-
-        <ul className="navLinks">
-
+        <ul className='navLinks'>
           <li className='navLink'>
-            <Link to="/browse" className='link' >
-              <img className="navIcon" src={BrowseImg} alt="browse" />
+            <Link to='/news' className='link'>
+              <img className='navIcon' src={BrowseImg} alt='browse' />
+              News
+            </Link>
+          </li>
+          <li className='navLink'>
+            <Link to='/browse' className='link'>
+              <img className='navIcon' src={BrowseImg} alt='browse' />
               Browse
             </Link>
           </li>
-
-          <li className="navLink" onClick={loginWithRedirect}>
-            <Link to="/" className='link' >
-              <img className="navIcon" src={LoginImg} alt="login" />
-                Login  
+          <li className='navLink' onClick={loginWithRedirect}>
+            <Link to='/' className='link'>
+              <img className='navIcon' src={LoginImg} alt='login' />
+              Login
             </Link>
           </li>
         </ul>
-      </nav>    
+      </nav>
     </header>
   );
 };

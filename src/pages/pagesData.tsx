@@ -9,6 +9,7 @@ import Browse from './default/Browse';
 // auth
 import Profile from './authenticatedPages/Profile';
 import AddInvestments from './authenticatedPages/AddInvestment';
+import News from './default/News';
 
 const pagesData = [
   {
@@ -52,6 +53,13 @@ const pagesData = [
     element: <Profile />,
     showAuth: true,
     showDefault: false
+  },
+  {
+    title: 'News',
+    path: '/news',
+    element: <News />,
+    showAuth: true,
+    showDefault: true
   },
   {
     title: 'AddInvestments',

@@ -9,26 +9,34 @@ import BurgerImg from 'assets/icons/menu.svg';
 import handleMenuClick from 'helpers/handleMenuClick';
 
 const MobileNavbarDefault = () => {
-
   const { loginWithRedirect } = useAuth0();
 
   return (
-    <header className="mobileHeader">
-      <nav className="mobileNav">
-        <Link to="/">
-          <h1 className="logo">FinWiz</h1>
+    <header className='mobileHeader'>
+      <nav className='mobileNav'>
+        <Link to='/'>
+          <h1 className='logo'>FinWiz</h1>
         </Link>
-        <img className="hamburgerIcon" id="hamburgerIcon" src={BurgerImg} alt="menu" onClick={handleMenuClick} />
+        <img
+          className='hamburgerIcon'
+          id='hamburgerIcon'
+          src={BurgerImg}
+          alt='menu'
+          onClick={handleMenuClick}
+        />
       </nav>
 
-      <div className="mobileNavLinks" id="mobileNavLinks">
-        <Link to="/browse" className="mobileLink" onClick={handleMenuClick}>
-          <img className="navIcon" src={BrowseImg} alt="browse" />
+      <div className='mobileNavLinks' id='mobileNavLinks'>
+        <Link to='/news' className='mobileLink' onClick={handleMenuClick}>
+          <img className='navIcon' src={BrowseImg} alt='browse' />
+          News
+        </Link>
+        <Link to='/browse' className='mobileLink' onClick={handleMenuClick}>
+          <img className='navIcon' src={BrowseImg} alt='browse' />
           Browse
         </Link>
-
-        <Link to="/" className="mobileLink" onClick={loginWithRedirect}>
-          <img className="navIcon" src={LoginImg} alt="login" />
+        <Link to='/' className='mobileLink' onClick={loginWithRedirect}>
+          <img className='navIcon' src={LoginImg} alt='login' />
           Login
         </Link>
       </div>

@@ -1,0 +1,1 @@
+export const removeNulls = (obj) => obj.filter((single) => !Object.values(single).some((val) => !val));
