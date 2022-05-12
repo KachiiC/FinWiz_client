@@ -1,7 +1,6 @@
 // Imports
 import { useAuth0 } from '@auth0/auth0-react';
 import { Tabs } from 'antd';
-
 // Local Imports
 import StocksTable from 'components/antdComponents/StocksTable';
 import CryptoTable from 'components/antdComponents/CryptoTable';
@@ -10,9 +9,9 @@ import GraphContainer from 'components/default/GraphContainer';
 import Spinner from 'components/antdComponents/Spinner';
 import UserDetails from 'components/authenticatedComponents/UserDetails';
 import { IUserProfile } from 'interfaces/user/IUserProfile';
-
+import UserNewsColumnData from './UserNewsColumnData';
 // Styles
-import './profile.scss';
+import './styles/profile.scss';
 
 const Profile = () => {
   const { TabPane } = Tabs;
@@ -33,25 +32,29 @@ const Profile = () => {
   if(!user || !profile) return (<Spinner />);
 
   return (
-    <div className='genericContainer'>
-      <div className='genericInnerContainer'>  
-        {/* user details */}
-        <UserDetails user={user} profile={profile}/>
+    <>
+      <div className='genericContainer'>
+        <div className='genericInnerContainer'>  
+          {/* user details */}
+          <UserDetails user={user} profile={profile}/>
 
-        {/* tables */}
-        <Tabs type="card">
-          <TabPane tab="Stocks" key="1">
-            <StocksTable stockData={profile.stocks}/>
-          </TabPane>
-          <TabPane tab="Cryptos" key="2">
-            <CryptoTable />
-          </TabPane>
-        </Tabs>
+          {/* tables */}
+          <Tabs type="card">
+            <TabPane tab="Stocks" key="1">
+              <StocksTable stockData={profile.stocks}/>
+            </TabPane>
+            <TabPane tab="Cryptos" key="2">
+              <CryptoTable />
+            </TabPane>
+          </Tabs>
 
-        {/* graphs */}
-        <GraphContainer stocks={profile.stocks} crypto={profile.cryptos} investmentValues={profile.investmentValues}  />
+          {/* graphs */}
+          <GraphContainer stocks={profile.stocks} crypto={profile.cryptos} investmentValues={profile.investmentValues}  />
+        </div>
       </div>
-    </div>
+      {/* News */}
+      <UserNewsColumnData />
+    </>
   );
 };
 
