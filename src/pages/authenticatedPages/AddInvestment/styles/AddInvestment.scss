@@ -2,7 +2,7 @@
 @use 'sassVariables/spacing.scss' as spacing;
 
 .formContainer {
-  width: 60vw;
+  width: 70vw;
   border: 1px solid white;
   box-shadow: colors.$container-shadow;
   padding: 20px 50px;
@@ -64,4 +64,10 @@
 
 .ant-btn-primary:hover {
   box-shadow: colors.$container-shadow;
+}
+
+@media only screen and (max-width: 850px) {
+  .formContainer {
+    width: 90vw;
+  }
 }
