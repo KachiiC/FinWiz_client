@@ -10,6 +10,7 @@ import { userApi } from 'redux/store';
 import Spinner from 'components/antdComponents/Spinner';
 // Styles
 import './sassVariables/App.scss';
+import Footer from 'components/default/Footer';
 
 const App = () => {
 
@@ -26,6 +27,7 @@ const App = () => {
       <div className="App">
         <BrowserRouter>
           { app }
+          <Footer />
         </BrowserRouter>
       </div>
     </ApiProvider>

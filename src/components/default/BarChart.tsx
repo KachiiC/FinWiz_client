@@ -4,7 +4,6 @@ import { Bar } from 'react-chartjs-2';
 ChartJS.register(...registerables);
 
 // Local imports
-import { IUserStock } from 'interfaces/stocks/IStocks';
 import { IGenericChart } from './interfaces/ICharts';
 import { getBarLabelsAndData } from 'helpers/graphHelpers';
 
