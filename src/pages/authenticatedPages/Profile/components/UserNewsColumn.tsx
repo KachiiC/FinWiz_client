@@ -13,6 +13,7 @@ const UserNewsColumn = (props: NewsColumn) => {
   return (
     <div className='genericContainer'>
       <div className='genericInnerContainer'>
+        <h1>Portfolio News</h1>
         <div className="userNewsWrapper ">
           <div className="grid-wrapper ">
             {displayNews}

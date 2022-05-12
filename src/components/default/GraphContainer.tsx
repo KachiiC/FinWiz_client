@@ -15,7 +15,7 @@ const GraphContainer = ({ stocks, crypto, investmentValues }: IGraphContainer ) 
   const profit = getAssetsInProfit(stocks, crypto);
 
   return (
-    <div className='genericContainer bgPrimary'>
+    <div className='genericContainer bgPrimary borderAboveBelow'>
       <div className='genericInnerContainer'>
 
         <div className="graphDetailsContainer">
