@@ -1,0 +1,56 @@
+.graphDetailsContainer {
+  display: flex;
+  margin-bottom: 80px;
+
+  .chart {
+    width: 65%;
+  }
+
+  .pieChartContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .graphDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex: 1;
+
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.5em;
+      margin-bottom: 3px;
+    }
+  }
+
+}
+
+.graphLeft {
+  // margin-right: 30px;
+}
+
+.graphRight {
+  // margin-left: 30px;
+}
+.pieGraphDetails {
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 3px;
+  }
+}

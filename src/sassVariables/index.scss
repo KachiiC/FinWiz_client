@@ -70,3 +70,25 @@ body {
   right: 0px;
   width: 700px;
 }
+
+.dividerAsset {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+h1 {
+  color: colors.$textHeadline;
+  font-size: fonts.$sizeTitle;
+  margin-bottom: 5px;
+}
+
+p {
+  color: colors.$textSecondary;
+  font-size: fonts.$sizeSubTitle;
+  margin-bottom: 3px;
+}
+
+span {
+  color: colors.$textPrimary;
+}

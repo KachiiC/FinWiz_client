@@ -6,22 +6,15 @@ ChartJS.register(...registerables);
 // Local imports
 import { IUserStock } from 'interfaces/stocks/IStocks';
 import { IGenericChart } from './interfaces/ICharts';
+import { getBarLabelsAndData } from 'helpers/graphHelpers';
 
 // styles
 import './styles/Charts.scss';
 
 const BarChart = ({ stocks }: IGenericChart) => {
 
-  const labels: string[] = [];
-  const entryPrice: number[] = [];
-  const marketPrice: number[] = [];
-
-  stocks.forEach((stock: IUserStock): void => {
-    labels.push(stock.symbol);
-    entryPrice.push(stock.entryValuePerShare);
-    marketPrice.push(stock.details.marketValuePerShare);
-  });
-
+  const  { labels, entryPrice, marketPrice } = getBarLabelsAndData(stocks!);
+  
   const data = {
     labels,
     datasets: [
@@ -43,9 +36,11 @@ const BarChart = ({ stocks }: IGenericChart) => {
   const options = {
     plugins: {
       title: {
-        display: true,
-        text: 'Top 5 Entry vs. Market Price',
+        display: false,
       },
+      legend: {
+        display: false        
+      }
     },
     responsive: true,
     interaction: {
@@ -55,9 +50,35 @@ const BarChart = ({ stocks }: IGenericChart) => {
     scales: {
       x: {
         stacked: true,
+        grid: {
+          display: false,
+          color: 'rgba(235, 235, 235, 0.6)' // changes the color of the axis grid lines
+        },
+        ticks: {
+          color: 'rgb(235, 235, 235)' // changes the color of the axis labels
+        },
+        title: {
+          display: false, // title of axis
+          text: 'Asset',
+          color: 'rgb(235, 235, 235)',
+        },
       },
       y: {
         stacked: true,
+        grid: {
+          display: true,
+          color: 'rgb(75, 75, 75)'
+        },
+        ticks: {
+          color: 'rgb(235, 235, 235)',
+          // maxRotation: 90, // rotate the ticks
+          // minRotation: 90
+        },
+        title: {
+          display: true, 
+          text: 'Price',
+          color: 'rgb(235, 235, 235)',
+        },
       },
     },
   };

@@ -26,6 +26,7 @@ const Profile = () => {
     const { data: userProfile, isLoading: profileLoading } = userApi.useGetTestUserQuery();
     if(!profileLoading) {
       profile = userProfile;
+      console.log(profile);
     }
   }
 
@@ -33,25 +34,31 @@ const Profile = () => {
   if(!user || !profile) return (<Spinner />);
 
   return (
-    <div className='genericContainer'>
-      <div className='genericInnerContainer'>  
-        {/* user details */}
-        <UserDetails user={user} profile={profile}/>
+    <>
+      <div className='genericContainer'>
+        <div className='genericInnerContainer'>  
+          {/* user details */}
+          <UserDetails user={user} profile={profile}/>
 
-        {/* tables */}
-        <Tabs type="card">
-          <TabPane tab="Stocks" key="1">
-            <StocksTable stockData={profile.stocks}/>
-          </TabPane>
-          <TabPane tab="Cryptos" key="2">
-            <CryptoTable />
-          </TabPane>
-        </Tabs>
+          {/* tables */}
+          <Tabs type="card">
+            <TabPane tab="Stocks" key="1">
+              <StocksTable stockData={profile.stocks}/>
+            </TabPane>
+            <TabPane tab="Cryptos" key="2">
+              <CryptoTable />
+            </TabPane>
+          </Tabs>
 
-        {/* graphs */}
-        <GraphContainer stocks={profile.stocks} crypto={profile.cryptos} investmentValues={profile.investmentValues}  />
+          {/* graphs */}
+        </div>
       </div>
-    </div>
+      <GraphContainer 
+        stocks={profile.stocks} 
+        crypto={profile.cryptos} 
+        investmentValues={profile.investmentValues}  
+      />
+    </>
   );
 };
 
