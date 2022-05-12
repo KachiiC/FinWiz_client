@@ -45,7 +45,7 @@ const UserNewsColumnData = () => {
 
   newsData.map((article, index) => { 
     newsElements[index].content = (
-      <a href={article.url}>
+      <a href={article.url} target="_blank" rel="noreferrer">
         <p>{article.title}</p>
         <img src={article.image} />
       </a>

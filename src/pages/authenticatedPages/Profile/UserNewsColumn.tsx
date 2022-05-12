@@ -14,8 +14,10 @@ const UserNewsColumn = (props: NewsColumn) => {
   return (
     <div className='genericContainer'>
       <div className='genericInnerContainer'>
-        <div className="grid-wrapper ">
-          {displayNews}
+        <div className="userNewsWrapper ">
+          <div className="grid-wrapper ">
+            {displayNews}
+          </div>
         </div>
       </div>
     </div>
