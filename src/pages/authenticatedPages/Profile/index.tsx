@@ -9,7 +9,7 @@ import GraphContainer from 'components/default/GraphContainer';
 import Spinner from 'components/antdComponents/Spinner';
 import UserDetails from 'components/authenticatedComponents/UserDetails';
 import { IUserProfile } from 'interfaces/user/IUserProfile';
-import UserNewsColumnData from './UserNewsColumnData';
+import UserNewsColumnData from './components/UserNewsColumnData';
 // Styles
 import './styles/profile.scss';
 
@@ -38,7 +38,6 @@ const Profile = () => {
         <div className='genericInnerContainer'>  
           {/* user details */}
           <UserDetails user={user} profile={profile}/>
-
           {/* tables */}
           <Tabs type="card">
             <TabPane tab="Stocks" key="1">

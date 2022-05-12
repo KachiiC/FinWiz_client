@@ -31,15 +31,23 @@
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.1);
     object-fit: contain;
-    color: rgb(235, 235, 235, 0);
     font-weight: 10000;
     padding: 10px;
   }
+
+  .grid-wrapper > div > a > p {
+    color: rgb(235, 235, 235, 0);
+  }
   
-    .grid-wrapper > div > a:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-      color: rgb(235, 235, 235);
-    }
+  .grid-wrapper > div > a:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgb(235, 235, 235);
+  }
+
+
+  .grid-wrapper > div > a > p:hover {
+    color: rgb(235, 235, 235);
+  }
 
   .grid-wrapper > div > a > img {
     width: 100%;

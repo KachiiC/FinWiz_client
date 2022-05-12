@@ -1,10 +1,9 @@
 // Local Imports
-import './styles/userNewsColumn.scss';
-import { NewsColumn } from 'interfaces/profile/INewsColumn';
+import '../styles/userNewsColumn.scss';
+import { NewsColumn } from 'pages/authenticatedPages/Profile/profileInterfaces';
 
 const UserNewsColumn = (props: NewsColumn) => {
 
-  
   const displayNews = props.data.map((article) => (
     <div className={article.className} key={article.key}> 
       {article.content}
