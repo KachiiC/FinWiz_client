@@ -3,15 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Form, Button } from 'antd';
 // Local Imports
 import AutoCompleteForm from './AutoCompleteForm';
-
-interface AntdFormProps {
-  data: {
-    name: string;
-    // eslint-disable-next-line
-    rules: any[];
-    content: JSX.Element;
-  }[];
-}
+import { AntdFormProps } from '../interfaces/IAntdFormProps';
 
 const AntdForm = (props: AntdFormProps) => {
 

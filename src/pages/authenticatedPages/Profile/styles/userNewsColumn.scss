@@ -1,0 +1,85 @@
+@use 'sassVariables/colors.scss' as colors;
+
+/* Reset CSS */
+.userNewsWrapper {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  /* Main CSS */
+
+  .grid-wrapper > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .grid-wrapper > div > a {
+    width: 100%;
+    min-height: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+    font-weight: 10000;
+    padding: 10px;
+  }
+
+  .grid-wrapper > div > a > p {
+    color: rgb(235, 235, 235, 0);
+  }
+  
+  .grid-wrapper > div > a:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgb(235, 235, 235);
+  }
+
+
+  .grid-wrapper > div > a > p:hover {
+    color: rgb(235, 235, 235);
+  }
+
+  .grid-wrapper > div > a > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+ .grid-wrapper > div > a > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .grid-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr); //look into this
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+  }
+
+  .grid-wrapper .wide {
+    grid-column: span 2;
+  }
+  .grid-wrapper .tall {
+    grid-row: span 2;
+  }
+}
