@@ -27,7 +27,7 @@ const pagesData = [
   },
   {
     title: 'Details',
-    path: '/details',
+    path: '/details/:symbol',
     element: <Details />,
     showAuth: true,
     showDefault: true

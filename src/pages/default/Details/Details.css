@@ -1,0 +1,68 @@
+.company-details-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 10px 0px;
+}
+
+.company-profile {
+    grid-column: span 8;
+    margin: auto;
+    width: 95%;
+}
+
+.stock-ticker-widget {
+    grid-column: span 4;
+}
+
+.stock-chart-widget {
+  grid-column: span 12;
+}
+
+.stock-widget-container {
+    margin: auto;  
+    width: 95%; 
+}
+
+@media only screen and (max-width: 1280px) {
+    .company-profile {
+        grid-column: span 7;
+    }
+
+    .stock-ticker-widget {
+        grid-column: span 5;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .company-profile {
+        grid-column: span 6;
+    }
+
+    .stock-ticker-widget {
+        grid-column: span 6;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .company-profile {
+        grid-column: span 12;
+    }
+
+    .stock-ticker-widget {
+        grid-column: span 12;
+    }
+
+    .stock-ticker-container {
+        margin: auto;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .stock-ticker-container {
+        margin: auto;
+        width: 80%;
+    }
+}
