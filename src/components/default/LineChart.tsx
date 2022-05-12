@@ -18,9 +18,7 @@ const LineChart = ({ investmentValues }: ILineChart) => {
         display: false
       },
       title: {
-        display: true, // probably hide this and add our own title
-        text: 'Portfolio Over Time',
-        color: 'white',
+        display: false, 
       },
     },
     scales: {

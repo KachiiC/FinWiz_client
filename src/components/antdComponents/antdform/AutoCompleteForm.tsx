@@ -13,7 +13,7 @@ const AutoCompleteForm = () => {
     console.log('data', data);
   };
 
-  const requirements = [{ required: true, message: 'Please input symbol!' },{ max: 5, message: 'Symbol must not exceed 4 characters' }];
+  const requirements = [{ required: true, message: 'Please input symbol!' },{ max: 5, message: 'Symbol must not exceed 5 characters' }];
 
   return (
     <Form.Item  name='symbol' rules={requirements} >

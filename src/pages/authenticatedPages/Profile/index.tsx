@@ -25,6 +25,7 @@ const Profile = () => {
     const { data: userProfile, isLoading: profileLoading } = userApi.useGetTestUserQuery();
     if(!profileLoading) {
       profile = userProfile;
+      console.log(profile);
     }
   }
 
@@ -47,11 +48,14 @@ const Profile = () => {
               <CryptoTable />
             </TabPane>
           </Tabs>
-
-          {/* graphs */}
-          <GraphContainer stocks={profile.stocks} crypto={profile.cryptos} investmentValues={profile.investmentValues}  />
         </div>
       </div>
+      {/* Graphs */}
+      <GraphContainer 
+        stocks={profile.stocks} 
+        crypto={profile.cryptos} 
+        investmentValues={profile.investmentValues}  
+      />
       {/* News */}
       <UserNewsColumnData />
     </>

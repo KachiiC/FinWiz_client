@@ -6,7 +6,6 @@ import { IUserStock, ICombinedStock } from 'interfaces/stocks/IStocks';
 import { IStocksTable } from './interfaces/IStocksTable';
 
 const StocksTable = ({ stockData }: IStocksTable) => {
-  console.log('stock table: ', stockData);
   const stocksData = stockData.map((stock: IUserStock) :ICombinedStock  => {
     return {
       ...stock,
