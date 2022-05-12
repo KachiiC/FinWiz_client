@@ -6,24 +6,15 @@ ChartJS.register(...registerables);
 // Local imports
 import { IUserStock } from 'interfaces/stocks/IStocks';
 import { IGenericChart } from './interfaces/ICharts';
+import { getBarLabelsAndData } from 'helpers/graphHelpers';
 
 // styles
 import './styles/Charts.scss';
 
 const BarChart = ({ stocks }: IGenericChart) => {
 
-  const labels: string[] = [];
-  const entryPrice: number[] = [];
-  const marketPrice: number[] = [];
-
-  if(stocks){
-    stocks.forEach((stock: IUserStock): void => {
-      labels.push(stock.symbol);
-      entryPrice.push(stock.entryValuePerShare);
-      marketPrice.push(stock.details.marketValuePerShare);
-    });
-  }
-
+  const  { labels, entryPrice, marketPrice } = getBarLabelsAndData(stocks!);
+  
   const data = {
     labels,
     datasets: [

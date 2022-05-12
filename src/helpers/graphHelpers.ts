@@ -54,8 +54,23 @@ const getPieLabelsAndData = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
   return { labels, quantities };
 };
 
+const getBarLabelsAndData = (stocks: IUserStock[]) => {
+  const labels: string[] = [];
+  const entryPrice: number[] = [];
+  const marketPrice: number[] = [];
+
+  stocks.forEach((stock: IUserStock): void => {
+    labels.push(stock.symbol);
+    entryPrice.push(stock.entryValuePerShare);
+    marketPrice.push(stock.details.marketValuePerShare);
+  });
+
+  return { labels, entryPrice, marketPrice };
+};
+
 export {
   calcProfits,
   getAssetsInProfit,
-  getPieLabelsAndData
+  getPieLabelsAndData,
+  getBarLabelsAndData
 };
