@@ -78,6 +78,10 @@
   color: #1890ff!important;
 }
 
+.ant-table-pagination.ant-pagination.ant-table-pagination-right  {
+  margin-bottom: 0;
+}
+
 .ant-pagination-disabled .ant-pagination-item-link {
   background-color: colors.$backgroundDark2 !important;
   color: colors.$textSecondary !important;

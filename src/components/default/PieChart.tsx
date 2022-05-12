@@ -5,25 +5,17 @@ ChartJS.register(...registerables);
 
 // Local imports
 import { IGenericChart } from './interfaces/ICharts';
-import { IUserStock } from 'interfaces/stocks/IStocks';
+import { getPieLabelsAndData } from 'helpers/graphHelpers';
 
 // styles
 import './styles/Charts.scss';
 
-const PieChart = ({ stocks }: IGenericChart) => {  
-  const labels: string[] = [];
-  const quantities: number[] = [];
+const PieChart = ({ stocks, crypto, title }: IGenericChart) => {  
+  
+  const { labels, quantities } = getPieLabelsAndData(stocks!, crypto!);
 
-  stocks.forEach((stock: IUserStock): void => {
-    labels.push(stock.symbol);
-    quantities.push(stock.totalValueOfShares);
-  });
-
-  // todo - make this up of stocks and crypto
-  // crypto.forEach(crypto => {
-  //   labels.push(crypto.name);
-  //   quantities.push(crypto.totalCryptoValue);
-  // });
+  let display = true;
+  if(quantities.length === 0) display = false;
   
   const data = {
     labels,
@@ -51,9 +43,24 @@ const PieChart = ({ stocks }: IGenericChart) => {
     ],
   };
 
+  const options = {
+    plugins: {
+      legend: {
+        display: false
+      }
+    }
+  };
+
+  const showChart = !display ? 
+    (<p>You are not currently holding any of this asset!</p>)
+    :
+    (<Doughnut data={data} options={options}/>);
+      
+
   return (
     <div className="chartWrapper pieWrapper">
-      <Doughnut data={data}/>
+      <h2>{title}</h2>
+      {showChart}
     </div>
   );
 };
