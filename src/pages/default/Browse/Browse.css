@@ -1,0 +1,28 @@
+.browse-container {
+  padding: 20px 10px;
+  width: 100vw;
+  animation: fadeIn 2s;
+}
+
+.browse-tabs {
+  display: flex;
+}
+
+.single-browse-tab {
+  color: white;
+  border: 1px solid white;
+  padding: 10px 30px;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
