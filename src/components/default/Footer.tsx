@@ -9,7 +9,7 @@ import './styles/Footer.scss';
 const Footer = () => {
 
   return (
-    <header className="mainFooter">
+    <footer className="mainFooter">
       <ul className="navLinks">
 
         <li className='navLink'>
@@ -24,7 +24,7 @@ const Footer = () => {
             FinWiz 2022  
         </li>
       </ul>
-    </header>
+    </footer>
   );
 };
 
