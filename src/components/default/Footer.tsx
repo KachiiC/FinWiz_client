@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ContactImg from 'assets/icons/contact.svg';
 import CopyrightImg from 'assets/icons/copyright.svg';
 // Styles
-import '../styles/Footer.scss';
+import './styles/Footer.scss';
 
 const Footer = () => {
 
