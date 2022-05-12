@@ -32,17 +32,18 @@ const AntdForm = (props: AntdFormProps) => {
         onFinish={onSubmit}
         onFinishFailed={onSubmitFailed}
       >
-        <div className='genericInnerContainer'>
+        <div className='formContainer'>
           <div className='antdFormSpacing'>
+            <h2 className="formTitle">Add New Investment</h2>
             <AutoCompleteForm />
             {displayForm}
+            <Form.Item>
+              <Button type="primary" htmlType="submit">
+            Submit
+              </Button>
+            </Form.Item>
           </div>
         </div>
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
       </Form>
     </div>
   );

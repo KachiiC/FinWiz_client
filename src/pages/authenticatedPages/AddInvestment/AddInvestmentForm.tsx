@@ -7,8 +7,8 @@ const stocksFormData = [
   {
     name:'typeselector', // this needs to be selector
     rules:[{ required: true, message: 'Please input the date purchased' }],
-    content:      
-    <Select>
+    content:     
+    <Select defaultValue="stock">
       <Select.Option value="stock">Stock</Select.Option>
       <Select.Option value="crypto">Crypto</Select.Option>
     </Select>
