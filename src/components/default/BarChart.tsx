@@ -1,14 +1,13 @@
 // Imports
 import { Chart as ChartJS, registerables } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-ChartJS.register(...registerables);
-
 // Local imports
 import { IGenericChart } from './interfaces/ICharts';
 import { getBarLabelsAndData } from 'helpers/graphHelpers';
-
 // styles
 import './styles/Charts.scss';
+
+ChartJS.register(...registerables);
 
 const BarChart = ({ stocks }: IGenericChart) => {
 
