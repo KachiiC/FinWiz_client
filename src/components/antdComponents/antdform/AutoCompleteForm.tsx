@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const mock = [{ value: 'AMD' }, { value: 'AAPL' }, { value: 'NIO' }, { value: 'SOFI' }, { value: 'DAME' }, { value: 'DAMV' }];
 
-const AutoCompleteForm: React.FC = () => {
+const AutoCompleteForm = () => {
 
   const [options, setOptions] = useState<{ value: string }[]>([]);
   const onSearch = (searchText: string) => {
@@ -13,8 +13,10 @@ const AutoCompleteForm: React.FC = () => {
     console.log('data', data);
   };
 
+  const requirements = [{ required: true, message: 'Please input symbol!' },{ max: 5, message: 'Symbol must not exceed 4 characters' }];
+
   return (
-    <Form.Item  name='symbol' rules={[{ required: true, message: 'Please input symbol!' },{ max: 4, message: 'Symbol must not exceed 4 characters' }]} >
+    <Form.Item  name='symbol' rules={requirements} >
       <AutoComplete
         options={options}
         onSelect={onSelect}
@@ -23,7 +25,6 @@ const AutoCompleteForm: React.FC = () => {
       />
     </Form.Item>
   );
-
 };
 
 export default AutoCompleteForm;

@@ -1,6 +1,5 @@
 @use 'sassVariables/colors.scss' as colors;
 @use 'sassVariables/spacing.scss' as spacing;
-@use 'sassVariables/fonts.scss' as fonts;
 
 .genericContainer {
   .genericInnerContainer{
@@ -9,7 +8,6 @@
       padding: 5%;
       margin: 5% 0;
     }
-
     .ant-form-item-label>label {
       color: colors.$textPrimary !important
     }

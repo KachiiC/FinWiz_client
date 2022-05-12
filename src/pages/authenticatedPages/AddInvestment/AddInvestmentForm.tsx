@@ -14,12 +14,12 @@ const stocksFormData = [
     </Select>
   },
   {
-    name:'buyQuantity',
+    name:'numberOfShares',
     rules:[{ required: true, message: 'Please input the quantity purchased' }],
     content: <InputNumber placeholder='Please enter the quantity'/>
   },
   {
-    name: 'buyCost',
+    name: 'marketValuePerShare',
     rules: [{ required: true, message: 'Please input the cost of purchase' }],
     content: <InputNumber placeholder='Please enter the buy price' />
   },
