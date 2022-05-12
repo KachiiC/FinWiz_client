@@ -1,7 +1,7 @@
 .company-details-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding: 10px 0px;
+  padding: 20px 10px;
 }
 
 .company-profile {
@@ -19,7 +19,7 @@
 }
 
 .stock-widget-container {
-    margin: auto;  
+    margin: 20px auto;  
     width: 95%; 
 }
 

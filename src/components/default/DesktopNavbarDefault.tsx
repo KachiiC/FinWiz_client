@@ -23,7 +23,7 @@ const DesktopNavbarDefault = () => {
             </Link>
           </li>
           <li className='navLink'>
-            <Link to='/browse' className='link'>
+            <Link to='/browse/stock' className='link'>
               <img className='navIcon' src={BrowseImg} alt='browse' />
               Browse
             </Link>

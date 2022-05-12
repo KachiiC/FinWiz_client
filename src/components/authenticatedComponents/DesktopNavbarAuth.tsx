@@ -32,7 +32,7 @@ const DesktopNavbarAuth = () => {
       onClick={handleClickAdd}
       items={[
         {
-          label: 'Stocks',
+          label: <Link to="/browse/stock">Stock</Link>,
           key: 'stock',
         },
         {
