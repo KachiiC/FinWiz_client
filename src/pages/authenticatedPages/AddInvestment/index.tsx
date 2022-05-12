@@ -1,7 +1,13 @@
+// Local imports
+
+import AddInvestmentForm from './AddInvestmentForm';
+import './styles/AddInvestment.scss';
 
 const AddInvestments = () => {
   return (
-    <h1>Add Investments</h1>
+    <>
+      <AddInvestmentForm />
+    </>
   );
 };
 
