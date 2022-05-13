@@ -59,6 +59,7 @@ export const bestCryptoColumns = [
     title: 'price',
     dataIndex: 'price',
     sorter: (a, b) => a.price - b.price,
+    render: (text: string) => `$${text}`,
   },
   {
     title: 'Hourly Change',
