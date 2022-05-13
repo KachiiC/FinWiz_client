@@ -7,6 +7,7 @@ import ProfileImg from 'assets/icons/profile.svg';
 import AddImg from 'assets/icons/add.svg';
 import BrowseImg from 'assets/icons/search.svg';
 import LogoutImg from 'assets/icons/logout.svg';
+import NewsImg from 'assets/icons/news.svg';
 
 const DesktopNavbarAuth = () => {
   const { logout } = useAuth0();
@@ -77,7 +78,7 @@ const DesktopNavbarAuth = () => {
             </Dropdown>
             <li className='navLink'>
               <Link to='/news' className='link'>
-                <img className='navIcon' src={BrowseImg} alt='news' />
+                <img className='navIcon' src={NewsImg} alt='news' />
                 News
               </Link>
             </li>

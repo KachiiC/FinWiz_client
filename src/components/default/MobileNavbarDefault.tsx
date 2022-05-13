@@ -7,6 +7,7 @@ import BrowseImg from 'assets/icons/search.svg';
 import LoginImg from 'assets/icons/login.svg';
 import BurgerImg from 'assets/icons/menu.svg';
 import handleMenuClick from 'helpers/handleMenuClick';
+import NewsImg from 'assets/icons/news.svg';
 
 const MobileNavbarDefault = () => {
   const { loginWithRedirect } = useAuth0();
@@ -27,14 +28,14 @@ const MobileNavbarDefault = () => {
       </nav>
 
       <div className='mobileNavLinks' id='mobileNavLinks'>
-        <Link to='/news' className='mobileLink' onClick={handleMenuClick}>
-          <img className='navIcon' src={BrowseImg} alt='browse' />
-          News
-        </Link>
         <Link to='/browse' className='mobileLink' onClick={handleMenuClick}>
           <img className='navIcon' src={BrowseImg} alt='browse' />
           Browse
         </Link>
+        <Link to='/news' className='mobileLink' onClick={handleMenuClick}>
+          <img className='navIcon' src={NewsImg} alt='browse' />
+          News
+        </Link>        
         <Link to='/' className='mobileLink' onClick={loginWithRedirect}>
           <img className='navIcon' src={LoginImg} alt='login' />
           Login
