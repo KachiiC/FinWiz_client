@@ -1,9 +1,10 @@
+@use 'sassVariables/spacing.scss' as spacing;
+
 .mItem img {
   width: 100%;
 }
 
 .masonry {
-    padding: 20px;
   column-count: 4;
   column-gap: 16px;
 }

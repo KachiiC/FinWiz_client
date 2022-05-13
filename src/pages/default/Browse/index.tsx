@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import AntdTable from 'components/antdComponents/AntdTable';
 import { browseLists, browseStockColumns } from './BrowseData';
-import './Browse.css';
+import './Browse.scss';
 import { addRank } from 'helpers/object.helpers';
 import { useNavigate } from 'react-router-dom';
 
@@ -32,9 +32,11 @@ const Browse = () => {
   };
 
   return (
-    <div className='browse-container'>
-      <div className='browse-tabs'>{browseTabs}</div>
-      <AntdTable data={tableData} columns={browseStockColumns} row={rowLogic} />
+    <div className="genericContainer">
+      <div className="genericInnerContainer">
+        <div className='browse-tabs'>{browseTabs}</div>
+        <AntdTable data={tableData} columns={browseStockColumns} row={rowLogic} />
+      </div>
     </div>
   );
 };
