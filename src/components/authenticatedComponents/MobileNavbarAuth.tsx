@@ -42,7 +42,11 @@ const MobileNavbarAuth = () => {
         </Link>
         <Link to='/browse/stock' className='mobileLink' onClick={handleMenuClick}>
           <img className='navIcon' src={BrowseImg} alt='browse' />
-          Browse
+          Stock
+        </Link>
+        <Link to='/browse/stock' className='mobileLink' onClick={handleMenuClick}>
+          <img className='navIcon' src={BrowseImg} alt='browse' />
+          Crypto
         </Link>
         <Link to='/news' className='mobileLink' onClick={handleMenuClick}>
           <img className='navIcon' src={NewsImg} alt='browse' />
