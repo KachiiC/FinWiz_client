@@ -8,6 +8,7 @@ import BrowseImg from 'assets/icons/search.svg';
 import LogoutImg from 'assets/icons/logout.svg';
 import BurgerImg from 'assets/icons/menu.svg';
 import handleMenuClick from 'helpers/handleMenuClick';
+import NewsImg from 'assets/icons/news.svg';
 
 const MobileNavbarAuth = () => {
   const { logout } = useAuth0();
@@ -44,7 +45,7 @@ const MobileNavbarAuth = () => {
           Browse
         </Link>
         <Link to='/news' className='mobileLink' onClick={handleMenuClick}>
-          <img className='navIcon' src={BrowseImg} alt='browse' />
+          <img className='navIcon' src={NewsImg} alt='browse' />
           News
         </Link>
         <Link to='/' className='mobileLink' onClick={handleLogout}>
