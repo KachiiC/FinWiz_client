@@ -37,7 +37,7 @@ const DesktopNavbarAuth = () => {
           key: 'stock',
         },
         {
-          label: 'Crypto',
+          label:  <Link to="/browse/crypto">Crypto</Link>,
           key: 'crypto',
         },
         {
