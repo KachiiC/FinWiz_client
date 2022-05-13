@@ -9,6 +9,7 @@ import Browse from './default/Browse';
 // auth
 import Profile from './authenticatedPages/Profile';
 import AddInvestments from './authenticatedPages/AddInvestment';
+import News from './default/News';
 
 const pagesData = [
   {
@@ -16,56 +17,63 @@ const pagesData = [
     path: '/',
     element: <Landing />,
     showAuth: true,
-    showDefault: true
+    showDefault: true,
   },
   {
     title: 'About',
     path: '/about',
     element: <About />,
     showAuth: true,
-    showDefault: true
+    showDefault: true,
   },
   {
     title: 'Details',
     path: '/details/:symbol',
     element: <Details />,
     showAuth: true,
-    showDefault: true
+    showDefault: true,
   },
   {
     title: 'Contact',
     path: '/contact',
     element: <Contact />,
     showAuth: true,
-    showDefault: true
+    showDefault: true,
   },
   {
     title: 'Browse',
-    path: '/browse',
+    path: '/browse/stock',
     element: <Browse />,
     showAuth: true,
-    showDefault: true
+    showDefault: true,
   },
   {
     title: 'Profile',
     path: '/profile',
     element: <Profile />,
     showAuth: true,
-    showDefault: false
+    showDefault: false,
+  },
+  {
+    title: 'News',
+    path: '/news',
+    element: <News />,
+    showAuth: true,
+    showDefault: true,
   },
   {
     title: 'AddInvestments',
     path: '/addInvestments',
     element: <AddInvestments />,
     showAuth: true,
-    showDefault: false
+    showDefault: false,
   },
   {
     title: 'Not Found',
     path: '*',
     element: <h1>404 not found</h1>,
     showAuth: true,
-    showDefault: true
+    showDefault: true,
   },
 ];
 

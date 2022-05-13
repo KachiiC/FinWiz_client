@@ -6,11 +6,6 @@ const Details = () => {
   
   const { symbol } = useParams();
 
-  const symbolArgs = {
-    height: 500,
-    symbol: symbol,
-  };
-
   const companyProfile = (
     <div className='company-profile'>
       <CompanyProfile symbol={symbol} height={600} width='100%' colorTheme='dark' />
@@ -20,8 +15,8 @@ const Details = () => {
   const stockTicker = (
     <div className='stock-ticker-widget'>
       <div className='stock-ticker-container'>
+        <SingleTicker colorTheme="dark" width={425} symbol={symbol}/>
         <TechnicalAnalysis colorTheme='dark' symbol={symbol} height={400} />
-        <SingleTicker colorTheme="dark" width={425} />
       </div>
     </div>
   );
@@ -29,7 +24,7 @@ const Details = () => {
   const stockChart = (
     <div className='stock-chart-widget'>
       <div className='stock-widget-container'>
-        <SymbolOverview {...symbolArgs} width='100%' colorTheme='dark' />
+        <SymbolOverview symbols={[[symbol || '']]} width='100%' colorTheme='dark' />
       </div>
     </div>
   );

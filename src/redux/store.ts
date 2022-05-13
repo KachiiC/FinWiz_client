@@ -3,7 +3,7 @@ import { IUserProfile } from 'interfaces/user/IUserProfile';
 
 const userApi = createApi({
   reducerPath: 'userApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://finwiz-server.herokuapp.com/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
   tagTypes: ['User'],
   refetchOnMountOrArgChange: 300,
   endpoints: (builder) => ({    
