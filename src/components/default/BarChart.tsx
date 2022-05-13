@@ -9,9 +9,9 @@ import './styles/Charts.scss';
 
 ChartJS.register(...registerables);
 
-const BarChart = ({ stocks }: IGenericChart) => {
+const BarChart = ({ stocks, crypto }: IGenericChart) => {
 
-  const  { labels, entryPrice, marketPrice } = getBarLabelsAndData(stocks!);
+  const  { labels, entryPrice, marketPrice } = getBarLabelsAndData(stocks!, crypto!);
   
   const data = {
     labels,

@@ -13,6 +13,8 @@ const calcProfits = (investmentValues: IUserInvestmentValue[]) => {
 
 const getAssetsInProfit = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
   let assetsInProfit = 0;
+  let assetsBreakEven = 0;
+  let assetsInLoss = 0;
   let noOfAssets = 0;
   if(stocks) {
     noOfAssets += stocks.length;
@@ -20,14 +22,23 @@ const getAssetsInProfit = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
       if(stock.entryValuePerShare < stock.details.marketValuePerShare) assetsInProfit++;
     });
   }
+  
   if(crypto) {
     noOfAssets += crypto.length;
     crypto.forEach(crypto => {
-      if(crypto.averageValuePerCrypto < crypto.details.marketValuePerShare) assetsInProfit++;
+      if(crypto.averageValuePerCrypto < crypto.details.market_value_per_crypto) assetsInProfit++;
+      else if(crypto.averageValuePerCrypto === crypto.details.market_value_per_crypto) assetsBreakEven++;
+      else assetsInLoss++;
     });
   }
 
-  return (100 / noOfAssets) * assetsInProfit;
+  const totals = {
+    assetsInProfit: (100 / noOfAssets) * assetsInProfit,
+    assetsBreakEven: (100 / noOfAssets) * assetsBreakEven,
+    assetsInLoss: (100 / noOfAssets) * assetsInLoss
+  };
+
+  return totals;
 };
 
 const getPieLabelsAndData = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
@@ -37,8 +48,20 @@ const getPieLabelsAndData = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
   if(stocks && crypto) {
     labels.push('Stock');
     labels.push('Crypto');
-    // ! todo - calc makeup of stocks crypto
+    let stockTotal = 0;
+    let cryptoTotal = 0;
 
+    stocks.forEach((stock: IUserStock): void => {
+      labels.push(stock.details.name);
+      stockTotal += stock.totalValueOfShares;
+    });
+    crypto.forEach(crypto => {
+      labels.push(crypto.symbol);
+      cryptoTotal += crypto.totalCryptoValue;
+    });
+
+    quantities.push(stockTotal, cryptoTotal);
+    
   } else if(stocks){
     stocks.forEach((stock: IUserStock): void => {
       labels.push(stock.details.name);
@@ -54,16 +77,26 @@ const getPieLabelsAndData = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
   return { labels, quantities };
 };
 
-const getBarLabelsAndData = (stocks: IUserStock[]) => {
+const getBarLabelsAndData = (stocks: IUserStock[] | null, crypto: IUserCrypto[] | null) => {
   const labels: string[] = [];
   const entryPrice: number[] = [];
   const marketPrice: number[] = [];
 
-  stocks.forEach((stock: IUserStock): void => {
-    labels.push(stock.symbol);
-    entryPrice.push(stock.entryValuePerShare);
-    marketPrice.push(stock.details.marketValuePerShare);
-  });
+  if(stocks) {
+    stocks.forEach((stock: IUserStock): void => {
+      labels.push(stock.symbol);
+      entryPrice.push(stock.entryValuePerShare);
+      marketPrice.push(stock.details.marketValuePerShare);
+    });
+  } 
+  console.log(crypto);
+  if(crypto) {
+    crypto.forEach((crypto: IUserCrypto): void => {
+      labels.push(crypto.symbol);
+      entryPrice.push(crypto.averageValuePerCrypto);
+      marketPrice.push(crypto.details.market_value_per_crypto);
+    });
+  } 
 
   return { labels, entryPrice, marketPrice };
 };
