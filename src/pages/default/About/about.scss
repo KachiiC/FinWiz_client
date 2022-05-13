@@ -3,18 +3,20 @@
 .aboutContainer {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  height: 100vh;
+  height: 90vh;
   .aboutTopLayer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     color: colors.$textPrimary;
-    max-height: 50vh;
+    max-height: 45vh;
     padding: 0px;
     .aboutImg {
+      display: inline-block;
       min-width: 100%;
       object-fit: cover;
-      overflow: hidden;
       max-height: 100%;
+      min-height: 100%;
+      overflow: hidden;
     }
     .aboutText {
       justify-self: flex-end;
@@ -51,6 +53,27 @@
   }
 }
 
+.aboutTeamContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  .aboutTeamInnerContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    border: 1px solid white;
+    padding: 30px;
+    margin: 30px;
+  }
+}
+
+.teamImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
 @media only screen and (max-width: 1400px) {
   .aboutTopLayer {
     grid-template-columns: 1fr !important;
@@ -60,6 +83,24 @@
       object-fit: cover;
       overflow: hidden;
       max-height: 100%;
+    }
+  }
+}
+@media only screen and (max-width: 1120px) {
+  .aboutTeamContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 400px;
+    .aboutTeamInnerContainer {
+      display: flex;
+      align-items: space-between;
+      width: 400px;
+      border: 1px solid white;
+      padding: 30px;
+      margin: 30px;
+      height: 50vh;
     }
   }
 }

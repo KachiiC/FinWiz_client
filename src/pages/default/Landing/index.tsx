@@ -5,11 +5,8 @@ import './landing.scss';
 
 const Landing = () => {
 
-
   return (
-
     <LandingSectionOne />
-
   );
 };
 
