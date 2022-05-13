@@ -5,6 +5,7 @@ import About from './default/About';
 import Details from './default/Details';
 import Contact from './default/Contact';
 import Browse from './default/Browse';
+import CryptoBrowse from './default/Browse/CryptoBrowse';
 
 // auth
 import Profile from './authenticatedPages/Profile';
@@ -44,6 +45,13 @@ const pagesData = [
     title: 'Browse',
     path: '/browse/stock',
     element: <Browse />,
+    showAuth: true,
+    showDefault: true,
+  },
+  {
+    title: 'Browse',
+    path: '/browse/crypto',
+    element: <CryptoBrowse />,
     showAuth: true,
     showDefault: true,
   },
