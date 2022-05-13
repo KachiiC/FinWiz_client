@@ -22,7 +22,9 @@ const Profile = () => {
   // get the user profile
   let profile: IUserProfile | undefined;
   if(!isLoading && user?.sub){
-    const { data: userProfile, isLoading: profileLoading } = userApi.useGetTestUserQuery();
+    // const { data: userProfile, isLoading: profileLoading } = userApi.useGetTestUserQuery();
+    const { data: userProfile, isLoading: profileLoading } = userApi.useGetUserQuery(user.sub);
+
     if(!profileLoading) {
       profile = userProfile;
       console.log(profile);
