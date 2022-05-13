@@ -42,21 +42,28 @@ const Profile = () => {
           <UserDetails user={user} profile={profile}/>
           {/* tables */}
           <Tabs type="card">
+            {profile.stocks && 
             <TabPane tab="Stocks" key="1">
               <StocksTable stockData={profile.stocks}/>
             </TabPane>
+            }
+            {profile.cryptos && 
             <TabPane tab="Cryptos" key="2">
               <CryptoTable />
             </TabPane>
+            }
           </Tabs>
+
         </div>
       </div>
       {/* Graphs */}
+      {(profile.stocks && profile.cryptos) &&
       <GraphContainer 
         stocks={profile.stocks} 
         crypto={profile.cryptos} 
         investmentValues={profile.investmentValues}  
       />
+      }
       {/* News */}
       <UserNewsColumnData />
     </>
