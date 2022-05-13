@@ -12,7 +12,7 @@ const GraphContainer = ({ stocks, crypto, investmentValues }: IGraphContainer ) 
 
   // get profit/loss, assets in profit
   const { status, value } = calcProfits(investmentValues);
-  const profit = getAssetsInProfit(stocks, crypto);
+  const { assetsInProfit, assetsBreakEven, assetsInLoss } = getAssetsInProfit(stocks, crypto);
 
   return (
     <div className='genericContainer bgPrimary borderAboveBelow'>
@@ -34,7 +34,9 @@ const GraphContainer = ({ stocks, crypto, investmentValues }: IGraphContainer ) 
           </div>
           <div className="graphDetails graphRight">
             <h1>Entry Price vs. Market Price</h1>
-            <p>{profit}% of your assets are in profit.</p>
+            <p>{assetsInProfit}% of your assets are in profit.</p>
+            <p>{assetsBreakEven}% of your assets are in break even.</p>
+            <p>{assetsInLoss}% of your assets are in loss.</p>
           </div>
         </div>
 

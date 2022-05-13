@@ -26,10 +26,10 @@ interface IUserCrypto {
 }
 
 interface ISingleCrypto {
+  market_value_per_crypto: number;
   id: number;
   name: string;
   symbol: string;
-  marketValuePerShare: number;
 }
 
 export type {
