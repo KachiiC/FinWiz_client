@@ -1,0 +1,65 @@
+@use 'sassVariables/colors.scss' as colors;
+
+.aboutContainer {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 100vh;
+  .aboutTopLayer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: colors.$textPrimary;
+    max-height: 50vh;
+    padding: 0px;
+    .aboutImg {
+      min-width: 100%;
+      object-fit: cover;
+      overflow: hidden;
+      max-height: 100%;
+    }
+    .aboutText {
+      justify-self: flex-end;
+      align-self: center;
+      padding: 20px;
+    }
+  }
+  .aboutBottomLayer {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid white;
+    .aboutTeamButton {
+      background-color: transparent;
+      border: 1px solid white;
+      text-align: center;
+      transition: all .3s cubic-bezier(.645,.045,.355,1);
+      height: 32px;
+      width: fit-content;
+      padding: 4px 15px;
+      font-size: 14px;
+      border-radius: 2px;
+      line-height: 1.5715;
+      position: relative;
+      display: inline-block;
+      font-weight: 400;
+      color: colors.$textPrimary;
+    }
+    .aboutTeamButton:hover {
+      box-shadow: colors.$container-shadow;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .aboutTopLayer {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr 1fr ;
+    .aboutImg {
+      width: 100%;
+      object-fit: cover;
+      overflow: hidden;
+      max-height: 100%;
+    }
+  }
+}

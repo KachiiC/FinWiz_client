@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import BrowseImg from 'assets/icons/search.svg';
 import LoginImg from 'assets/icons/login.svg';
 import NewsImg from 'assets/icons/news.svg';
+import AboutImg from 'assets/icons/about.svg';
+import ContactImg from 'assets/icons/contact.svg';
 
 const DesktopNavbarDefault = () => {
   const { loginWithRedirect } = useAuth0();
@@ -18,6 +20,12 @@ const DesktopNavbarDefault = () => {
         </Link>
         <ul className='navLinks'>
           <li className='navLink'>
+            <Link to="/about" className='link' >
+              <img className="navIcon" src={AboutImg} alt="about" />
+              About
+            </Link>
+          </li>
+          <li className='navLink'>
             <Link to='/browse/stock' className='link'>
               <img className='navIcon' src={BrowseImg} alt='browse' />
               Browse
@@ -29,6 +37,12 @@ const DesktopNavbarDefault = () => {
               News
             </Link>
           </li>          
+          <li className='navLink'>
+            <Link to="/contact" className='link' >
+              <img className="navIcon" src={ContactImg} alt="browse" />
+              Contact
+            </Link>
+          </li>
           <li className='navLink' onClick={loginWithRedirect}>
             <Link to='/' className='link'>
               <img className='navIcon' src={LoginImg} alt='login' />
