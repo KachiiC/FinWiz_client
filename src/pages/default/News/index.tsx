@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 // CSS
-import './News.css';
+import './News.scss';
 // HELPERS
 import { removeNulls } from 'helpers/object.helpers';
 // COMPONENTS
@@ -22,8 +22,12 @@ const News = () => {
   console.log(articlesData);
 
   return (
-    <div className='masonry'>
-      <DisplayArticles data={articlesData} />
+    <div className="genericContainer">
+      <div className="genericInnerContainer">
+        <div className='masonry'>
+          <DisplayArticles data={articlesData} />
+        </div>
+      </div>
     </div>
   );
 };

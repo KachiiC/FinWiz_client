@@ -25,7 +25,8 @@ body {
     
   .genericInnerContainer {
     width: spacing.$desktopContainerWidth;
-    }
+    animation: fadeIn 2s;
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -98,3 +99,13 @@ span {
   border-bottom: 1px solid white;
 }
 
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
