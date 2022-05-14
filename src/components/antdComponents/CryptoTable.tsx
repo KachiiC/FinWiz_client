@@ -1,10 +1,10 @@
 // Imports
 import { Table } from 'antd';
 
-// Local Import
-import { Cryptos } from 'data/cryptos';
+// Local imports
+import { ICryptoTable } from './interfaces/ICryptoTable';
 
-const CryptoTable = () => {
+const CryptoTable = ({ cryptoData }: ICryptoTable) => {
 
   const cryptoColumns = [
     {
@@ -37,8 +37,6 @@ const CryptoTable = () => {
     },
   ];
   
-  const cryptoData = Cryptos.cryptoList;
-
   return (
     <Table 
       pagination={{ pageSize: 5 }}  

@@ -31,6 +31,10 @@ const Profile = () => {
     }
   }
 
+  // get stocks and crypto values or set as empty array
+  const stocks = profile?.stocks ? profile.stocks.userStock : [];
+  const crypto = profile?.cryptos ? profile.cryptos.cryptoList: [];
+
   // if user or profile is loading display the spinner
   if(!user || !profile) return (<Spinner />);
 
@@ -40,27 +44,26 @@ const Profile = () => {
         <div className='genericInnerContainer'>  
           {/* user details */}
           <UserDetails user={user} profile={profile}/>
+          
           {/* tables */}
           <Tabs type="card">
-            {profile.stocks && 
             <TabPane tab="Stocks" key="1">
-              <StocksTable stockData={profile.stocks}/>
+              <StocksTable stockData={stocks}/>
             </TabPane>
-            }
-            {profile.cryptos && 
             <TabPane tab="Cryptos" key="2">
-              <CryptoTable />
+              <CryptoTable cryptoData={crypto}/>
             </TabPane>
-            }
           </Tabs>
 
         </div>
       </div>
+
       {/* Graphs */}
-      {(profile.stocks && profile.cryptos) &&
+      {}
+      {profile.investmentValues.length > 0 &&
       <GraphContainer 
-        stocks={profile.stocks} 
-        crypto={profile.cryptos} 
+        stocks={stocks} 
+        crypto={crypto} 
         investmentValues={profile.investmentValues}  
       />
       }
