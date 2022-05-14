@@ -1,11 +1,11 @@
 // Imports
 import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
-
 // Local Imports
 import BrowseImg from 'assets/icons/search.svg';
 import LoginImg from 'assets/icons/login.svg';
 import NewsImg from 'assets/icons/news.svg';
+import AboutImg from 'assets/icons/about.svg';
 
 const DesktopNavbarDefault = () => {
   const { loginWithRedirect } = useAuth0();
@@ -17,6 +17,12 @@ const DesktopNavbarDefault = () => {
           <h1 className='logo'>FinWiz</h1>
         </Link>
         <ul className='navLinks'>
+          <li className='navLink'>
+            <Link to="/about" className='link' >
+              <img className="navIcon" src={AboutImg} alt="about" />
+              About
+            </Link>
+          </li>
           <li className='navLink'>
             <Link to='/browse/stock' className='link'>
               <img className='navIcon' src={BrowseImg} alt='browse' />

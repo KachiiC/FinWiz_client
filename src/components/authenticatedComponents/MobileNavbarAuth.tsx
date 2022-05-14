@@ -9,6 +9,9 @@ import LogoutImg from 'assets/icons/logout.svg';
 import BurgerImg from 'assets/icons/menu.svg';
 import handleMenuClick from 'helpers/handleMenuClick';
 import NewsImg from 'assets/icons/news.svg';
+import AboutImg from 'assets/icons/about.svg';
+import ContactImg from 'assets/icons/contact.svg';
+
 
 const MobileNavbarAuth = () => {
   const { logout } = useAuth0();
@@ -32,6 +35,11 @@ const MobileNavbarAuth = () => {
         />
       </nav>
       <div className='mobileNavLinks' id='mobileNavLinks'>
+
+        <Link to="/about" className='mobileLink' >
+          <img className="navIcon" src={AboutImg} alt="about" />
+          About
+        </Link>
         <Link to='/profile' className='mobileLink' onClick={handleMenuClick}>
           <img className='navIcon' src={ProfileImg} alt='profile' />
           Profile
@@ -56,6 +64,7 @@ const MobileNavbarAuth = () => {
           <img className='navIcon' src={LogoutImg} alt='logout' />
           Logout
         </Link>
+
       </div>
     </header>
   );

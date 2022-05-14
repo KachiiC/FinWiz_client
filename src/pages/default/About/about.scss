@@ -1,0 +1,177 @@
+@use 'sassVariables/colors.scss' as colors;
+
+::-webkit-scrollbar {
+  display: none;
+}
+.aboutHeader {
+  background-color: colors.$backgroundDark2;
+  width: 100%;
+  height: 90vh;
+
+  @keyframes aboutBox{
+    10%  {background-color: colors.$backgroundDark1}
+    35%   {background-color: colors.$backgroundDark2}
+    60%  {background-color: colors.$backgroundDark3}
+    85%  {background-color: colors.$backgroundDark2}
+    100% {background-color: colors.$backgroundDark1}
+  }
+
+  .aboutHeaderBox {
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    padding-top: 20vh;
+    padding-left: 20vw;
+    background-color: colors.$backgroundDark1;
+    animation-name: aboutBox;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+}
+
+
+.aboutContainer {
+  border-top: 1px solid white;
+  display: grid;
+  grid-template-rows: repeat(6 1fr);
+  width: 100vw;
+  background-color: colors.$backgroundDark1;
+  .aboutTopLayer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: colors.$textPrimary;
+    padding: 0px;
+    height: 45vh;
+    .aboutImg {
+      display: inline-block;
+      min-width: 100%;
+      object-fit: cover;
+      max-height: 100%;
+      min-height: 100%;
+      overflow: hidden;
+    }
+    .aboutImgRight {
+      max-width: 100%;
+      object-fit: cover;
+      min-height: 100%;
+      overflow: hidden;
+    }
+    .aboutText {
+      justify-self: flex-end;
+      align-self: center;
+    }
+    .aboutHeading {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px;
+      color: colors.$textPrimary;
+      background-color: colors.$backgroundDark1;
+    }
+    .aboutHeadingLeft {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 30px;
+      color: colors.$textPrimary;
+    }
+  }
+
+  .aboutBottomLayer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    min-height: 400px;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$backgroundDark2;
+    border-top: 1px solid white;
+    .aboutTopLayerDescription {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      h3 {
+        color: colors.$textSecondary;
+      }
+    }
+    .aboutButtonContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid white;
+      height: 100%;
+      .aboutTeamButton {
+        background-color: transparent;
+        border: 1px solid white;
+        text-align: center;
+        transition: all .3s cubic-bezier(.645,.045,.355,1);
+        height: 32px;
+        width: fit-content;
+        padding: 4px 15px;
+        font-size: 14px;
+        border-radius: 2px;
+        line-height: 1.5715;
+        position: relative;
+        font-weight: 400;
+        color: colors.$textPrimary;
+      }
+      .aboutTeamButton:hover {
+        box-shadow: colors.$container-shadow;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.aboutTeamContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  .aboutTeamInnerContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    border: 1px solid white;
+    padding: 30px;
+    margin: 30px;
+  }
+}
+.teamImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .aboutTopLayer {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr 1fr ;
+    .aboutImg {
+    display: none !important;
+    }
+    .aboutHeading {
+      display: none !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .aboutTeamContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 400px;
+    .aboutTeamInnerContainer {
+      display: flex;
+      align-items: space-between;
+      width: 400px;
+      border: 1px solid white;
+      padding: 30px;
+      margin: 30px;
+      height: 50vh;
+    }
+  }
+}

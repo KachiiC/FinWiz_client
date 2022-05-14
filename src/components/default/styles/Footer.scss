@@ -1,50 +1,32 @@
 @use 'sassVariables/colors.scss' as colors;
-@use 'sassVariables/spacing.scss' as spacing;
 @use 'sassVariables/fonts.scss' as fonts;
 
 .mainFooter {
   background-color: colors.$backgroundDark1;
-  display: flex;
+  display: grid;
+  grid-template-rows: 75px 50px;
   justify-content: center;
   align-items: center;
-  height: spacing.$desktopHeaderHeight;
   border-bottom: none; 
   border-top: colors.$headerFooterBorder; 
   box-shadow: colors.$headerShadow;
 }
 
-.navLinks {
-  margin-bottom: 0;
-  margin-top: 5px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.navLink {
-  text-decoration: none;
-  display: inline;
-  margin-left: 40px;
-  color: colors.$textPrimary;
+.footerCopyright {
+  justify-self: center;
   font-size: fonts.$sizeNavLink;
-  align-self: flex-end;  
+  align-self: flex-start;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
   
-  a, Link {
-    color: colors.$textPrimary;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-
-    &:hover {
-      color: colors.$textPrimary;
-      text-underline-offset: 1px;
-      text-decoration-thickness: 1px !important;
-      text-decoration-color: colors.$textPrimary !important;
-      text-decoration: underline;
-    }
-  }
-
-  .navIcon {
-    width: 18px;
-    margin-right: 5px;
+  .footerIcon {
+    width: 30px;
+    margin: 5px;;
   }
 }
+
+

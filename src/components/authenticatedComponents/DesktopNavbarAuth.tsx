@@ -8,6 +8,8 @@ import AddImg from 'assets/icons/add.svg';
 import BrowseImg from 'assets/icons/search.svg';
 import LogoutImg from 'assets/icons/logout.svg';
 import NewsImg from 'assets/icons/news.svg';
+import AboutImg from 'assets/icons/about.svg';
+import ContactImg from 'assets/icons/contact.svg';
 
 const DesktopNavbarAuth = () => {
   const { logout } = useAuth0();
@@ -52,10 +54,18 @@ const DesktopNavbarAuth = () => {
     <>
       <header className='mainHeader'>
         <nav className='topNavbar'>
+
           <Link to='/'>
             <h1 className='logo'>FinWiz</h1>
           </Link>
           <ul className='navLinks'>
+
+            <li className='navLink'>
+              <Link to="/about" className='link' >
+                <img className="navIcon" src={AboutImg} alt="about" />
+                About
+              </Link>
+            </li>
             <li className='navLink'>
               <Link to='/profile' className='link'>
                 <img className='navIcon' src={ProfileImg} alt='profile' />
@@ -88,6 +98,7 @@ const DesktopNavbarAuth = () => {
                 Logout
               </Link>
             </li>
+
           </ul>
         </nav>
       </header>
