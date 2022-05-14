@@ -5,7 +5,7 @@ import { IUserCrypto } from 'interfaces/crypto/ICrypto';
 const calcProfits = (investmentValues: IUserInvestmentValue[]) => {
   const investmentLength = investmentValues.length;
   const lastTwoInvestments = investmentValues.slice(investmentLength-2);
-  const status = lastTwoInvestments[0].value < lastTwoInvestments[1].value ? 'increased' : 'decreased';
+  const status = lastTwoInvestments[0].value <= lastTwoInvestments[1].value ? 'increased' : 'decreased';
   const value = Math.abs(lastTwoInvestments[0].value - lastTwoInvestments[1].value).toFixed(2);
   
   return { status, value };
@@ -89,7 +89,6 @@ const getBarLabelsAndData = (stocks: IUserStock[] | null, crypto: IUserCrypto[] 
       marketPrice.push(stock.details.marketValuePerShare);
     });
   } 
-  console.log(crypto);
   if(crypto) {
     crypto.forEach((crypto: IUserCrypto): void => {
       labels.push(crypto.symbol);
