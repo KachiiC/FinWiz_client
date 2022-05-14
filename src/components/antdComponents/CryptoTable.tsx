@@ -3,8 +3,17 @@ import { Table } from 'antd';
 
 // Local imports
 import { ICryptoTable } from './interfaces/ICryptoTable';
+import { IUserCrypto, ICombinedCrypto } from 'interfaces/crypto/ICrypto';
 
 const CryptoTable = ({ cryptoData }: ICryptoTable) => {
+
+  const cryptosData = cryptoData.map((crypto: IUserCrypto) :ICombinedCrypto  => {
+    return {
+      ...crypto,
+      name: crypto.details.name,
+      marketValuePerCrypto: crypto.details.marketValuePerCrypto,
+    };
+  });
 
   const cryptoColumns = [
     {
@@ -16,9 +25,14 @@ const CryptoTable = ({ cryptoData }: ICryptoTable) => {
       dataIndex: 'symbol',
     },
     {
-      title: 'Entry Value Per Crypto',
-      dataIndex: 'entryValuePerCrypto',
-      sorter: (a, b) => a.entryValuePerCrypto - b.entryValuePerCrypto,
+      title: 'Quantity',
+      dataIndex: 'quantityOfCrypto',
+      sorter: (a, b) => a.quantityOfCrypto - b.quantityOfCrypto,
+    },
+    {
+      title: 'Average Buy Price',
+      dataIndex: 'averageValuePerCrypto',
+      sorter: (a, b) => a.averageValuePerCrypto - b.averageValuePerCrypto,
     },
     {
       title: 'Market Value Per Crypto',
@@ -26,12 +40,7 @@ const CryptoTable = ({ cryptoData }: ICryptoTable) => {
       sorter: (a, b) => a.marketValuePerCrypto - b.marketValuePerCrypto,
     },
     {
-      title: 'Quantity Of Crypto',
-      dataIndex: 'quantityOfCrypto',
-      sorter: (a, b) => a.quantityOfCrypto - b.quantityOfCrypto,
-    },
-    {
-      title: 'totalCryptoValue',
+      title: 'Total Value',
       dataIndex: 'totalCryptoValue',
       sorter: (a, b) => a.totalCryptoValue - b.totalCryptoValue,
     },
@@ -40,7 +49,7 @@ const CryptoTable = ({ cryptoData }: ICryptoTable) => {
   return (
     <Table 
       pagination={{ pageSize: 5 }}  
-      dataSource={cryptoData} 
+      dataSource={cryptosData} 
       columns={cryptoColumns} 
       rowKey="symbol"
       onRow={(record) => {

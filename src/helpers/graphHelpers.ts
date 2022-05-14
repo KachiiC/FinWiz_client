@@ -26,8 +26,8 @@ const getAssetsInProfit = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
   if(crypto) {
     noOfAssets += crypto.length;
     crypto.forEach(crypto => {
-      if(crypto.averageValuePerCrypto < crypto.details.market_value_per_crypto) assetsInProfit++;
-      else if(crypto.averageValuePerCrypto === crypto.details.market_value_per_crypto) assetsBreakEven++;
+      if(crypto.averageValuePerCrypto < crypto.details.marketValuePerCrypto) assetsInProfit++;
+      else if(crypto.averageValuePerCrypto === crypto.details.marketValuePerCrypto) assetsBreakEven++;
       else assetsInLoss++;
     });
   }
@@ -93,7 +93,7 @@ const getBarLabelsAndData = (stocks: IUserStock[] | null, crypto: IUserCrypto[] 
     crypto.forEach((crypto: IUserCrypto): void => {
       labels.push(crypto.symbol);
       entryPrice.push(crypto.averageValuePerCrypto);
-      marketPrice.push(crypto.details.market_value_per_crypto);
+      marketPrice.push(crypto.details.marketValuePerCrypto);
     });
   } 
 
