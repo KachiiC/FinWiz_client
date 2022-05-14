@@ -89,7 +89,6 @@ const getBarLabelsAndData = (stocks: IUserStock[] | null, crypto: IUserCrypto[] 
       marketPrice.push(stock.details.marketValuePerShare);
     });
   } 
-  console.log(crypto);
   if(crypto) {
     crypto.forEach((crypto: IUserCrypto): void => {
       labels.push(crypto.symbol);

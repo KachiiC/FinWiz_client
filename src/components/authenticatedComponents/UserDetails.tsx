@@ -8,7 +8,7 @@ import './styles/UserDetails.scss';
 const UserDetails = ({ user, profile }: IUserDetails) => {
 
   let upDown = '';
-  if(profile.investmentValues.length > 0){
+  if(profile.investmentValues.length > 1){
     const { status } = calcProfits(profile.investmentValues);
     upDown = status === 'increased' ? 'positive-amount' : 'negative-amount';
   }

@@ -1,6 +1,7 @@
 // Imports
 import { useAuth0 } from '@auth0/auth0-react';
 import { Form, Button } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 // Local Imports
 import AutoCompleteForm from './AutoCompleteForm';
@@ -12,6 +13,7 @@ const AntdForm = (props: AntdFormProps) => {
   const { user } = useAuth0();
   const [userAddStock] = userApi.useUserAddStockMutation();
   const [userAddCrypto] = userApi.useUserAddCryptoMutation();
+  const navigate = useNavigate();
 
   // Inside this function we call api service. Need to check if the SYMBL exists
   const onSubmit = (values) => {
@@ -27,8 +29,10 @@ const AntdForm = (props: AntdFormProps) => {
     // make the post request
     if(values.typeselector === 'stock') {
       userAddStock(asset);
+      navigate('/profile');
     } else {
       userAddCrypto(asset);
+      navigate('/profile');
     }
   };
   // In this api we need to check the formatting of the dates
