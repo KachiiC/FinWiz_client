@@ -6,7 +6,7 @@ import { IUserStock, ICombinedStock } from 'interfaces/stocks/IStocks';
 import { IStocksTable } from './interfaces/IStocksTable';
 
 const StocksTable = ({ stockData }: IStocksTable) => {
-  const stocksData = stockData.map((stock: IUserStock) :ICombinedStock  => {
+  const stocksData = stockData.map((stock: IUserStock): ICombinedStock  => {
     return {
       ...stock,
       name: stock.details.name,
@@ -24,12 +24,12 @@ const StocksTable = ({ stockData }: IStocksTable) => {
       dataIndex: 'symbol',
     },
     {
-      title: 'Number Of Shares',
+      title: 'Quantity',
       dataIndex: 'numberOfShares',
       sorter: (a: ICombinedStock, b: ICombinedStock) => a.numberOfShares - b.numberOfShares,
     },
     {
-      title: 'Entry Value Per Share',
+      title: 'Average Buy Price',
       dataIndex: 'entryValuePerShare',
       sorter: (a: ICombinedStock, b: ICombinedStock) => a.entryValuePerShare - b.entryValuePerShare,
     },
@@ -39,7 +39,7 @@ const StocksTable = ({ stockData }: IStocksTable) => {
       sorter: (a: ICombinedStock, b: ICombinedStock) => a.marketValuePerShare - b.marketValuePerShare,
     },
     {
-      title: 'Total Value Of Shares',
+      title: 'Total Value',
       dataIndex: 'totalValueOfShares',
       sorter: (a: ICombinedStock, b: ICombinedStock) => a.totalValueOfShares - b.totalValueOfShares,
     },
