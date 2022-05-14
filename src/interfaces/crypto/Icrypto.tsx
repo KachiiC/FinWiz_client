@@ -26,14 +26,28 @@ interface IUserCrypto {
 }
 
 interface ISingleCrypto {
-  market_value_per_crypto: number;
+  marketValuePerCrypto: number;
   id: number;
   name: string;
   symbol: string;
 }
 
+interface ICombinedCrypto {
+  id: number;
+  sub: string;
+  symbol: string; 
+  quantityOfCrypto: number;
+  averageValuePerCrypto: number;
+  totalCryptoValue: number;
+  firstBought: string;
+  lastBought: string;
+  name: string,
+  marketValuePerCrypto: number
+}
+
 export type {
   ICryptoSummary,
   IUserCrypto,
-  ISingleCrypto
+  ISingleCrypto,
+  ICombinedCrypto
 };
