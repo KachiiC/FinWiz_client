@@ -4,7 +4,7 @@
 .mainFooter {
   background-color: colors.$backgroundDark1;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 75px 50px;
   justify-content: center;
   align-items: center;
   border-bottom: none; 
@@ -15,6 +15,7 @@
 .footerCopyright {
   justify-self: center;
   font-size: fonts.$sizeNavLink;
+  align-self: flex-start;
 }
 
 .footerLinks {
@@ -23,7 +24,8 @@
   list-style-type: none;
   
   .footerIcon {
-    width: 18px;
+    width: 30px;
+    margin: 5px;;
   }
 }
 

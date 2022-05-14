@@ -92,12 +92,6 @@ const DesktopNavbarAuth = () => {
                 News
               </Link>
             </li>
-            <li className='navLink'>
-              <Link to="/contact" className='link' >
-                <img className="navIcon" src={ContactImg} alt="browse" />
-              Contact
-              </Link>
-            </li>
             <li className='navLink' onClick={handleLogout}>
               <Link to='/' className='link'>
                 <img className='navIcon' src={LogoutImg} alt='logout' />

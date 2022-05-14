@@ -60,10 +60,6 @@ const MobileNavbarAuth = () => {
           <img className='navIcon' src={NewsImg} alt='browse' />
           News
         </Link>
-        <Link to="/contact" className='mobileLink' >
-          <img className="navIcon" src={ContactImg} alt="browse" />
-          Contact
-        </Link>
         <Link to='/' className='mobileLink' onClick={handleLogout}>
           <img className='navIcon' src={LogoutImg} alt='logout' />
           Logout

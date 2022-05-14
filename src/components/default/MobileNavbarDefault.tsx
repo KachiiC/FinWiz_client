@@ -42,11 +42,7 @@ const MobileNavbarDefault = () => {
         <Link to='/news' className='mobileLink' onClick={handleMenuClick}>
           <img className='navIcon' src={NewsImg} alt='browse' />
           News
-        </Link>
-        <Link to="/contact" className='mobileLink' >
-          <img className="navIcon" src={ContactImg} alt="browse" />
-          Contact
-        </Link>    
+        </Link> 
         <Link to='/' className='mobileLink' onClick={loginWithRedirect}>
           <img className='navIcon' src={LoginImg} alt='login' />
           Login
