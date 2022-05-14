@@ -10,8 +10,6 @@ import BurgerImg from 'assets/icons/menu.svg';
 import handleMenuClick from 'helpers/handleMenuClick';
 import NewsImg from 'assets/icons/news.svg';
 import AboutImg from 'assets/icons/about.svg';
-import ContactImg from 'assets/icons/contact.svg';
-
 
 const MobileNavbarAuth = () => {
   const { logout } = useAuth0();
