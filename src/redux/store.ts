@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { IUserProfile } from 'interfaces/user/IUserProfile';
+import { IUserNewInvestment } from 'interfaces/investments/IUserNewInvestment';
 
 const userApi = createApi({
   reducerPath: 'userApi',
@@ -20,10 +21,30 @@ const userApi = createApi({
       query(sub: string) {
         return {
           url: `user/${sub}`,
-          method: 'PUT'
+          method: 'GET'
         };
       },
       providesTags: [{ type: 'User', id: 'LIST' }]
+    }),
+    userAddStock: builder.mutation<IUserNewInvestment, any>({
+      query(asset) {
+        return {
+          url: 'user-add-stock',
+          method: 'POST',
+          body: asset
+        };
+      },
+      invalidatesTags: [{ type: 'User', id: 'LIST' }]
+    }),
+    userAddCrypto: builder.mutation<IUserNewInvestment, any>({
+      query(asset) {
+        return {
+          url: 'user-add-crypto',
+          method: 'POST',
+          body: asset
+        };
+      },
+      invalidatesTags: [{ type: 'User', id: 'LIST' }]
     })
   })
 });
