@@ -48,7 +48,7 @@ const CryptoTable = ({ cryptoData }: ICryptoTable) => {
       title: 'Update Investment',
       render: (record) => (
         <>
-          <Link to={`/updateInvestment/stock/${record.symbol}`}>Update Stock</Link>
+          <Link to={`/updateInvestment/crypto/${record.symbol}`}>Update Crypto</Link>
         </>
       ),
     }
