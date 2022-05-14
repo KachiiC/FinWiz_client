@@ -1,6 +1,6 @@
 // Imports
 import { Table } from 'antd';
-
+import { Link } from 'react-router-dom';
 // Local imports
 import { ICryptoTable } from './interfaces/ICryptoTable';
 import { IUserCrypto, ICombinedCrypto } from 'interfaces/crypto/ICrypto';
@@ -44,6 +44,14 @@ const CryptoTable = ({ cryptoData }: ICryptoTable) => {
       dataIndex: 'totalCryptoValue',
       sorter: (a, b) => a.totalCryptoValue - b.totalCryptoValue,
     },
+    {
+      title: 'Update Investment',
+      render: (record) => (
+        <>
+          <Link to={`/updateInvestment/crypto/${record.symbol}`}>Update Crypto</Link>
+        </>
+      ),
+    }
   ];
   
   return (

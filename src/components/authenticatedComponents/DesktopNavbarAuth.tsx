@@ -9,7 +9,6 @@ import BrowseImg from 'assets/icons/search.svg';
 import LogoutImg from 'assets/icons/logout.svg';
 import NewsImg from 'assets/icons/news.svg';
 import AboutImg from 'assets/icons/about.svg';
-import ContactImg from 'assets/icons/contact.svg';
 
 const DesktopNavbarAuth = () => {
   const { logout } = useAuth0();

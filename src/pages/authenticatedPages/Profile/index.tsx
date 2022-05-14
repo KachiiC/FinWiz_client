@@ -1,6 +1,5 @@
 // Imports
 import { useAuth0 } from '@auth0/auth0-react';
-import { Tabs } from 'antd';
 // Local Imports
 import StocksTable from 'components/antdComponents/StocksTable';
 import CryptoTable from 'components/antdComponents/CryptoTable';
@@ -12,9 +11,9 @@ import { IUserProfile } from 'interfaces/user/IUserProfile';
 import UserNewsColumnData from './components/UserNewsColumnData';
 // Styles
 import './styles/profile.scss';
+import AntdTabs from 'components/antdComponents/AntdTabs';
 
 const Profile = () => {
-  const { TabPane } = Tabs;
 
   // get user data from auth0
   const { user, isLoading } = useAuth0();
@@ -37,6 +36,24 @@ const Profile = () => {
   // if user or profile is loading display the spinner
   if(!user || !profile) return (<Spinner />);
 
+  const tableData = [
+    {
+      title: 'Stocks',
+      content: <StocksTable stockData={stocks}/>
+    },
+    {
+      title: 'Crypto',
+      content: <CryptoTable cryptoData={crypto}/>
+    },
+  ];
+
+  const displayTabs =  tableData.map((table) => {
+    return {
+      title: table.title,
+      content: table.content
+    };
+  });
+
   return (
     <>
       <div className='genericContainer'>
@@ -45,20 +62,11 @@ const Profile = () => {
           <UserDetails user={user} profile={profile}/>
           
           {/* tables */}
-          <Tabs type="card">
-            <TabPane tab="Stocks" key="1">
-              <StocksTable stockData={stocks}/>
-            </TabPane>
-            <TabPane tab="Cryptos" key="2">
-              <CryptoTable cryptoData={crypto}/>
-            </TabPane>
-          </Tabs>
-
+          <AntdTabs data={displayTabs}/>
         </div>
       </div>
 
       {/* Graphs */}
-      {}
       {profile.investmentValues.length > 1 &&
       <GraphContainer 
         stocks={stocks} 

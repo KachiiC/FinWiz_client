@@ -3,6 +3,7 @@ import { Table } from 'antd';
 
 // Local imports
 import { IUserStock, ICombinedStock } from 'interfaces/stocks/IStocks';
+import { Link } from 'react-router-dom';
 import { IStocksTable } from './interfaces/IStocksTable';
 
 const StocksTable = ({ stockData }: IStocksTable) => {
@@ -43,6 +44,14 @@ const StocksTable = ({ stockData }: IStocksTable) => {
       dataIndex: 'totalValueOfShares',
       sorter: (a: ICombinedStock, b: ICombinedStock) => a.totalValueOfShares - b.totalValueOfShares,
     },
+    {
+      title: 'Update Investment',
+      render: (record) => (
+        <>
+          <Link to={`/updateInvestment/stock/${record.symbol}`}>Update Stock</Link>
+        </>
+      ),
+    }
   ];
 
   return (
