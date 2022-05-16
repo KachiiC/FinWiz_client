@@ -7,7 +7,8 @@ export interface SiteAntdTableProps {
         title: string;
         dataIndex: string;
         sorter?: ((a, b) => number);
-        render?: (record) => JSX.Element | string
+        render?: any
+        // render?: ((text, record) => JSX.Element | string) | ((text) => JSX.Element | string)
     }[];
     pagination?: false | TablePaginationConfig | undefined;
     row?: GetComponentProps<object>

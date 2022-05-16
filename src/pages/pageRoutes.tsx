@@ -12,7 +12,7 @@ export const defaultPageRoutes = pagesData
   });
 
 export const authPageRoutes = pagesData
-  .filter((page) => !page.showDefault)
+  // .filter((page) => !page.showDefault)
   .map(({ path, element, title }) => {
     const routeArgs = { path, element };
 

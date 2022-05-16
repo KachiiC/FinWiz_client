@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 // DATA
 import { defaultColumns } from 'data/columns';
+import { currencyConverter } from 'helpers/integer.helpers';
 
 export const stocksColumns = [
   ...defaultColumns,
@@ -24,11 +25,12 @@ export const stocksColumns = [
     title: 'Total Value',
     dataIndex: 'totalValueOfShares',
     sorter: (a, b) => a.totalValueOfShares - b.totalValueOfShares,
+    render: (text) => `${currencyConverter(text)}`
   },
   {
     title: 'Update Investment',
     dataIndex: 'updateInvestments',
-    render: (record) => <Link to={`/updateInvestment/stock/${record.symbol}`}>Update Stock</Link>,
+    render: (text, record) => <Link to={`/updateInvestment/stock/${record.symbol}`}>Update Stock</Link>,
   },
 ];
 
@@ -53,10 +55,11 @@ export const cryptoColumns = [
     title: 'Total Value',
     dataIndex: 'totalCryptoValue',
     sorter: (a, b) => a.totalCryptoValue - b.totalCryptoValue,
+    render: (text) => `${currencyConverter(text)}`
   },
   {
     title: 'Update Investment',
     dataIndex: 'updateInvestments',
-    render: (record) => <Link to={`/updateInvestment/crypto/${record.symbol}`}>Update Crypto</Link>,
+    render: (text, record) => <Link to={`/updateInvestment/crypto/${record.symbol}`}>Update Crypto</Link>,
   },
 ];
