@@ -12,6 +12,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { IUserProfile } from 'interfaces/user/IUserProfile';
 // REDUX
 import { userApi } from 'redux/store';
+import { cryptoDataHelper, stockDataHelpers } from 'helpers/profileHelpers';
 
 const Profile = () => {
   // get user data from auth0
@@ -37,12 +38,12 @@ const Profile = () => {
   const investmentsData = [
     {
       title: 'Stocks',
-      data: stocksData,
+      data: stockDataHelpers(stocksData),
       columns: stocksColumns,
     },
     {
       title: 'Crypto',
-      data: cryptoData,
+      data: cryptoDataHelper(cryptoData),
       columns: cryptoColumns,
     },
   ];

@@ -2,7 +2,7 @@
 import { InputNumber, DatePicker } from 'antd';
 // DATA
 
-const requiredRule = (message: string) => [{ required: true, message }];
+export const requiredRule = (message: string) => [{ required: true, message }];
 
 export const stocksFormData = [
   {
