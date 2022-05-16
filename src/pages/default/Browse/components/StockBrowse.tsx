@@ -15,19 +15,19 @@ const StockBrowse = () => {
 
   const navigate = useNavigate();
 
-  const [gainersData, setTopData] = useState([]);
-  const [losersData, setOldestData] = useState([]);
-  const [mostactiveData, setNewestData] = useState([]);
+  const [gainersData, setGainersData] = useState([]);
+  const [losersData, setLosersData] = useState([]);
+  const [mostactiveData, setMostActiveData] = useState([]);
 
   useEffect(() => {
     investmentListServices('stock', 'gainers')
-      .then((res) => {console.log(res); setTopData(res);})
+      .then((res) => {console.log('gainers', res); setGainersData(res);})
       .catch((err) => console.log(err));
     investmentListServices('stock', 'losers')
-      .then((res) => setOldestData(res))
+      .then((res) => {console.log('losers', res); setLosersData(res);})
       .catch((err) => console.log(err));
     investmentListServices('stock', 'mostactive')
-      .then((res) => setNewestData(res))
+      .then((res) => {console.log('mostactive', res); setMostActiveData(res);})
       .catch((err) => console.log(err));
   }, []);
 
