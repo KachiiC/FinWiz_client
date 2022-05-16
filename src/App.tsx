@@ -3,8 +3,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { ApiProvider } from '@reduxjs/toolkit/dist/query/react';
 import { userApi } from 'redux/store';
 // COMPONENTS
-import { BrowserRouter } from 'react-router-dom';
 import { AuthPages, Pages } from 'pages';
+import { BrowserRouter } from 'react-router-dom';
 import Footer from 'components/Footer';
 import Navbar from 'components/Navbar';
 import Spinner from 'components/antdComponents/AntdSpinner';

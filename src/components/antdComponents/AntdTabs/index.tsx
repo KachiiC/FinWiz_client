@@ -6,7 +6,6 @@ import { AntdTabProps } from './AntdTabsInterface';
 import './AntdTabs.scss';
 
 const AntdTabs = ({ data }: AntdTabProps) => {
-  
   const { TabPane } = Tabs;
 
   const diplayedTabs = data.map(({ title, content }) => (

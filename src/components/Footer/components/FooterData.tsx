@@ -4,7 +4,7 @@ const { GitHub, LinkedIn } = Icons;
 
 export const footerData = [
   {
-    type: 'LinkedIn',
+    type: 'Youtube',
     link: 'https://www.linkedin.com/feed/',
     icon: LinkedIn,
   },
@@ -17,5 +17,10 @@ export const footerData = [
     type: 'LinkedIn',
     link: 'https://www.linkedin.com/feed/',
     icon: LinkedIn,
+  },
+  {
+    type: 'Contact',
+    link: 'https://www.linkedin.com/feed/',
+    icon: GitHub,
   },
 ];

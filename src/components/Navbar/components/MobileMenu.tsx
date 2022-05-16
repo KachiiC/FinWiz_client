@@ -15,11 +15,12 @@ const { BurgerImg } = Icons;
 const MobileMenu = () => {
   
   const { isAuthenticated } = useAuth0();
-
+  
+  // Toogles the mobile menu
   const [mobileMenu, setMobileMenu] = useState(false);
 
+  // Auth Logic
   const authLogic = isAuthenticated ? 'Logout' : 'Login';
-
   const menuList = isAuthenticated ? navMenuList : defaultMenus();
 
   const mobileMenuButton = (
@@ -31,6 +32,7 @@ const MobileMenu = () => {
     />
   );
 
+  // Dropdown Mobile Menu
   const mobileMenuDropDown = (
     <div className='mobileNavLinks' id='mobileNavLinks'>
       {menuRender(menuList, 'mobile')}

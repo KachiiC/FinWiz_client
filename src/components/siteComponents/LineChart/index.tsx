@@ -13,12 +13,8 @@ const LineChart = ({ investmentValues }: ILineChart) => {
   const options = {
     responsive: true,
     plugins: {
-      legend: {
-        display: false,
-      },
-      title: {
-        display: false,
-      },
+      legend: { display: false },
+      title: { display: false },
     },
     scales: {
       x: lineChartX,

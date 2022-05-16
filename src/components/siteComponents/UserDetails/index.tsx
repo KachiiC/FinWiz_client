@@ -1,7 +1,7 @@
-// INTERFACES
-import { IUserDetails } from './UserDetailsInterfaces';
 // HELPERS
 import { calcProfits } from 'helpers/graphHelpers';
+// INTERFACES
+import { IUserDetails } from './UserDetailsInterfaces';
 // STYLES
 import './UserDetails.scss';
 

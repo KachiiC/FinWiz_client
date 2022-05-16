@@ -10,7 +10,6 @@ import { AntdFormProps } from './AntdFormInterfaces';
 import { userApi } from 'redux/store';
 
 const AntdForm = ({ data }: AntdFormProps) => {
-
   const { useUserAddStockMutation, useUserAddCryptoMutation } = userApi;
   const [userAddStock] = useUserAddStockMutation();
   const [userAddCrypto] = useUserAddCryptoMutation();
@@ -20,7 +19,7 @@ const AntdForm = ({ data }: AntdFormProps) => {
 
   // Inside this function we call api service. Need to check if the SYMBL exists
   const onSubmit = (values) => {
-    const { symbol, numberOfShares, marketValuePerShare, date } = values;
+    const { symbol, numberOfShares, marketValuePerShare, date, typeselector } = values;
 
     // format the data
     const asset = {
@@ -32,8 +31,8 @@ const AntdForm = ({ data }: AntdFormProps) => {
     };
 
     // make the post request
-    values.typeselector === 'stock' ? userAddStock(asset) : userAddCrypto(asset);
-
+    typeselector === 'stock' ? userAddStock(asset) : userAddCrypto(asset);
+    // redirect
     navigate('/profile');
   };
 

@@ -1,3 +1,4 @@
+// INTERFACES
 import { IUserInvestmentValue } from 'interfaces/investments/IUserInvestmentValues';
 import { IUserStock } from 'interfaces/stocks/IStocks';
 import { IUserCrypto } from 'interfaces/crypto/ICrypto';

@@ -2,16 +2,13 @@ import { Button, Form } from 'antd';
 
 const { Item } = Form;
 
+// returns a field base on data 
 export const AntdFormFields = ({ data }) => {
-  return data.map((form) => {
-    const { name, rules, content } = form;
-
-    return (
-      <Item name={name} key={name} rules={rules}>
-        {content}
-      </Item>
-    );
-  });
+  return data.map(({ name, rules, content }) => (
+    <Item name={name} key={name} rules={rules}>
+      {content}
+    </Item>
+  ));
 };
 
 export const AntdFormButton = (

@@ -10,4 +10,3 @@ export interface IUserProfile {
   stocks: IStockSummary | null;
   cryptos: ICryptoSummary | null;
 }
-
