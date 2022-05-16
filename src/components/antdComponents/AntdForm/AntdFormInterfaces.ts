@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export interface AntdFormProps {
     data: {
         name: string;
@@ -9,6 +11,7 @@ export interface AntdFormProps {
 
 export interface AntdAutoCompleteProps {
     values: AntdValueField[]
+    setSymbol: Dispatch<SetStateAction<string>>
 }
 
 export interface AntdValueField {
