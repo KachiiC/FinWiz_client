@@ -1,46 +1,73 @@
 // COMPONENTS
 import AntdTable from 'components/antdComponents/AntdTable';
+import { useNavigate } from 'react-router-dom';
 // DATA
-import { browseLists, browseStockColumns } from '../BrowseData';
+import { browseStockColumns } from '../BrowseData';
 // STYLES
 import '../Browse.scss';
 // HELPERS
 import { useEffect, useState } from 'react';
-import { addRank } from 'helpers/object.helpers';
 // SERVICES
 import { investmentListServices } from 'services/investment';
-import { useNavigate } from 'react-router-dom';
+import AntdTabs from 'components/antdComponents/AntdTabs';
 
 const StockBrowse = () => {
-  const [listType, setListType] = useState('gainers');
-  const [tableData, setTableData] = useState([]);
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    investmentListServices('stock', listType)
-      .then((res) => addRank(res))
-      .then((res) => setTableData(res))
-      .catch((err) => console.log(err));
-  }, [listType]);
+  const [gainersData, setGainersData] = useState([]);
+  const [losersData, setLosersData] = useState([]);
+  const [mostactiveData, setMostActiveData] = useState([]);
 
-  const browseTabs = browseLists.map(({ title, url }) => (
-    <div className='single-browse-tab' onClick={() => setListType(url)} key={title}>
-      {title}
-    </div>
-  ));
+  useEffect(() => {
+    investmentListServices('stock', 'gainers')
+      .then((res) => setGainersData(res))
+      .catch((err) => console.log(err));
+    investmentListServices('stock', 'losers')
+      .then((res) => setLosersData(res))
+      .catch((err) => console.log(err));
+    investmentListServices('stock', 'mostactive')
+      .then((res) => setMostActiveData(res))
+      .catch((err) => console.log(err));
+  }, []);
+
+  
+  const stocksTableTabs = [
+    {
+      title: 'Gainers',
+      data: gainersData,
+      columns: browseStockColumns,
+    },
+    {
+      title: 'Losers',
+      data: losersData,
+      columns: browseStockColumns,
+    },
+    {
+      title: 'Most Active',
+      data: mostactiveData,
+      columns: browseStockColumns,
+    }
+  ];
 
   const rowLogic = (record) => {
     return {
       onClick: () => navigate(`/details/${record.symbol}`),
     };
   };
-
+  
+  const tabsData = stocksTableTabs.map((inv) => {
+    const { columns, data, title } = inv;
+    return {
+      title,
+      content: <AntdTable data={data} columns={columns} row={rowLogic} />,
+    };
+  });
+  
   return (
     <div className='genericContainer'>
       <div className='genericInnerContainer'>
-        <div className='browse-tabs'>{browseTabs}</div>
-        <AntdTable data={tableData} columns={browseStockColumns} row={rowLogic} />
+        <AntdTabs data={tabsData} />
       </div>
     </div>
   );
