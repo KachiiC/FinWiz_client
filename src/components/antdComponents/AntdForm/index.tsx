@@ -1,22 +1,23 @@
-// External
-import { useAuth0 } from '@auth0/auth0-react';
-import { useNavigate } from 'react-router-dom';
 // COMPONENTS
 import { AntdFormButton, AntdFormFields } from './components/AntdFormCompoents';
-import { Form } from 'antd';
-import { SelectOptions } from 'pages/authenticatedPages/AddInvestment/components/InvestmentsFormsData';
+import { Form, Select } from 'antd';
+// DATA
+import { stockFormValues, cryptoFormValues } from 'data/FormValues';
+// EXTERNAL
+import { useAuth0 } from '@auth0/auth0-react';
+import { useNavigate } from 'react-router-dom';
 // INTERFACES
 import { AntdFormProps } from './AntdFormInterfaces';
 // REDUX
-import { userApi } from 'redux/store';
 import AutoCompleteForm from './components/AutoCompleteForm';
+import { userApi } from 'redux/store';
 import { useState } from 'react';
-import { stockFormValues, cryptoFormValues } from 'data/FormValues';
 
 const AntdForm = ({ data }: AntdFormProps) => {
   const { useUserAddStockMutation, useUserAddCryptoMutation } = userApi;
   const [userAddStock] = useUserAddStockMutation();
   const [userAddCrypto] = useUserAddCryptoMutation();
+  const [symbolVal, setSymbolVal] = useState('');
   const [investmentType, setInvestmentType] = useState('stock');
 
   const { user } = useAuth0();
@@ -24,19 +25,24 @@ const AntdForm = ({ data }: AntdFormProps) => {
 
   // Inside this function we call api service. Need to check if the SYMBL exists
   const onSubmit = (values) => {
-    const { symbol, numberOfShares, marketValuePerShare, date, typeselector } = values;
+    const { numberOfShares, marketValuePerShare, date, select } = values;
 
     // format the data
     const asset = {
-      symbol,
+      symbol: symbolVal,
       quantity: numberOfShares,
       buyCost: marketValuePerShare,
       date: date._d,
       sub: user?.sub,
     };
 
-    // make the post request
-    typeselector === 'stock' ? userAddStock(asset) : userAddCrypto(asset);
+    const apiLogic = {
+      stock: userAddStock(asset),
+      crypto: userAddCrypto(asset),
+    };
+
+    apiLogic[select];
+
     // redirect
     navigate('/profile');
   };
@@ -46,19 +52,24 @@ const AntdForm = ({ data }: AntdFormProps) => {
     crypto: cryptoFormValues,
   };
 
-  console.log(formValues['crypto']);
-  
   return (
     <div className='genericContainer'>
-      <Form name='basic' onFinish={onSubmit}>
+      <Form
+        name='basic'
+        onFinish={onSubmit}
+        onValuesChange={(val) => setInvestmentType(val.select)}
+      >
         <div className='formContainer'>
           <div className='antdFormSpacing'>
             <h2 className='formTitle'>Add New Investment</h2>
-            <Form.Item>
-              <SelectOptions setType={setInvestmentType} />
+            <Form.Item name='select'>
+              <Select placeholder='Select Investment Type'>
+                <Select.Option value='stock'>Stock</Select.Option>
+                <Select.Option value='crypto'>Crypto</Select.Option>
+              </Select>
             </Form.Item>
             <Form.Item>
-              <AutoCompleteForm values={formValues[investmentType]} />
+              <AutoCompleteForm values={formValues[investmentType]} setSymbol={setSymbolVal} />
             </Form.Item>
             <AntdFormFields data={data} />
             {AntdFormButton}

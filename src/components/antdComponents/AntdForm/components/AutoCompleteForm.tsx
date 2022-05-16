@@ -4,7 +4,7 @@ import { AutoComplete } from 'antd';
 // INTERFACES
 import { AntdAutoCompleteProps, AntdValueField } from '../AntdFormInterfaces';
 
-const AutoCompleteForm = ({ values }: AntdAutoCompleteProps) => {
+const AutoCompleteForm = ({ values, setSymbol }: AntdAutoCompleteProps) => {
   const [options, setOptions] = useState<AntdValueField[]>([]);
 
   const newValue = (input: string) => {
@@ -13,11 +13,11 @@ const AutoCompleteForm = ({ values }: AntdAutoCompleteProps) => {
   };
 
   const onSearch = (searchText: string) => {
-    !searchText
-      ? setOptions([])
-      : newValue(searchText);
-  };
+    !searchText ? setOptions([]) : newValue(searchText);
 
+    setSymbol(searchText);
+
+  };
 
   return <AutoComplete options={options} onChange={onSearch} placeholder='Please enter a symbol' />;
 };
