@@ -4,15 +4,20 @@ import { useNavigate } from 'react-router-dom';
 // COMPONENTS
 import { AntdFormButton, AntdFormFields } from './components/AntdFormCompoents';
 import { Form } from 'antd';
+import { SelectOptions } from 'pages/authenticatedPages/AddInvestment/components/InvestmentsFormsData';
 // INTERFACES
 import { AntdFormProps } from './AntdFormInterfaces';
 // REDUX
 import { userApi } from 'redux/store';
+import AutoCompleteForm from './components/AutoCompleteForm';
+import { useState } from 'react';
+import { stockFormValues, cryptoFormValues } from 'data/FormValues';
 
 const AntdForm = ({ data }: AntdFormProps) => {
   const { useUserAddStockMutation, useUserAddCryptoMutation } = userApi;
   const [userAddStock] = useUserAddStockMutation();
   const [userAddCrypto] = useUserAddCryptoMutation();
+  const [investmentType, setInvestmentType] = useState('stock');
 
   const { user } = useAuth0();
   const navigate = useNavigate();
@@ -36,12 +41,25 @@ const AntdForm = ({ data }: AntdFormProps) => {
     navigate('/profile');
   };
 
+  const formValues = {
+    stock: stockFormValues,
+    crypto: cryptoFormValues,
+  };
+
+  console.log(formValues['crypto']);
+  
   return (
     <div className='genericContainer'>
       <Form name='basic' onFinish={onSubmit}>
         <div className='formContainer'>
           <div className='antdFormSpacing'>
             <h2 className='formTitle'>Add New Investment</h2>
+            <Form.Item>
+              <SelectOptions setType={setInvestmentType} />
+            </Form.Item>
+            <Form.Item>
+              <AutoCompleteForm values={formValues[investmentType]} />
+            </Form.Item>
             <AntdFormFields data={data} />
             {AntdFormButton}
           </div>
