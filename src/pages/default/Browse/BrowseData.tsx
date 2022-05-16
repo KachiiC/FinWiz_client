@@ -1,4 +1,4 @@
-import { currencyConverter, numberWithCommas } from 'helpers/integer.helpers';
+import { numberWithCommas, positiveNegative } from 'helpers/integer.helpers';
 
 export const browseLists = [
   {
@@ -30,60 +30,57 @@ export const cryptoLists = [
   },
 ];
 
-const positiveNegative = (num, type?) => {
-  const classLogic = num > 0 ? 'positive' : 'negative';
-  const typeLogic = type === '%' ? `${num}%` : `${currencyConverter(num)}`;
-
-  return <div className={`${classLogic}-amount`}>{typeLogic}</div>;
-};
-
-export const bestCryptoColumns = [
+export const browseCryptoColumns = [
   {
-    title: 'rank',
+    title: 'Rank',
     dataIndex: 'rank',
     align: 'center',
     sorter: (a, b) => a.rank - b.rank,
-    defaultSort: (a,b) => a.rank - b.rank
+    defaultSort: (a, b) => a.rank - b.rank,
   },
   {
-    title: 'name',
+    title: 'Name',
     dataIndex: 'name',
   },
   {
-    title: 'symbol',
+    title: 'Symbol',
     dataIndex: 'symbol',
-    render: (text: string) => `$${text}`,
     align: 'center',
   },
   {
-    title: 'price',
+    title: 'Price',
     dataIndex: 'price',
     sorter: (a, b) => a.price - b.price,
     render: (text: string) => `$${text}`,
+    align: 'center',
   },
   {
     title: 'Hourly Change',
     dataIndex: 'hourly_change',
     render: (text) => positiveNegative(text),
     sorter: (a, b) => a.hourly_change - b.hourly_change,
+    align: 'center',
   },
   {
     title: 'Daily Change',
     dataIndex: 'daily_change',
     render: (text) => positiveNegative(text),
     sorter: (a, b) => a.daily_change - b.daily_change,
+    align: 'center',
   },
   {
     title: 'Weekly Change',
     dataIndex: 'weekly_change',
     render: (text) => positiveNegative(text),
     sorter: (a, b) => a.weekly_change - b.weekly_change,
+    align: 'center',
   },
   {
     title: 'Monthly Change',
     dataIndex: 'monthly_change',
     render: (text) => positiveNegative(text),
     sorter: (a, b) => a.monthly_change - b.monthly_change,
+    align: 'center',
   },
 ];
 
@@ -92,32 +89,33 @@ export const browseStockColumns = [
     title: 'Rank',
     dataIndex: 'rank',
     sorter: (a, b) => a.rank - b.rank,
-  },
-  {
-    title: 'Symbol',
-    dataIndex: 'symbol',
+    align: 'center',
   },
   {
     title: 'Name',
     dataIndex: 'name',
+  },
+  {
+    title: 'Symbol',
+    dataIndex: 'symbol',
     align: 'center',
   },
   {
     title: 'Value',
     dataIndex: 'marketValuePerShare',
     render: (text: string) => `$${text}`,
-    align: 'center',
     sorter: (a, b) => a.marketValuePerShare - b.marketValuePerShare,
+    align: 'center',
   },
   {
-    title: 'Change amount (+/-)',
+    title: 'Change (+/-)',
     dataIndex: 'changeAmount',
     render: (text) => positiveNegative(text),
     align: 'center',
     sorter: (a, b) => a.changeAmount - b.changeAmount,
   },
   {
-    title: 'Change Percentage (%)',
+    title: 'Change (%)',
     dataIndex: 'changePercent',
     render: (text) => positiveNegative(text, '%'),
     align: 'center',

@@ -1,20 +1,20 @@
-// Imports
+// COMPONENTS
 import { Tabs } from 'antd';
-// Local Imports
-import { AntdTabProps } from '../interfaces/IAntdForm';
+// INTERFACES
+import { AntdTabProps } from './AntdTabsInterface';
+// STYLES
+import './AntdTabs.scss';
 
-const AntdTabs = (props: AntdTabProps) => {
+const AntdTabs = ({ data }: AntdTabProps) => {
   const { TabPane } = Tabs;
 
-  const diplayedTabs = props.data.map((tab) => (
-    <TabPane tab={tab.title} key={tab.title}>
-      {tab.content}
+  const diplayedTabs = data.map(({ title, content }) => (
+    <TabPane tab={title} key={title}>
+      {content}
     </TabPane>
   ));
 
-  return (
-    <Tabs type="card">{diplayedTabs}</Tabs>
-  );
+  return <Tabs type='card'>{diplayedTabs}</Tabs>;
 };
 
 export default AntdTabs;

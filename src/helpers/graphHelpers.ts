@@ -1,8 +1,9 @@
+// INTERFACES
 import { IUserInvestmentValue } from 'interfaces/investments/IUserInvestmentValues';
 import { IUserStock } from 'interfaces/stocks/IStocks';
 import { IUserCrypto } from 'interfaces/crypto/ICrypto';
 
-const calcProfits = (investmentValues: IUserInvestmentValue[]) => {
+export const calcProfits = (investmentValues: IUserInvestmentValue[]) => {
   const investmentLength = investmentValues.length;
   const lastTwoInvestments = investmentValues.slice(investmentLength-2);
   const status = lastTwoInvestments[0].value <= lastTwoInvestments[1].value ? 'increased' : 'decreased';
@@ -11,7 +12,7 @@ const calcProfits = (investmentValues: IUserInvestmentValue[]) => {
   return { status, value };
 };
 
-const getAssetsInProfit = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
+export const getAssetsInProfit = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
   let assetsInProfit = 0;
   let assetsBreakEven = 0;
   let assetsInLoss = 0;
@@ -41,7 +42,7 @@ const getAssetsInProfit = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
   return totals;
 };
 
-const getPieLabelsAndData = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
+export const getPieLabelsAndData = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
   const labels: string[] = [];
   const quantities: number[] = [];
 
@@ -77,7 +78,7 @@ const getPieLabelsAndData = (stocks: IUserStock[], crypto: IUserCrypto[]) => {
   return { labels, quantities };
 };
 
-const getBarLabelsAndData = (stocks: IUserStock[] | null, crypto: IUserCrypto[] | null) => {
+export const getBarLabelsAndData = (stocks: IUserStock[] | null, crypto: IUserCrypto[] | null) => {
   const labels: string[] = [];
   const entryPrice: number[] = [];
   const marketPrice: number[] = [];
@@ -98,11 +99,4 @@ const getBarLabelsAndData = (stocks: IUserStock[] | null, crypto: IUserCrypto[] 
   } 
 
   return { labels, entryPrice, marketPrice };
-};
-
-export {
-  calcProfits,
-  getAssetsInProfit,
-  getPieLabelsAndData,
-  getBarLabelsAndData
 };
