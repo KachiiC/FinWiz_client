@@ -1,8 +1,6 @@
 import { newsArticleProps } from '../NewsProps';
 
-const SingleArticle = (article: newsArticleProps) => {
-  const { title, url, image } = article;
-
+const SingleArticle = ({ title, url, image }: newsArticleProps) => {
   return (
     <div className='mItem' key={title}>
       <div className='article-container'>
@@ -20,9 +18,8 @@ const SingleArticle = (article: newsArticleProps) => {
 };
 
 const DisplayArticles = (props: { data: newsArticleProps[] }) => {
-  const displayedArticles = props.data.map((article) => {
-    const { title, url, image } = article;
-
+  const displayedArticles = props.data.map(({ title, url, image }) => {
+    
     const singleArticleArgs = { title, url, image };
 
     return <SingleArticle key={title} {...singleArticleArgs} />;

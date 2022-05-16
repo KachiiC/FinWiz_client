@@ -1,4 +1,4 @@
-interface IStockSummary {
+export interface IStockSummary {
   id: number;
   sub: string;
   currentTotalAmount: number;
@@ -9,10 +9,10 @@ interface IStockSummary {
   userStock: IUserStock[];
 }
 
-interface IUserStock {
+export interface IUserStock {
   id: number;
   sub: string;
-  symbol: string; 
+  symbol: string;
   entryValuePerShare: number;
   numberOfShares: number;
   totalValueOfShares: number;
@@ -21,17 +21,17 @@ interface IUserStock {
   details: ISingleStock;
 }
 
-interface ISingleStock {
+export interface ISingleStock {
   id: number;
   name: string;
   symbol: string;
   marketValuePerShare: number;
 }
 
-interface ICombinedStock {
+export interface ICombinedStock {
   id: number;
   sub: string;
-  symbol: string; 
+  symbol: string;
   entryValuePerShare: number;
   numberOfShares: number;
   totalValueOfShares: number;
@@ -40,10 +40,3 @@ interface ICombinedStock {
   name: string;
   marketValuePerShare: number;
 }
-
-export type {
-  IStockSummary,
-  IUserStock,
-  ISingleStock,
-  ICombinedStock
-};

@@ -1,19 +1,7 @@
-// Imports
+// COMPONENTS
+import { defaultPageRoutes, authPageRoutes } from './pageRoutes';
 import { Routes } from 'react-router-dom';
 
-// Local imports
-import { defaultPageRoutes, authPageRoutes } from './pageRoutes';
+export const Pages = <Routes>{defaultPageRoutes}</Routes>;
 
-const Pages = (
-  <Routes>
-    {defaultPageRoutes}
-  </Routes>
-);
-
-const AuthPages = (
-  <Routes>
-    { authPageRoutes }
-  </Routes>
-);
-
-export { Pages, AuthPages };
+export const AuthPages = <Routes>{authPageRoutes}</Routes>;

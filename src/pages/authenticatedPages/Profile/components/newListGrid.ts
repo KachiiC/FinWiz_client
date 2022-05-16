@@ -1,4 +1,5 @@
-import { SingleNews } from '../profileInterfaces';
+// INTERFACES
+import { SingleNews } from '../ProfileInterfaces';
 
 const newsListGrid: SingleNews[] = [
   {

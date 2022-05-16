@@ -1,35 +1,32 @@
-// Imports
-import { BrowserRouter } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
+// REDUX
 import { ApiProvider } from '@reduxjs/toolkit/dist/query/react';
-// Local imports
-import { Pages, AuthPages } from 'pages';
-import AuthNavbar from 'components/authenticatedComponents/AuthNavbar';
-import DefaultNavbar from 'components/default/DefaultNavbar';
 import { userApi } from 'redux/store';
-import Spinner from 'components/antdComponents/Spinner';
-// Styles
-import './sassVariables/App.scss';
-import Footer from 'components/default/Footer';
+// COMPONENTS
+import { BrowserRouter } from 'react-router-dom';
+import { AuthPages, Pages } from 'pages';
+import Footer from 'components/Footer';
+import Navbar from 'components/Navbar';
+import Spinner from 'components/antdComponents/AntdSpinner';
+// STYLES
+import 'sassVariables/App.scss';
 
 const App = () => {
-
   // check if user is authenticated
   const { isAuthenticated, isLoading } = useAuth0();
-  const app = isAuthenticated ? (<><AuthNavbar /> {AuthPages}</>) : (<><DefaultNavbar /> {Pages}</>);
+  const app = isAuthenticated ? AuthPages : Pages;
 
   // if loading show loading placeholder
   // todo - replace with spinner or loading icon
-  if(isLoading) return <Spinner />;
+  if (isLoading) return <Spinner />;
 
   return (
     <ApiProvider api={userApi}>
-      <div className="App">
-        <BrowserRouter>
-          { app }
-          <Footer />
-        </BrowserRouter>
-      </div>
+      <BrowserRouter>
+        <Navbar />
+        <main>{app}</main>
+        <Footer />
+      </BrowserRouter>
     </ApiProvider>
   );
 };

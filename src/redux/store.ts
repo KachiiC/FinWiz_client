@@ -1,13 +1,15 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+// INTERFACES
 import { IUserProfile } from 'interfaces/user/IUserProfile';
 import { IUserNewInvestment } from 'interfaces/investments/IUserNewInvestment';
+// REDUX
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const userApi = createApi({
-  reducerPath: 'userApi',
+export const userApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
+  reducerPath: 'userApi',
   tagTypes: ['User'],
   refetchOnMountOrArgChange: 300,
-  endpoints: (builder) => ({    
+  endpoints: (builder) => ({
     getTestUser: builder.query<IUserProfile, void>({
       query() {
         return {
@@ -26,7 +28,7 @@ const userApi = createApi({
       },
       providesTags: [{ type: 'User', id: 'LIST' }]
     }),
-    userAddStock: builder.mutation<IUserNewInvestment, any>({
+    userAddStock: builder.mutation<IUserNewInvestment, unknown>({
       query(asset) {
         return {
           url: 'user-add-stock',
@@ -36,7 +38,7 @@ const userApi = createApi({
       },
       invalidatesTags: [{ type: 'User', id: 'LIST' }]
     }),
-    userAddCrypto: builder.mutation<IUserNewInvestment, any>({
+    userAddCrypto: builder.mutation<IUserNewInvestment, unknown>({
       query(asset) {
         return {
           url: 'user-add-crypto',
@@ -48,5 +50,3 @@ const userApi = createApi({
     })
   })
 });
-
-export { userApi };

@@ -2,8 +2,8 @@ import { IUserInvestmentValue } from 'interfaces/investments/IUserInvestmentValu
 import { IStockSummary } from 'interfaces/stocks/IStocks';
 import { ICryptoSummary } from 'interfaces/crypto/ICrypto';
 
-interface IUserProfile {
-  id: number;                   
+export interface IUserProfile {
+  id: number;
   sub: string;
   totalInvestmentValue: number;
   investmentValues: IUserInvestmentValue[];
@@ -11,6 +11,3 @@ interface IUserProfile {
   cryptos: ICryptoSummary | null;
 }
 
-export type {
-  IUserProfile,
-};

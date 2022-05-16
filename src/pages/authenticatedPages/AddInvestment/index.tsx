@@ -1,14 +1,10 @@
-// Local imports
+// COMPONENTS
+import AntdForm from 'components/antdComponents/AntdForm';
+// DATA
+import { stocksFormData } from './components/InvestmentFormComponents';
+// STYLES
+import './AddInvestment.scss';
 
-import AddInvestmentForm from './AddInvestmentForm';
-import './styles/AddInvestment.scss';
-
-const AddInvestments = () => {
-  return (
-    <>
-      <AddInvestmentForm />
-    </>
-  );
-};
+const AddInvestments = () => <AntdForm data={stocksFormData} />;
 
 export default AddInvestments;

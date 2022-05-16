@@ -1,11 +1,8 @@
-// Imports
 import { render } from 'react-dom';
-import { Auth0Provider } from '@auth0/auth0-react';
-
-// Local imports
+// COMPONENTS
 import App from './App';
-
-// Styles
+import { Auth0Provider } from '@auth0/auth0-react';
+// STYLES
 import 'antd/dist/antd.min.css';
 import './sassVariables/index.scss';
 
@@ -19,6 +16,5 @@ render(
   >
     <App />
   </Auth0Provider>,
-  root
+  root,
 );
-

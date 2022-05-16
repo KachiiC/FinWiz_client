@@ -1,17 +1,12 @@
-
-interface IAuth0User {
-  email?: string | undefined;
-  email_verified?: boolean | undefined;
-  family_name?: string | undefined;
-  given_name?: string | undefined;
-  locale?: string | undefined;
-  name?: string | undefined;
-  nickname?: string | undefined;
-  picture?: string | undefined;
-  sub?: string | undefined;
-  updated_at?: string | undefined;
+export interface IAuth0User {
+  email?: string;
+  email_verified?: boolean;
+  family_name?: string;
+  given_name?: string;
+  locale?: string;
+  name?: string;
+  nickname?: string;
+  picture?: string;
+  sub?: string;
+  updated_at?: string;
 }
-
-export type {
-  IAuth0User,
-};

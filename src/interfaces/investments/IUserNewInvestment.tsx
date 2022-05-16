@@ -1,11 +1,7 @@
-interface IUserNewInvestment {
+export interface IUserNewInvestment {
   symbol: string;
   quantity: number;
   buyCost: number;
   date: string;
-  sub: string
+  sub: string;
 }
-
-export type {
-  IUserNewInvestment
-};

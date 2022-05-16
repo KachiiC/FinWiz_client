@@ -1,13 +1,10 @@
 // Local imports
 import LandingSectionOne from './LandingSectionOne';
 // Styles
-import './landing.scss';
+import './Landing.scss';
 
 const Landing = () => {
-
-  return (
-    <LandingSectionOne />
-  );
+  return <LandingSectionOne />;
 };
 
 export default Landing;

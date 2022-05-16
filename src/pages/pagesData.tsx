@@ -1,88 +1,85 @@
-// Local Imports
-// default
-import Landing from './default/Landing';
+// DEFAULT PAGES
 import About from './default/About';
-import Details from './default/Details';
 import Contact from './default/Contact';
-import Browse from './default/Browse';
-import CryptoBrowse from './default/Browse/CryptoBrowse';
-
-// auth
-import Profile from './authenticatedPages/Profile';
-import AddInvestments from './authenticatedPages/AddInvestment';
+import CryptoBrowse from './default/Browse/components/CryptoBrowse';
+import Details from './default/Details';
+import Landing from './default/Landing';
 import News from './default/News';
+import StockBrowse from './default/Browse/components/StockBrowse';
+// AUTH PAGES
+import AddInvestments from './authenticatedPages/AddInvestment';
+import Profile from './authenticatedPages/Profile';
 
-const pagesData = [
+// DEFAULT PAGES
+export const defaultPages = [
   {
-    title: 'Landing',
-    path: '/',
-    element: <Landing />,
-    showAuth: true,
-    showDefault: true,
+    title: 'Contact',
+    path: '/contact',
+    element: <Contact />,
+    showDefault: true
   },
   {
-    title: 'About',
-    path: '/about',
-    element: <About />,
-    showAuth: true,
-    showDefault: true,
+    title: 'Crypto Browse',
+    path: '/browse/crypto',
+    element: <CryptoBrowse />,
+    showDefault: true
   },
   {
     title: 'Details',
     path: '/details/:symbol',
     element: <Details />,
-    showAuth: true,
-    showDefault: true,
+    showDefault: true
   },
   {
-    title: 'Contact',
-    path: '/contact',
-    element: <Contact />,
-    showAuth: true,
-    showDefault: true,
-  },
-  {
-    title: 'Browse',
-    path: '/browse/stock',
-    element: <Browse />,
-    showAuth: true,
-    showDefault: true,
-  },
-  {
-    title: 'Browse',
-    path: '/browse/crypto',
-    element: <CryptoBrowse />,
-    showAuth: true,
-    showDefault: true,
-  },
-  {
-    title: 'Profile',
-    path: '/profile',
-    element: <Profile />,
-    showAuth: true,
-    showDefault: false,
+    title: 'Landing',
+    path: '/',
+    element: <Landing />,
+    showDefault: true
   },
   {
     title: 'News',
     path: '/news',
     element: <News />,
-    showAuth: true,
-    showDefault: true,
+    showDefault: true
   },
   {
-    title: 'AddInvestments',
-    path: '/addInvestments',
+    title: 'Stock Browse',
+    path: '/browse/stock',
+    element: <StockBrowse />,
+    showDefault: true
+  },
+  {
+    title: 'About',
+    path: '/about',
+    element: <About />,
+    showDefault: true
+  }
+];
+
+// AUTH PAGES
+export const authPages = [
+  {
+    title: 'Add',
+    path: '/add',
     element: <AddInvestments />,
-    showAuth: true,
     showDefault: false,
   },
   {
-    title: 'Not Found',
-    path: '*',
-    element: <h1>404 not found</h1>,
-    showAuth: true,
-    showDefault: true,
+    title: 'Profile',
+    path: '/profile',
+    element: <Profile />,
+    showDefault: false,
   },
 ];
+
+// ERROR HANDLER
+const errorhandler = {
+  title: 'Not Found',
+  path: '*',
+  element: <h1>404 not found</h1>,
+  showDefault: true,
+};
+
+const pagesData = [...defaultPages, ...authPages, errorhandler];
 
 export default pagesData;
