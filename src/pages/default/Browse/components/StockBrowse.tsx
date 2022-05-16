@@ -21,13 +21,13 @@ const StockBrowse = () => {
 
   useEffect(() => {
     investmentListServices('stock', 'gainers')
-      .then((res) => {console.log('gainers', res); setGainersData(res);})
+      .then((res) => setGainersData(res))
       .catch((err) => console.log(err));
     investmentListServices('stock', 'losers')
-      .then((res) => {console.log('losers', res); setLosersData(res);})
+      .then((res) => setLosersData(res))
       .catch((err) => console.log(err));
     investmentListServices('stock', 'mostactive')
-      .then((res) => {console.log('mostactive', res); setMostActiveData(res);})
+      .then((res) => setMostActiveData(res))
       .catch((err) => console.log(err));
   }, []);
 
