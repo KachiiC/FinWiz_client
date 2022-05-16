@@ -1,35 +1,5 @@
 import { numberWithCommas, positiveNegative } from 'helpers/integer.helpers';
 
-export const browseLists = [
-  {
-    title: 'Gainers',
-    url: 'gainers',
-  },
-  {
-    title: 'Losers',
-    url: 'losers',
-  },
-  {
-    title: 'Most Active',
-    url: 'mostactive',
-  },
-];
-
-export const cryptoLists = [
-  {
-    title: 'Top',
-    url: 'top',
-  },
-  {
-    title: 'Oldest',
-    url: 'oldest',
-  },
-  {
-    title: 'Newest',
-    url: 'newest',
-  },
-];
-
 export const browseCryptoColumns = [
   {
     title: 'Rank',
