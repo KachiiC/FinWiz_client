@@ -2,12 +2,12 @@ export const cryptoDataHelper = (data) => {
 
   return data.map(crypto => {
 
-    const { symbol, quantity, averageValuePerCrypto, totalCryptoValue, details } = crypto;
+    const { symbol, quantityOfCrypto, averageValuePerCrypto, totalCryptoValue, details } = crypto;
     const { name, marketValuePerCrypto } = details;
 
     return {
       symbol,
-      quantityOfCrypto: quantity,
+      quantityOfCrypto,
       averageValuePerCrypto,
       totalCryptoValue,
       name,
