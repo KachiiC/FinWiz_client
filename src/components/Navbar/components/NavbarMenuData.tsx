@@ -38,7 +38,7 @@ export const browseDropdown = [
     key: 'crypto',
   },
   {
-    label: 'NFT',
-    key: 'nft',
+    label: <Link to='/browse/commodities'>Commodities</Link>,
+    key: 'commodities ',
   },
 ];

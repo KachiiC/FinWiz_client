@@ -38901,3 +38901,117 @@ export const cryptoFormValues = [
     'value': 'yVault LP-yCurve(YYCRV)'
   },
 ];
+
+export const commoditiesFormValues = [
+  {
+    value: 'Gold'
+  },
+  {
+    value: 'Silver'
+  },
+  {
+    value: 'Palladium'
+  },
+  {
+    value: 'Platinum'
+  },
+  {
+    value: 'Aluminium'
+  },
+  {
+    value: 'Zinc'
+  },
+  {
+    value: 'Lead'
+  },
+  {
+    value: 'Nickel'
+  },
+  {
+    value: 'Tin'
+  },
+  {
+    value: 'Copper'
+  },
+  {
+    value: 'US Coffee C'
+  },
+  {
+    value: 'US Cotton #2'
+  },
+  {
+    value: 'US Sugar #11'
+  },
+  {
+    value: 'Orange Juice'
+  },
+  {
+    value: 'US Cocoa'
+  },
+  {
+    value: 'London Coffee'
+  },
+  {
+    value: 'London Cocoa'
+  },
+  {
+    value: 'London Sugar'
+  },
+  {
+    value: 'Lumber'
+  },
+  {
+    value: 'Live Cattle'
+  },
+  {
+    value: 'Lean Hogs'
+  },
+  {
+    value: 'Feeder Cattle'
+  },
+  {
+    value: 'Brent Oil'
+  },
+  {
+    value: 'Crude Oil WTI'
+  },
+  {
+    value: 'London Gas Oil'
+  },
+  {
+    value: 'Natural Gas'
+  },
+  {
+    value: 'Heating Oil'
+  },
+  {
+    value: 'Carbon Emissions'
+  },
+  {
+    value: 'Gasoline RBOB'
+  },
+  {
+    value: 'London Wheat'
+  },
+  {
+    value: 'Rough Rice'
+  },
+  {
+    value: 'US Soybean Oil'
+  },
+  {
+    value: 'US Soybean Meal'
+  },
+  {
+    value: 'US Soybeans'
+  },
+  {
+    value: 'US Wheat'
+  },
+  {
+    value: 'US Corn'
+  },
+  {
+    value: 'Oats'
+  }
+];
