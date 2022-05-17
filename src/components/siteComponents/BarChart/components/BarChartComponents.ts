@@ -1,5 +1,5 @@
 export const barChartX = {
-  stacked: true,
+  stacked: false,
   grid: {
     display: false,
     color: 'rgba(235, 235, 235, 0.6)', // changes the color of the axis grid lines
@@ -15,7 +15,7 @@ export const barChartX = {
 };
 
 export const barChartY = {
-  stacked: true,
+  stacked: false,
   grid: {
     display: true,
     color: 'rgb(75, 75, 75)',
