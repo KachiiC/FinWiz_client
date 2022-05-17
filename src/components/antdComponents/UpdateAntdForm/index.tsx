@@ -1,5 +1,5 @@
 // COMPONENTS
-import { AntdFormButton, AntdFormFields } from './components/AntdFormCompoents';
+import { AntdFormButton, AntdFormFields } from './components/AntdFormComponents';
 import { Form, Select } from 'antd';
 // EXTERNAL
 import { useAuth0 } from '@auth0/auth0-react';

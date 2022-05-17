@@ -1,5 +1,5 @@
 // COMPONENTS
-import { AntdFormButton, AntdFormFields } from './components/AntdFormCompoents';
+import { AntdFormButton, AntdFormFields } from './components/AntdFormComponents';
 import { Form, Select } from 'antd';
 // DATA
 import { stockFormValues, cryptoFormValues } from 'data/FormValues';
