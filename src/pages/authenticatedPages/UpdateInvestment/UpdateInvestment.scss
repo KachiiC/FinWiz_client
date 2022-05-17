@@ -25,6 +25,9 @@
     margin: 0px 0px 25px;
     border-radius: 2px;
   }
+  .updateFormParam:hover {
+    cursor: not-allowed;
+  }
 }
 
 .ant-form-item-control-input-content {

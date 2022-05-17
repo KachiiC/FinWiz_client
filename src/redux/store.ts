@@ -1,6 +1,7 @@
 // INTERFACES
 import { IUserProfile } from 'interfaces/user/IUserProfile';
 import { IUserNewInvestment } from 'interfaces/investments/IUserNewInvestment';
+import { IUpdateUserAsset } from 'interfaces/investments/IUpdateUserAsset';
 // REDUX
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
@@ -48,7 +49,7 @@ export const userApi = createApi({
       },
       invalidatesTags: [{ type: 'User', id: 'LIST' }]
     }),
-    updateUserStock: builder.mutation<any, unknown>({
+    updateUserStock: builder.mutation<IUpdateUserAsset, unknown>({
       query(asset) {
         return {
           url: 'user-update-stock',
@@ -58,7 +59,7 @@ export const userApi = createApi({
       },
       invalidatesTags: [{ type: 'User', id: 'LIST' }]
     }),
-    updateUserCrypto: builder.mutation<any, unknown>({
+    updateUserCrypto: builder.mutation<IUpdateUserAsset, unknown>({
       query(asset) {
         return {
           url: 'user-update-crypto',

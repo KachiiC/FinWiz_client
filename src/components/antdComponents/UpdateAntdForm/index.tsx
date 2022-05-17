@@ -22,7 +22,6 @@ const UpdateAntdForm = ({ data, params }: AntdFormProps) => {
   const onSubmit = (values) => {
     const { numberOfShares, marketValuePerShare, date, select } = values;
 
-    console.log(numberOfShares);
     if(select === 'buy' || select === 'sell' && numberOfShares <= params.quantity) {
 
       // format the data
