@@ -3,7 +3,8 @@ export interface AntdFormProps {
         name: string;
         rules?: any[];
         content: JSX.Element;
-    }[]
+    }[],
+    params: any
 }
 
 export interface AntdValueField {
