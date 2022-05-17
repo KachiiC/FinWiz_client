@@ -36,12 +36,11 @@ const AntdForm = ({ data }: AntdFormProps) => {
       sub: user?.sub,
     };
 
-    const apiLogic = {
-      stock: userAddStock(asset),
-      crypto: userAddCrypto(asset),
-    };
-
-    apiLogic[select];
+    if (select === 'stock') {
+      userAddStock(asset);
+    } else if (select === 'crypto') {
+      userAddCrypto(asset);
+    }
 
     // redirect
     navigate('/profile');
