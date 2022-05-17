@@ -8,46 +8,49 @@ import '../Browse.scss';
 // HELPERS
 import { useEffect, useState } from 'react';
 // SERVICES
-import { investmentListServices } from 'services/investment';
+import { stockListServices } from 'services/investment';
 import AntdTabs from 'components/antdComponents/AntdTabs';
 
 const StockBrowse = () => {
-
   const navigate = useNavigate();
 
-  const [gainersData, setGainersData] = useState([]);
-  const [losersData, setLosersData] = useState([]);
-  const [mostactiveData, setMostActiveData] = useState([]);
+  const [stockData, setStockData] = useState({
+    gainers: [],
+    losers: [],
+    mostActive: [],
+  });
+
+  const { gainers, losers, mostActive } = stockData;
 
   useEffect(() => {
-    investmentListServices('stock', 'gainers')
-      .then((res) => setGainersData(res))
-      .catch((err) => console.log(err));
-    investmentListServices('stock', 'losers')
-      .then((res) => setLosersData(res))
-      .catch((err) => console.log(err));
-    investmentListServices('stock', 'mostactive')
-      .then((res) => setMostActiveData(res))
+    stockListServices()
+      .then((res) => {
+        const dataTypes = Object.keys(res);
+        dataTypes.forEach((key) => {
+          res[key] = res[key].map((obj, index) => {
+            obj.rank = index + 1;
+            return obj;
+          });
+        });
+        return res;
+      })
+      .then((res) => setStockData(res))
       .catch((err) => console.log(err));
   }, []);
 
-  
   const stocksTableTabs = [
     {
       title: 'Gainers',
-      data: gainersData,
-      columns: browseStockColumns,
+      data: gainers,
     },
     {
       title: 'Losers',
-      data: losersData,
-      columns: browseStockColumns,
+      data: losers,
     },
     {
       title: 'Most Active',
-      data: mostactiveData,
-      columns: browseStockColumns,
-    }
+      data: mostActive,
+    },
   ];
 
   const rowLogic = (record) => {
@@ -55,15 +58,15 @@ const StockBrowse = () => {
       onClick: () => navigate(`/details/${record.symbol}`),
     };
   };
-  
+
   const tabsData = stocksTableTabs.map((inv) => {
-    const { columns, data, title } = inv;
+    const { data, title } = inv;
     return {
       title,
-      content: <AntdTable data={data} columns={columns} row={rowLogic} />,
+      content: <AntdTable data={data} columns={browseStockColumns} row={rowLogic} />,
     };
   });
-  
+
   return (
     <div className='genericContainer'>
       <div className='genericInnerContainer'>
