@@ -21,6 +21,8 @@ export const getAssetsInProfit = (stocks: IUserStock[], crypto: IUserCrypto[]) =
     noOfAssets += stocks.length;
     stocks.forEach(stock => {
       if(stock.entryValuePerShare < stock.details.marketValuePerShare) assetsInProfit++;
+      else if(stock.entryValuePerShare === stock.details.marketValuePerShare) assetsBreakEven++;
+      else assetsInLoss++;
     });
   }
   
@@ -34,9 +36,9 @@ export const getAssetsInProfit = (stocks: IUserStock[], crypto: IUserCrypto[]) =
   }
 
   const totals = {
-    assetsInProfit: (100 / noOfAssets) * assetsInProfit,
-    assetsBreakEven: (100 / noOfAssets) * assetsBreakEven,
-    assetsInLoss: (100 / noOfAssets) * assetsInLoss
+    assetsInProfit: ((100 / noOfAssets) * assetsInProfit).toFixed(2),
+    assetsBreakEven: ((100 / noOfAssets) * assetsBreakEven).toFixed(2),
+    assetsInLoss: ((100 / noOfAssets) * assetsInLoss).toFixed(2)
   };
 
   return totals;

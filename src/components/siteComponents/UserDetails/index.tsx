@@ -23,7 +23,7 @@ const UserDetails = ({ user, profile }: IUserDetails) => {
     <div className='userDetailsContainer'>
       <h1>{user.given_name}&apos;s Portfolio</h1>
       <p>
-        Portfolio Value: <span className={upDown}>${totalInvestmentValue}</span>
+        Portfolio Value: <span className={upDown}>${totalInvestmentValue.toFixed(2)}</span>
       </p>
       <p>
         Largest Stock Hold: <span>{largestStockHold}</span>
