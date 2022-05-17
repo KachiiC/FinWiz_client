@@ -49,6 +49,7 @@ export const userApi = createApi({
       },
       invalidatesTags: [{ type: 'User', id: 'LIST' }]
     }),
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     userAddCommodity: builder.mutation<any, unknown>({
       query(asset) {
         return {
