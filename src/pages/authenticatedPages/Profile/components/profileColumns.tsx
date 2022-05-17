@@ -42,7 +42,7 @@ export const stocksColumns = [
   {
     title: 'Update Investment',
     dataIndex: 'updateInvestments',
-    render: (text, record) => <Link to={`/updateInvestment/stock/${record.symbol}`}>Update Stock</Link>,
+    render: (text, record) => <Link to={`/updateInvestment/stock/${record.symbol}/${record.numberOfShares}`}>Update Stock</Link>,
     align: 'center'
   },
 ];
@@ -85,7 +85,7 @@ export const cryptoColumns = [
   {
     title: 'Update Investment',
     dataIndex: 'updateInvestments',
-    render: (text, record) => <Link to={`/updateInvestment/crypto/${record.symbol}`}>Update Crypto</Link>,
+    render: (text, record) => <Link to={`/updateInvestment/crypto/${record.symbol}/${record.quantityOfCrypto}`}>Update Crypto</Link>,
     align: 'center'
   },
 ];

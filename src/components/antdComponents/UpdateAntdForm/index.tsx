@@ -22,27 +22,31 @@ const UpdateAntdForm = ({ data, params }: AntdFormProps) => {
   const onSubmit = (values) => {
     const { numberOfShares, marketValuePerShare, date, select } = values;
 
-    // format the data
-    const asset = {
-      boughtOrSold: select === 'buy' ? true : false,
-      symbol: params.symbol,
-      quantity: numberOfShares,
-      price: marketValuePerShare,
-      date: date._d,
-      sub: user?.sub,
-    };
+    console.log(numberOfShares);
+    if(select === 'buy' || select === 'sell' && numberOfShares <= params.quantity) {
 
-    console.log('asset from update form', asset);
-    console.log('user', user);
-    // TODO add in redux functions for all 4 cases 
-    if (params.asset === 'stock') {
-      userUpdateStock(asset);
-    } else if (params.asset === 'crypto') {
-      userUpdateCrypto(asset);
+      // format the data
+      const asset = {
+        boughtOrSold: select === 'buy' ? true : false,
+        symbol: params.symbol,
+        quantity: numberOfShares,
+        price: marketValuePerShare,
+        date: date._d,
+        sub: user?.sub,
+      };
+
+      // TODO add in redux functions for all 4 cases 
+      if (params.asset === 'stock') {
+        userUpdateStock(asset);
+      } else if (params.asset === 'crypto') {
+        userUpdateCrypto(asset);
+      }
+
+      // redirect
+      navigate('/profile');
+    } else {
+      alert('You cannot sell more stocks than you own');
     }
-
-    // redirect
-    navigate('/profile');
   };
 
   return (
