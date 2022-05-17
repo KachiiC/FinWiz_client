@@ -17,6 +17,14 @@
     color: colors.$textPrimary;
     margin: 10px 0;
   } 
+
+  .updateFormParam {
+    display: flex;
+    border: 1px solid colors.$textPrimary;
+    padding: 3px 11px;
+    margin: 0px 0px 25px;
+    border-radius: 2px;
+  }
 }
 
 .ant-form-item-control-input-content {
@@ -66,8 +74,10 @@
   box-shadow: colors.$container-shadow;
 }
 
+
 @media only screen and (max-width: 850px) {
   .formContainer {
     width: 90vw;
   }
 }
+

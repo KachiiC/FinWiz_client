@@ -9,7 +9,7 @@ import { AntdFormProps } from './AntdFormInterfaces';
 // REDUX
 import { userApi } from 'redux/store';
 
-const UpdateAntdForm = ({ data }: AntdFormProps) => {
+const UpdateAntdForm = ({ data, params }: any) => {
   const { useUserAddStockMutation, useUserAddCryptoMutation } = userApi;
   const [userAddStock] = useUserAddStockMutation();
   const [userAddCrypto] = useUserAddCryptoMutation();
@@ -19,21 +19,20 @@ const UpdateAntdForm = ({ data }: AntdFormProps) => {
 
   // Inside this function we call api service.
   const onSubmit = (values) => {
-    const { numberOfShares, marketValuePerShare, date, select } = values;
+    const { numberOfShares, marketValuePerShare, date } = values;
 
     // format the data
     const asset = {
-      // symbol: symbolVal, // get from params
+      symbol: params.symbol,
       quantity: numberOfShares,
       buyCost: marketValuePerShare,
       date: date._d,
       sub: user?.sub,
     };
 
-    // Instead of getting in an if statement we need to get from params
-    if (select === 'stock') {
+    if (params.asset === 'stock') {
       userAddStock(asset);
-    } else if (select === 'crypto') {
+    } else if (params.asset === 'crypto') {
       userAddCrypto(asset);
     }
 
@@ -50,6 +49,8 @@ const UpdateAntdForm = ({ data }: AntdFormProps) => {
         <div className='formContainer'>
           <div className='antdFormSpacing'>
             <h2 className='formTitle'>Update Investment</h2>
+            <p className='updateFormParam'>{params.asset.slice(0, 1).toUpperCase().concat(params.asset.slice(1))}</p>
+            <p className='updateFormParam'>{params.symbol}</p>
             <AntdFormFields data={data} />
             {AntdFormButton}
           </div>

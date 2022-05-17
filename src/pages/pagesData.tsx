@@ -73,13 +73,7 @@ export const authPages = [
   },
   {
     title: 'Update Crypto',
-    path: '/updateInvestment/crypto/:symbol',
-    element: <UpdateInvestments />,
-    showDefault: false,
-  },
-  {
-    title: 'Update Stock',
-    path: '/updateInvestment/stock/:symbol',
+    path: '/updateInvestment/:asset/:symbol',
     element: <UpdateInvestments />,
     showDefault: false,
   },
