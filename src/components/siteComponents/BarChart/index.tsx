@@ -22,13 +22,11 @@ const BarChart = ({ stocks, crypto }: IGenericChart) => {
         label: 'Entry Price',
         data: entryPrice,
         backgroundColor: 'rgb(10, 99, 132)',
-        stack: 'Stack 0',
       },
       {
         label: 'Market Price',
         data: marketPrice,
         backgroundColor: 'rgb(75, 192, 192)',
-        stack: 'Stack 0',
       },
     ],
   };
