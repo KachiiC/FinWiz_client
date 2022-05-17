@@ -33,9 +33,9 @@ const GraphContainer = ({ stocks, crypto, investmentValues }: IGraphContainer) =
             <BarChart stocks={stocks} crypto={crypto} />
           </div>
           <div className='graphDetails graphRight'>
-            <h1>Entry Price vs. Market Price</h1>
+            <h1>Average Buy Price vs. Market Price</h1>
             <p>{assetsInProfit}% of your assets are in profit.</p>
-            <p>{assetsBreakEven}% of your assets are in break even.</p>
+            <p>{assetsBreakEven}% of your assets are break even.</p>
             <p>{assetsInLoss}% of your assets are in loss.</p>
           </div>
         </div>
