@@ -47,6 +47,26 @@ export const userApi = createApi({
         };
       },
       invalidatesTags: [{ type: 'User', id: 'LIST' }]
+    }),
+    updateUserStock: builder.mutation<any, unknown>({
+      query(asset) {
+        return {
+          url: 'user-update-stock',
+          method: 'PATCH',
+          body: asset
+        };
+      },
+      invalidatesTags: [{ type: 'User', id: 'LIST' }]
+    }),
+    updateUserCrypto: builder.mutation<any, unknown>({
+      query(asset) {
+        return {
+          url: 'user-update-crypto',
+          method: 'PATCH',
+          body: asset
+        };
+      },
+      invalidatesTags: [{ type: 'User', id: 'LIST' }]
     })
   })
 });

@@ -7,12 +7,13 @@ import { useNavigate } from 'react-router-dom';
 // INTERFACES
 import { AntdFormProps } from './AntdFormInterfaces';
 // REDUX
-// import { userApi } from 'redux/store';
+import { userApi } from 'redux/store';
 
 const UpdateAntdForm = ({ data, params }: AntdFormProps) => {
   // Here we need to import redux services for buy and sell
-  // const { useUserAddStockMutation } = userApi;
-  // const [userAddStock] = useUserAddStockMutation();
+  const { useUpdateUserCryptoMutation, useUpdateUserStockMutation } = userApi;
+  const [userUpdateCrypto] = useUpdateUserCryptoMutation();
+  const [userUpdateStock] = useUpdateUserStockMutation();
 
   const { user } = useAuth0();
   const navigate = useNavigate();
@@ -26,26 +27,18 @@ const UpdateAntdForm = ({ data, params }: AntdFormProps) => {
       boughtOrSold: select === 'buy' ? true : false,
       symbol: params.symbol,
       quantity: numberOfShares,
-      buyCost: marketValuePerShare,
+      price: marketValuePerShare,
       date: date._d,
       sub: user?.sub,
     };
 
     console.log('asset from update form', asset);
-
+    console.log('user', user);
     // TODO add in redux functions for all 4 cases 
     if (params.asset === 'stock') {
-      if (select === 'buy') {
-        // userBuyStock(asset);
-      } else if (select === 'sell') {
-        // userSellStock(asset);
-      }
+      userUpdateStock(asset);
     } else if (params.asset === 'crypto') {
-      if (select === 'buy') {
-        // userBuyCrypto(asset);
-      } else if (select === 'sell') {
-        // userSellCrypto(asset);
-      }
+      userUpdateCrypto(asset);
     }
 
     // redirect
