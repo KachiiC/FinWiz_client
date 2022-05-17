@@ -109,3 +109,82 @@ export const browseStockColumns = [
     reponsive: ['lgmarketCap'],
   },
 ];
+
+export const browseCommoditiesColumns = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+  },
+  {
+    title: 'Price',
+    dataIndex: 'last',
+    sorter: (a, b) => a.last - b.last,
+    render: (text) => `$${text}`,
+    align: 'center'
+  },
+  {
+    title: 'Change',
+    dataIndex: 'change',
+    sorter: (a, b) => a.change - b.change,
+    render: (text) => positiveNegative(text),
+    align: 'center'
+  },
+  {
+    title: 'Change (%)',
+    dataIndex: 'change_percentage',
+    sorter: (a, b) => a.change_percentage - b.change_percentage,
+    render: (text) => positiveNegative(text, '%'),
+    align: 'center'
+  },
+  {
+    title: 'Last Close',
+    dataIndex: 'last_close',
+    sorter: (a, b) => a.last_close - b.last_close,
+    render: (text) => `$${text}`,
+    align: 'center'
+  },
+  {
+    title: 'High',
+    dataIndex: 'high',
+    sorter: (a, b) => a.high - b.high,
+    render: (text) => `$${text}`,
+    align: 'center'
+  },
+  {
+    title: 'Low',
+    dataIndex: 'low',
+    sorter: (a, b) => a.low - b.low,
+    render: (text) => `$${text}`,
+    align: 'center'
+  },
+  {
+    title: 'Type',
+    dataIndex: 'type',
+    align: 'center',
+    filters: [
+      {
+        text: 'Metals',
+        value: 'metals'
+      },
+      {
+        text: 'Softs',
+        value: 'softs'
+      },
+      {
+        text: 'Meats',
+        value: 'meats'
+      },
+      {
+        text: 'Energy',
+        value: 'energy'
+      },
+      {
+        text: 'Grains',
+        value: 'grains'
+      },
+    ],
+    onFilter: (value, record) => record.type === value,
+    filterSearch: true,
+
+  },
+];

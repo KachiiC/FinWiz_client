@@ -8,7 +8,7 @@ import '../Browse.scss';
 // HELPERS
 import { useEffect, useState } from 'react';
 // SERVICES
-import { stockListServices } from 'services/investment';
+import { investmentListServices } from 'services/investment';
 import AntdTabs from 'components/antdComponents/AntdTabs';
 
 const StockBrowse = () => {
@@ -23,7 +23,7 @@ const StockBrowse = () => {
   const { gainers, losers, mostActive } = stockData;
 
   useEffect(() => {
-    stockListServices()
+    investmentListServices('stock')
       .then((res) => {
         const dataTypes = Object.keys(res);
         dataTypes.forEach((key) => {

@@ -10,51 +10,58 @@ import StockBrowse from './default/Browse/components/StockBrowse';
 import AddInvestments from './authenticatedPages/AddInvestment';
 import Profile from './authenticatedPages/Profile';
 import UpdateInvestments from './authenticatedPages/UpdateInvestment';
+import CommoditiesBrowse from './default/Browse/components/CommoditiesBrowse';
 
 // DEFAULT PAGES
 export const defaultPages = [
   {
+    title: 'About',
+    path: '/about',
+    element: <About />,
+    showDefault: true,
+  },
+  {
     title: 'Contact',
     path: '/contact',
     element: <Contact />,
-    showDefault: true
+    showDefault: true,
   },
   {
     title: 'Crypto Browse',
     path: '/browse/crypto',
     element: <CryptoBrowse />,
-    showDefault: true
+    showDefault: true,
+  },
+  {
+    title: 'Commodities Browse',
+    path: '/browse/commodities',
+    element: <CommoditiesBrowse />,
+    showDefault: true,
   },
   {
     title: 'Details',
     path: '/details/:symbol',
     element: <Details />,
-    showDefault: true
+    showDefault: true,
   },
   {
     title: 'Landing',
     path: '/',
     element: <Landing />,
-    showDefault: true
+    showDefault: true,
   },
   {
     title: 'News',
     path: '/news',
     element: <News />,
-    showDefault: true
+    showDefault: true,
   },
   {
     title: 'Stock Browse',
     path: '/browse/stock',
     element: <StockBrowse />,
-    showDefault: true
+    showDefault: true,
   },
-  {
-    title: 'About',
-    path: '/about',
-    element: <About />,
-    showDefault: true
-  }
 ];
 
 // AUTH PAGES

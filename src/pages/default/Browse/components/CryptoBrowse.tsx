@@ -11,42 +11,34 @@ import AntdTabs from 'components/antdComponents/AntdTabs';
 import { useNavigate } from 'react-router-dom';
 
 const CryptoBrowse = () => {
-
   const navigate = useNavigate();
- 
-  const [topData, setTopData] = useState([]);
-  const [oldestData, setOldestData] = useState([]);
-  const [newestData, setNewestData] = useState([]);
 
+  const [cryptoData, setCryptoData] = useState({
+    top: [],
+    oldest: [],
+    newest: [],
+  });
+
+  const { top, oldest, newest } = cryptoData;
   useEffect(() => {
-    investmentListServices('crypto', 'top')
-      .then((res) => setTopData(res))
-      .catch((err) => console.log(err));
-    investmentListServices('crypto', 'oldest')
-      .then((res) => setOldestData(res))
-      .catch((err) => console.log(err));
-    investmentListServices('crypto', 'newest')
-      .then((res) => setNewestData(res))
+    investmentListServices('crypto')
+      .then((res) => setCryptoData(res))
       .catch((err) => console.log(err));
   }, []);
-
 
   const cryptoTableTabs = [
     {
       title: 'Top',
-      data: topData,
-      columns: browseCryptoColumns,
+      data: top,
     },
     {
       title: 'Oldest',
-      data: oldestData,
-      columns: browseCryptoColumns,
+      data: oldest,
     },
     {
       title: 'Newest',
-      data: newestData,
-      columns: browseCryptoColumns,
-    }
+      data: newest,
+    },
   ];
 
   const rowLogic = (record) => {
@@ -56,10 +48,10 @@ const CryptoBrowse = () => {
   };
 
   const tabsData = cryptoTableTabs.map((inv) => {
-    const { columns, data, title } = inv;
+    const { data, title } = inv;
     return {
       title,
-      content: <AntdTable data={data} columns={columns} row={rowLogic} />,
+      content: <AntdTable data={data} columns={browseCryptoColumns} row={rowLogic} />,
     };
   });
 
