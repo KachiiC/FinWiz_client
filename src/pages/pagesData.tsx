@@ -9,6 +9,7 @@ import StockBrowse from './default/Browse/components/StockBrowse';
 // AUTH PAGES
 import AddInvestments from './authenticatedPages/AddInvestment';
 import Profile from './authenticatedPages/Profile';
+import UpdateInvestments from './authenticatedPages/UpdateInvestment';
 
 // DEFAULT PAGES
 export const defaultPages = [
@@ -68,6 +69,18 @@ export const authPages = [
     title: 'Profile',
     path: '/profile',
     element: <Profile />,
+    showDefault: false,
+  },
+  {
+    title: 'Update Crypto',
+    path: '/updateInvestment/crypto/:symbol',
+    element: <UpdateInvestments />,
+    showDefault: false,
+  },
+  {
+    title: 'Update Stock',
+    path: '/updateInvestment/stock/:symbol',
+    element: <UpdateInvestments />,
     showDefault: false,
   },
 ];

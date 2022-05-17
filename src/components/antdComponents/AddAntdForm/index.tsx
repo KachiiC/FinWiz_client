@@ -13,7 +13,7 @@ import AutoCompleteForm from './components/AutoCompleteForm';
 import { userApi } from 'redux/store';
 import { useState } from 'react';
 
-const AntdForm = ({ data }: AntdFormProps) => {
+const AddAntdForm = ({ data }: AntdFormProps) => {
   const { useUserAddStockMutation, useUserAddCryptoMutation } = userApi;
   const [userAddStock] = useUserAddStockMutation();
   const [userAddCrypto] = useUserAddCryptoMutation();
@@ -79,4 +79,4 @@ const AntdForm = ({ data }: AntdFormProps) => {
   );
 };
 
-export default AntdForm;
+export default AddAntdForm;
