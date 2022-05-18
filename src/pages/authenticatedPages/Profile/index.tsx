@@ -29,7 +29,6 @@ const Profile = () => {
     });
 
     if (!profileLoading) profile = userProfile;
-    console.log(profile);
   }
   
   // get stocks and crypto values or set as empty array
@@ -86,7 +85,9 @@ const Profile = () => {
         />
       )}
       {/* News */}
-      <UserNewsColumnData />
+      {profile &&
+      <UserNewsColumnData profile={profile} />
+      }
     </>
   );
 };

@@ -10,7 +10,7 @@ import Icons from 'assets/icons';
 // INTERFACES
 import { AuthButtonProps } from './NavbarInterfaces';
 
-const { LogoutImg, LoginImg, BrowseImg } = Icons;
+const { LogoutImg, LoginImg, BrowseImg, SiteLogo } = Icons;
 
 const menuStyle = {
   backgroundColor: '#09111A',
@@ -18,9 +18,11 @@ const menuStyle = {
 };
 
 export const NavLogoIcon = () => (
-  <Link to='/'>
-    <h1 className='logo'>FinWiz</h1>
-  </Link>
+  <div className='nav-logo'>
+    <Link to='/'>
+      <img src={SiteLogo} alt='site-logo' className='nav-logo-img' />
+    </Link>
+  </div>
 );
 
 export const NavbarDropdown = () => {
