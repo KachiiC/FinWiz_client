@@ -80,6 +80,16 @@ export const userApi = createApi({
         };
       },
       invalidatesTags: [{ type: 'User', id: 'LIST' }]
+    }),
+    userUpdateCommodity: builder.mutation<IUpdateUserAsset, unknown>({
+      query(asset) {
+        return {
+          url: 'user-update-commodity',
+          method: 'PATCH',
+          body: asset
+        };
+      },
+      invalidatesTags: [{ type: 'User', id: 'LIST' }]
     })
   })
 });
