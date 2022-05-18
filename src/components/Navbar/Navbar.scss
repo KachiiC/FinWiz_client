@@ -7,6 +7,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
   height: spacing.$desktopHeaderHeight;
   border-bottom: colors.$headerFooterBorder; 
   box-shadow: colors.$headerShadow;
@@ -19,11 +22,15 @@
   align-items: center;
 }
 
-.logo {
+.nav-logo {
   color: colors.$textHeadline;
   line-height: 20px;
   font-size: fonts.$sizeLogo;
   margin: 0;
+}
+
+.nav-logo-img {
+  height: 70px;
 }
 
 .navLinks {

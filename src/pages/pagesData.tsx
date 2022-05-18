@@ -11,6 +11,8 @@ import AddInvestments from './authenticatedPages/AddInvestment';
 import Profile from './authenticatedPages/Profile';
 import UpdateInvestments from './authenticatedPages/UpdateInvestment';
 import CommoditiesBrowse from './default/Browse/components/CommoditiesBrowse';
+import CryptoDetails from './default/Details/components/CryptoDetails';
+import ForexBrowse from './default/Browse/components/ForexBrowse';
 
 // DEFAULT PAGES
 export const defaultPages = [
@@ -33,6 +35,12 @@ export const defaultPages = [
     showDefault: true,
   },
   {
+    title: 'Crypto Details',
+    path: '/crypto-details/:symbol',
+    element: <CryptoDetails />,
+    showDefault: true,
+  },
+  {
     title: 'Commodities Browse',
     path: '/browse/commodities',
     element: <CommoditiesBrowse />,
@@ -42,6 +50,12 @@ export const defaultPages = [
     title: 'Details',
     path: '/details/:symbol',
     element: <Details />,
+    showDefault: true,
+  },
+  {
+    title: 'Forex',
+    path: '/browse/forex',
+    element: <ForexBrowse />,
     showDefault: true,
   },
   {

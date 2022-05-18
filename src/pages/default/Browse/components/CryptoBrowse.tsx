@@ -43,7 +43,7 @@ const CryptoBrowse = () => {
 
   const rowLogic = (record) => {
     return {
-      onClick: () => navigate(`/details/${record.symbol}`),
+      onClick: () => navigate(`/crypto-details/${record.symbol}`),
     };
   };
 

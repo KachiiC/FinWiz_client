@@ -39,6 +39,10 @@ export const browseDropdown = [
   },
   {
     label: <Link to='/browse/commodities'>Commodities</Link>,
-    key: 'commodities ',
+    key: 'commodities',
+  },
+  {
+    label: <Link to='/browse/forex'>Forex</Link>,
+    key: 'forex',
   },
 ];
