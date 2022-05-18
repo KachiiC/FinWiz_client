@@ -1,29 +1,28 @@
 import { SingleTestimonyProps } from '../AboutInterfaces';
+import Images from 'assets/images';
+
+const { Omar, Gabe, Arisa, Ray } = Images;
 
 const aboutTestimonyData = [
   {
-    quote:
-      'Calvin: You know sometimes when I\'m talking, my words can\'t keep up with my thoughts... I wonder why we think faster than we speak. Hobbes: Probably so we can think twice.\'',
-    image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg',
-    person: 'Omar',
+    quote: 'When i\'m in Dubai, I can check my investments on FinWiz in real time, it\'s quick, free and easy to use!',
+    image: Omar,
+    person: 'Omar from Dubai',
   },
   {
-    quote:
-      'Thank you. before I begin, I\'d like everyone to notice that my report is in a professional, clear plastic binder...When a report looks this good, you know it\'ll get an A. That\'s a tip kids. Write it down.',
-    image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample27.jpg',
-    person: 'Leonardo',
+    quote: 'Finwiz is awesome, it puts the the fine ass in finance, I wish people told me about using it sooner!',
+    image: Gabe,
+    person: 'Babe Levin',
   },
   {
-    quote:
-      'My behaviour is addictive functioning in a disease process of toxic co-dependency. I need holistic healing and wellness before I\'ll accept any responsibility for my actions.',
-    image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg',
-    person: 'Tim Bread',
+    quote: 'I refered my friend Nick to FinWiz, it\'s been a week I\'m still waiting on the referral bonus that I was promised. ',
+    image: Arisa,
+    person: 'Queen Arisa',
   },
   {
-    quote:
-      'My behaviour is addictive functioning in a disease process of toxic co-dependency. I need holistic healing and wellness before I\'ll accept any responsibility for my actions.',
-    image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg',
-    person: 'Tim Bread',
+    quote: 'In a world where everything will eventually turn into crabs, this is the one thing I trust will stay the same!',
+    image: Ray,
+    person: 'Rayomd Krab',
   },
 ];
 

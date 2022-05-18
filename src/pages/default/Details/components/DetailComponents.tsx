@@ -1,6 +1,7 @@
 // COMPONENTS
 import {
   CompanyProfile,
+  FundamentalData,
   SingleTicker,
   SymbolOverview,
   TechnicalAnalysis,
@@ -27,6 +28,14 @@ export const StockChart = ({ symbol }: StockDetailProps) => (
   <div className='stock-chart-widget'>
     <div className='stock-widget-container'>
       <SymbolOverview symbols={[[symbol || '']]} width='100%' colorTheme='dark' />
+    </div>
+  </div>
+);
+
+export const StockFundamental = ({ symbol }: StockDetailProps) => (
+  <div className='stock-chart-widget'>
+    <div className='stock-widget-container'>
+      <FundamentalData colorTheme='dark' width={'100%'} symbol={symbol} />
     </div>
   </div>
 );

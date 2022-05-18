@@ -1,34 +1,37 @@
+import Images from 'assets/images';
+
 interface SingleProductProps {
   title: string;
   description: string;
   image: string;
 }
 
+const { Kachi, Nick, Tom, Silky } = Images;
+
 const teamData = [
   {
-    title: 'Kachi',
-    description: 'Full Stack',
-    image: 'https://picsum.photos/500/300?random=1',
+    title: 'Kachi Cheong',
+    description: 'Full Stack role, designed the data structure, api integrations and models',
+    image: Kachi,
   },
   {
-    title: 'Nick',
-    description: 'Front End',
-    image: 'https://picsum.photos/500/300?random=1',
+    title: 'Nick Allen',
+    description: 'Front End, desgined the UX, page structures and visual design.',
+    image: Nick,
   },
   {
-    title: 'Silky',
-    description: 'Backend',
-    image: 'https://picsum.photos/500/300?random=1',
+    title: 'Silky Ng',
+    description: 'Backend Developer, designed the schemas, controllers and ',
+    image: Tom,
   },
   {
-    title: 'Tom',
-    description: 'Front End',
-    image: 'https://picsum.photos/500/300?random=1',
+    title: 'Tom Broad',
+    description: 'Front End, designed the logic and functionality of the pages.',
+    image: Silky,
   },
 ];
 
 const SingleProductCard = ({ title, description, image }: SingleProductProps) => {
-
   return (
     <div className='team-list-card'>
       <figure className='team-list-card-thumb'>

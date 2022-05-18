@@ -8,6 +8,10 @@ import Kachi from './imagesList/Kachi.png';
 import Silky from './imagesList/Silky.png';
 import Laptop from './imagesList/laptop.jpg';
 import ScreenShot from './imagesList/screenshot.png';
+import Gabe from './imagesList/gabe.png';
+import Omar from './imagesList/omar.png';
+import Arisa from './imagesList/arisa.png';
+import Ray from './imagesList/ray.png';
 
 const Images = {
   PieChart,
@@ -16,10 +20,14 @@ const Images = {
   Laptop,
   ScreenShot,
   // TEAM IMAGES
+  Arisa,
+  Ray,
   Kachi,
   Nick,
   Silky,
-  Tom
+  Tom,
+  Gabe,
+  Omar
 };
 
 export default Images;
