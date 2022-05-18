@@ -10,7 +10,7 @@ import Icons from 'assets/icons';
 // INTERFACES
 import { AuthButtonProps } from './NavbarInterfaces';
 
-const { LogoutImg, LoginImg, BrowseImg, SiteLogo } = Icons;
+const { LogoutImg, LoginImg, BrowseImg, SiteLogoSvg } = Icons;
 
 const menuStyle = {
   backgroundColor: '#09111A',
@@ -20,7 +20,7 @@ const menuStyle = {
 export const NavLogoIcon = () => (
   <div className='nav-logo'>
     <Link to='/'>
-      <img src={SiteLogo} alt='site-logo' className='nav-logo-img' />
+      <img src={SiteLogoSvg} alt='site-logo' className='nav-logo-img' />
     </Link>
   </div>
 );

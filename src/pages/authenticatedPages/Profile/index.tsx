@@ -28,7 +28,7 @@ const Profile = () => {
       pollingInterval: 300000,
     });
 
-    if (!profileLoading) profile = userProfile;
+    if (!profileLoading) profile = userProfile; console.log(profile);
   }
   
   // get stocks and crypto values or set as empty array
