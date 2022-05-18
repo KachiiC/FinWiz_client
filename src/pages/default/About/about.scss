@@ -1,177 +1,304 @@
 @use 'sassVariables/colors.scss' as colors;
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
 
-::-webkit-scrollbar {
-  display: none;
-}
-.aboutHeader {
-  background-color: colors.$backgroundDark2;
-  width: 100%;
-  height: 90vh;
-
-  @keyframes aboutBox{
-    10%  {background-color: colors.$backgroundDark1}
-    35%   {background-color: colors.$backgroundDark2}
-    60%  {background-color: colors.$backgroundDark3}
-    85%  {background-color: colors.$backgroundDark2}
-    100% {background-color: colors.$backgroundDark1}
-  }
-
-  .aboutHeaderBox {
-    height: 100%;
-    display: flex;
-    justify-content: left;
-    padding-top: 20vh;
-    padding-left: 20vw;
-    background-color: colors.$backgroundDark1;
-    animation-name: aboutBox;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-  }
+.about-container {
+  // font-family: 'PT Sans Caption', "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  font-size: 3vh;
 }
 
-
-.aboutContainer {
-  border-top: 1px solid white;
-  display: grid;
-  grid-template-rows: repeat(6 1fr);
-  width: 100vw;
-  background-color: colors.$backgroundDark1;
-  .aboutTopLayer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    color: colors.$textPrimary;
-    padding: 0px;
-    height: 45vh;
-    .aboutImg {
-      display: inline-block;
-      min-width: 100%;
-      object-fit: cover;
-      max-height: 100%;
-      min-height: 100%;
-      overflow: hidden;
-    }
-    .aboutImgRight {
-      max-width: 100%;
-      object-fit: cover;
-      min-height: 100%;
-      overflow: hidden;
-    }
-    .aboutText {
-      justify-self: flex-end;
-      align-self: center;
-    }
-    .aboutHeading {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 30px;
-      color: colors.$textPrimary;
-      background-color: colors.$backgroundDark1;
-    }
-    .aboutHeadingLeft {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 30px;
-      color: colors.$textPrimary;
-    }
-  }
-
-  .aboutBottomLayer {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    min-height: 400px;
-    justify-content: center;
-    align-items: center;
-    background-color: colors.$backgroundDark2;
-    border-top: 1px solid white;
-    .aboutTopLayerDescription {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      h3 {
-        color: colors.$textSecondary;
-      }
-    }
-    .aboutButtonContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-top: 1px solid white;
-      height: 100%;
-      .aboutTeamButton {
-        background-color: transparent;
-        border: 1px solid white;
-        text-align: center;
-        transition: all .3s cubic-bezier(.645,.045,.355,1);
-        height: 32px;
-        width: fit-content;
-        padding: 4px 15px;
-        font-size: 14px;
-        border-radius: 2px;
-        line-height: 1.5715;
-        position: relative;
-        font-weight: 400;
-        color: colors.$textPrimary;
-      }
-      .aboutTeamButton:hover {
-        box-shadow: colors.$container-shadow;
-        cursor: pointer;
-      }
-    }
-  }
+.about-hero-header {
+  margin: auto 0px;
+  padding: 50px 20px;
 }
 
-.aboutTeamContainer {
+.about-hero {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 90vh;
+  padding: 1em;
+  box-sizing: border-box;
+  color: white;
+  background: url(https://images.unsplash.com/photo-1500417148159-68083bd7333a) center center no-repeat;
+  background-size: cover;
+  cursor: default;
+}
+
+.about-hero-title {
+  max-width: 70vw;
+  margin: 0;
+  font-size: 60px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.about-hero-footer {
+  display: flex;
+  margin: 0px 20px 20px;
+}
+
+.about-button {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border: .1em solid white;
+  cursor: pointer;
+}
+
+.about-button-primary {
+  color: black;
+  background-color: white;
+}
+
+.about-button-primary a,
+.about-button a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 640px) {
+  .about-hero-title {
+      font-size: 40px;
+  }
+}
+
+.about-testimony-container {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 30px;
-  .aboutTeamInnerContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 1000px;
-    border: 1px solid white;
-    padding: 30px;
-    margin: 30px;
-  }
-}
-.teamImg {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
+  flex-flow: wrap;
+  margin: 0;
+  padding: 50px;
+  height: 100%;
 }
 
-@media only screen and (max-width: 1400px) {
-  .aboutTopLayer {
-    grid-template-columns: 1fr !important;
-    grid-template-rows: 1fr 1fr ;
-    .aboutImg {
-    display: none !important;
-    }
-    .aboutHeading {
-      display: none !important;
-    }
+.about-testimony {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 25px;
+    min-width: 220px;
+    max-width: 280px;
+    width: 100%;
+    color: #333;
+    text-align: left;
+    box-shadow: none !important;
+}
+
+.about-testimony * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+
+.about-testimony img {
+    max-width: 100%;
+    vertical-align: middle;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    margin: 40px 0 0 10px;
+}
+
+.about-testimony blockquote {
+    display: block;
+    border-radius: 8px;
+    position: relative;
+    background-color: #09111A;
+    color: #ffffff;
+    padding: 25px 50px 30px 50px;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.6em;
+    font-style: italic;
+}
+
+.about-testimony blockquote:before,
+.about-testimony blockquote:after {
+    font-family: 'FontAwesome';
+    content: "\201C";
+    position: absolute;
+    font-size: 50px;
+    opacity: 0.3;
+    font-style: normal;
+}
+
+.about-testimony blockquote:before {
+    top: 25px;
+    left: 20px;
+}
+
+.about-testimony blockquote:after {
+    content: "\201D";
+    right: 20px;
+    bottom: 0;
+}
+
+.about-testimony-arrow {
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 0 solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid #09111A;
+    margin: 0;
+    position: absolute;
+}
+
+.about-testimony-author {
+    position: absolute;
+    bottom: 45px;
+    padding: 0 10px 0 120px;
+    margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+}
+
+.about-testimony-author h5 {
+    opacity: 0.8;
+    margin: 0;
+    font-weight: 800;
+}
+
+.about-testimony-author h5 span {
+    font-weight: 400;
+    text-transform: none;
+    padding-left: 5px;
+}
+
+.about-team-container {
+  text-align: center;
+}
+
+.about-team-container h1 {
+  font-size: 40px;
+}
+
+.team-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  animation: fadeIn 2s;
+}
+
+.team-list-card {
+  width: 325px;
+  margin: 20px 10px;
+  z-index: 5;
+  cursor: grab;
+}
+
+.team-list-card:hover .team-list-card-caption {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.team-list-card:hover img {
+  transform: translateY(-10px);
+}
+
+.team-list-card:hover .team-list-card-thumb::after {
+  top: 0;
+}
+
+.team-list-card:hover .team-list-card-caption p {
+  margin-top: 20px;
+}
+
+.team-list-card-thumb {
+  position: relative;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.team-list-card-thumb::after {
+  position: absolute;
+  top: 0;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 40%, rgba(255, 255, 255, 0) 100%);
+  transition: 0.3s;
+}
+
+.team-list-container img {
+  transition: 0.5s ease-in-out;
+}
+
+.team-list-card-caption {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  padding: 0 20px;
+  color: white;
+  transform: translateY(-50%);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.team-list-card-caption h2 {
+  display: -webkit-box;
+  max-height: 85px;
+  overflow: hidden;
+  font-size: 23px;
+  color: white;
+  line-height: 28px;
+  text-shadow: 0px 1px 5px black;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.team-list-card-caption p {
+  display: -webkit-box;
+  max-height: 150px;
+  margin: 20px 0;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  transition: 0.5s ease-in-out;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+@media (min-width: 1024px) {
+  .team-list-card-thumb {
+    max-height: 500px;
+  }
+
+  .team-list-card-thumb::after {
+    top: calc(100% - 140px);
+  }
+
+  .team-list-card-caption {
+    top: calc(100% - 110px);
+    transform: unset;
+  }
+
+  .team-list-card-caption p {
+    margin: 80px 0;
   }
 }
 
-@media only screen and (max-width: 1120px) {
-  .aboutTeamContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    width: 400px;
-    .aboutTeamInnerContainer {
-      display: flex;
-      align-items: space-between;
-      width: 400px;
-      border: 1px solid white;
-      padding: 30px;
-      margin: 30px;
-      height: 50vh;
-    }
+@media (max-width: 1040px) {
+  .team-list-card {
+    width: 425px;
+    margin: 20px 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .team-list-card {
+    max-width: 600px;
+    width: 90vw;
   }
 }
