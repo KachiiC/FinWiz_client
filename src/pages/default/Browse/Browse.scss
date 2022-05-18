@@ -3,6 +3,7 @@
 }
 
 .single-browse-tab {
+  animation: fadeIn 2s;
   color: white;
   border: 1px solid white;
   border-bottom: none;
@@ -10,4 +11,9 @@
   cursor: pointer;
   width: 200px;
   text-align: center;
+}
+
+.browse-ticker {
+  pointer-events: none !important;
+  cursor: default !important;
 }

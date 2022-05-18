@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 // COMPONENTS
 import AntdTable from 'components/antdComponents/AntdTable';
 // DATA
-import { browseCryptoColumns } from '../BrowseData';
+import { browseCryptoColumns, cryptoTickerData } from '../BrowseData';
 // SERVICES
 import { investmentListServices } from 'services/investment';
 // STYLES
 import '../Browse.scss';
 import AntdTabs from 'components/antdComponents/AntdTabs';
 import { useNavigate } from 'react-router-dom';
+import BrowseTicker from './BrowseTicker';
 
 const CryptoBrowse = () => {
   const navigate = useNavigate();
@@ -56,11 +57,14 @@ const CryptoBrowse = () => {
   });
 
   return (
-    <div className='genericContainer'>
-      <div className='genericInnerContainer'>
-        <AntdTabs data={tabsData} />
+    <>
+      <BrowseTicker data={cryptoTickerData} />
+      <div className='genericContainer'>
+        <div className='genericInnerContainer'>
+          <AntdTabs data={tabsData} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

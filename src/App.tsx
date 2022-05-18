@@ -10,6 +10,7 @@ import Navbar from 'components/Navbar';
 import Spinner from 'components/antdComponents/AntdSpinner';
 // STYLES
 import 'sassVariables/App.scss';
+import { ScrollToTop } from 'helpers/pageHelpers';
 
 const App = () => {
   // check if user is authenticated
@@ -23,6 +24,7 @@ const App = () => {
   return (
     <ApiProvider api={userApi}>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <main>{app}</main>
         <Footer />

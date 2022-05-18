@@ -5,6 +5,7 @@
 .about-container {
   // font-family: 'PT Sans Caption', "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
   font-size: 16px;
+  animation: fadeIn 2s;
 }
 
 .about-hero-header {
@@ -73,39 +74,40 @@
 }
 
 .about-testimony {
-    font-family: 'Raleway', Arial, sans-serif;
+    border-radius: 20px;
     position: relative;
-    overflow: hidden;
     margin: 10px 25px;
     min-width: 220px;
     max-width: 280px;
     width: 100%;
     color: #333;
     text-align: left;
-    box-shadow: none !important;
 }
 
 .about-testimony * {
-    -webkit-box-sizing: border-box;
+    -webkit-box-sizing: border-box;    
     box-sizing: border-box;
     -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
     transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 }
 
 .about-testimony img {
+    box-shadow: colors.$container-shadow;
     max-width: 100%;
     vertical-align: middle;
     height: 90px;
     width: 90px;
     border-radius: 50%;
     margin: 40px 0 0 10px;
+    border: 1px solid white;
 }
 
 .about-testimony blockquote {
+    box-shadow: colors.$container-shadow;
     display: block;
-    border-radius: 8px;
+    border-radius: 25px;
     position: relative;
-    background-color: #09111A;
+    background-color: #002d60;
     color: #ffffff;
     padding: 25px 50px 30px 50px;
     font-size: 0.8em;
@@ -141,9 +143,9 @@
     top: 100%;
     width: 0;
     height: 0;
-    border-left: 0 solid transparent;
+    border-left: 1px solid transparent;
     border-right: 25px solid transparent;
-    border-top: 25px solid #09111A;
+    border-top: 25px solid #002d60;
     margin: 0;
     position: absolute;
 }
@@ -172,11 +174,13 @@
 }
 
 .about-team-container {
+  padding: 50px 0px 20px;
   text-align: center;
 }
 
 .about-team-container h1 {
   font-size: 40px;
+  font-weight: 900;
 }
 
 .team-list-container {
@@ -189,6 +193,7 @@
 }
 
 .team-list-card {
+  box-shadow: colors.$container-shadow;
   width: 325px;
   margin: 20px 10px;
   z-index: 5;

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-
-const { Laptop, ScreenShot } = Images;
 import Images from 'assets/images';
+
+const { Laptop, ScreenShot, Kachi, Nick, Tom, Silky } = Images;
 
 export const AboutDesc1 = {
   title: 'Browse trending investments now!',
@@ -15,3 +15,26 @@ export const AboutDesc2 = {
   image: Laptop,
   button: <a href=''>Start Now</a>,
 };
+
+export const teamData = [
+  {
+    title: 'Kachi Cheong',
+    description: 'Full Stack Developer: designed the data structures, api integrations and models',
+    image: Kachi,
+  },
+  {
+    title: 'Nick Allen',
+    description: 'Frontend Developer: designed the UX, page structures and visual design.',
+    image: Nick,
+  },
+  {
+    title: 'Silky Ng',
+    description: 'Backend Developer: designed the schemas, controllers and routes.',
+    image: Silky,
+  },
+  {
+    title: 'Tom Broad',
+    description: 'Frontend Developer: created the logic and designed the page functionalities.',
+    image: Tom,
+  },
+];

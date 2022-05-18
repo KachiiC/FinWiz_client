@@ -2,7 +2,7 @@
 import AntdTable from 'components/antdComponents/AntdTable';
 import { useNavigate } from 'react-router-dom';
 // DATA
-import { browseStockColumns } from '../BrowseData';
+import { browseStockColumns, stockTickerData } from '../BrowseData';
 // STYLES
 import '../Browse.scss';
 // HELPERS
@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 // SERVICES
 import { investmentListServices } from 'services/investment';
 import AntdTabs from 'components/antdComponents/AntdTabs';
+import BrowseTicker from './BrowseTicker';
 
 const StockBrowse = () => {
   const navigate = useNavigate();
@@ -66,13 +67,17 @@ const StockBrowse = () => {
       content: <AntdTable data={data} columns={browseStockColumns} row={rowLogic} />,
     };
   });
+  
 
   return (
-    <div className='genericContainer'>
-      <div className='genericInnerContainer'>
-        <AntdTabs data={tabsData} />
+    <>
+      <BrowseTicker data={stockTickerData} />
+      <div className='genericContainer'>
+        <div className='genericInnerContainer'>
+          <AntdTabs data={tabsData} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

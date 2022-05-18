@@ -17,13 +17,13 @@ export const navMenuList = [
     authentication: true,
   },
   {
-    title: 'About',
-    icon: AboutImg,
+    title: 'News',
+    icon: NewsImg,
     authentication: false,
   },
   {
-    title: 'News',
-    icon: NewsImg,
+    title: 'About',
+    icon: AboutImg,
     authentication: false,
   },
 ];

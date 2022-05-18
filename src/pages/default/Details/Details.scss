@@ -79,3 +79,7 @@
         width: 80%;
     }
 }
+
+#tradingview_widget_wrapper div:nth-child(2) {
+    display: none !important;
+}
