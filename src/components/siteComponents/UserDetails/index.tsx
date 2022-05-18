@@ -1,5 +1,3 @@
-// HELPERS
-import { calcProfits } from 'helpers/graphHelpers';
 // INTERFACES
 import { IUserDetails } from './UserDetailsInterfaces';
 // STYLES
@@ -7,14 +5,7 @@ import './UserDetails.scss';
 
 const UserDetails = ({ user, profile }: IUserDetails) => {
 
-  const { investmentValues, totalInvestmentValue, stocks, cryptos } = profile;
-
-  let upDown = '';
-
-  if (investmentValues.length > 1) {
-    const { status } = calcProfits(investmentValues);
-    upDown = status === 'increased' ? 'positive-amount' : 'negative-amount';
-  }
+  const { totalInvestmentValue, stocks, cryptos } = profile;
 
   const largestStockHold = stocks ? stocks?.highestInvestmentStock : 'N/A';
   const largestCryptoHold = cryptos ? cryptos?.highestInvestedCurrency : 'N/A';
@@ -23,7 +14,7 @@ const UserDetails = ({ user, profile }: IUserDetails) => {
     <div className='userDetailsContainer'>
       <h1>{user.given_name}&apos;s Portfolio</h1>
       <p>
-        Portfolio Value: <span className={upDown}>${totalInvestmentValue.toFixed(2)}</span>
+        Portfolio Value: <span>${totalInvestmentValue.toFixed(2)}</span>
       </p>
       <p>
         Largest Stock Hold: <span>{largestStockHold}</span>

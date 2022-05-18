@@ -10,6 +10,7 @@ import LogoutImg from './iconsList/logout.svg';
 import NewsImg from './iconsList/news.svg';
 import ProfileImg from './iconsList/profile.svg';
 import SiteLogo from './iconsList/finwiz-logo.png';
+import SiteLogoSvg from './iconsList/finwiz_logo.svg';
 
 const Icons = {
   AboutImg,
@@ -23,7 +24,8 @@ const Icons = {
   LogoutImg,
   NewsImg,
   ProfileImg,
-  SiteLogo
+  SiteLogo,
+  SiteLogoSvg
 };
 
 export default Icons;
