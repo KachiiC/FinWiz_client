@@ -1,26 +1,39 @@
+@use 'sassVariables/colors.scss' as colors;
+
 .company-details-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding: 20px 10px;
+//   padding: 20px 10px;
 }
 
 .company-profile {
-    grid-column: span 8;
+    grid-column: span 6;
     margin: auto;
-    width: 95%;
+    width: 100%;
+    border: 1px solid white;
+    box-shadow: colors.$container-shadow;
+    display: flex;
+    justify-content: center;
 }
 
 .stock-ticker-widget {
-    grid-column: span 4;
+    grid-column: span 6;
+    border: 1px solid white;
+    box-shadow: colors.$container-shadow;
+    display: flex;
+    justify-content: center;
 }
 
 .stock-chart-widget {
-  grid-column: span 12;
+    grid-column: span 12;
 }
 
 .stock-widget-container {
     margin: 20px auto;  
-    width: 95%; 
+    width: 100%; 
+    border: 1px solid white;
+    box-shadow: colors.$container-shadow;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 1280px) {
