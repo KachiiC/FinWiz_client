@@ -47,6 +47,11 @@ const Profile = () => {
       data: cryptoDataHelper(cryptoData),
       columns: cryptoColumns,
     },
+    {
+      title: 'Commodities',
+      data: cryptoDataHelper(cryptoData),
+      columns: cryptoColumns,
+    },
   ];
 
   const tabsData = investmentsData.map((inv) => {

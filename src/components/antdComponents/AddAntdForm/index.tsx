@@ -2,7 +2,7 @@
 import { AntdFormButton, AntdFormFields } from './components/AntdFormComponents';
 import { Form, Select } from 'antd';
 // DATA
-import { stockFormValues, cryptoFormValues } from 'data/FormValues';
+import { stockFormValues, cryptoFormValues, commoditiesFormValues } from 'data/FormValues';
 // EXTERNAL
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
@@ -14,9 +14,10 @@ import { userApi } from 'redux/store';
 import { useState } from 'react';
 
 const AddAntdForm = ({ data }: AntdFormProps) => {
-  const { useUserAddStockMutation, useUserAddCryptoMutation } = userApi;
+  const { useUserAddStockMutation, useUserAddCryptoMutation, useUserAddCommodityMutation } = userApi;
   const [userAddStock] = useUserAddStockMutation();
   const [userAddCrypto] = useUserAddCryptoMutation();
+  const [userAddCommodity] = useUserAddCommodityMutation();
   const [symbolVal, setSymbolVal] = useState('');
   const [investmentType, setInvestmentType] = useState('stock');
 
@@ -40,6 +41,8 @@ const AddAntdForm = ({ data }: AntdFormProps) => {
       userAddStock(asset);
     } else if (select === 'crypto') {
       userAddCrypto(asset);
+    } else if (select === 'commodity') {
+      userAddCommodity(asset);
     }
 
     // redirect
@@ -49,6 +52,7 @@ const AddAntdForm = ({ data }: AntdFormProps) => {
   const formValues = {
     stock: stockFormValues,
     crypto: cryptoFormValues,
+    commodity: commoditiesFormValues
   };
 
   return (
@@ -65,6 +69,7 @@ const AddAntdForm = ({ data }: AntdFormProps) => {
               <Select placeholder='Select Investment Type'>
                 <Select.Option value='stock'>Stock</Select.Option>
                 <Select.Option value='crypto'>Crypto</Select.Option>
+                <Select.Option value='commodity'>Commodity</Select.Option>
               </Select>
             </Form.Item>
             <Form.Item>

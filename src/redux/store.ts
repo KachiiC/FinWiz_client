@@ -49,6 +49,17 @@ export const userApi = createApi({
       },
       invalidatesTags: [{ type: 'User', id: 'LIST' }]
     }),
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    userAddCommodity: builder.mutation<any, unknown>({
+      query(asset) {
+        return {
+          url: 'user-add-commodity',
+          method: 'POST',
+          body: asset
+        };
+      },
+      invalidatesTags: [{ type: 'User', id: 'LIST' }]
+    }),
     updateUserStock: builder.mutation<IUpdateUserAsset, unknown>({
       query(asset) {
         return {
