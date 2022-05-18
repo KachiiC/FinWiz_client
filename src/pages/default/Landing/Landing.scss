@@ -1,0 +1,49 @@
+@use 'sassVariables/colors.scss' as colors;
+
+.landingContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  text-align: center;
+  background-color: colors.$backgroundDark1;
+
+  .landingCenter {
+    padding: 30px;
+    width: 60%;
+  }
+
+  .landingLogo {
+    width: 80%;
+  }
+
+  h2{
+    color: colors.$textPrimary;
+    font-size: 3em;
+  }
+
+  h3 {
+    color: colors.$textSecondary;
+    margin-top: 20px;
+  }
+
+  .landingButton {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 10px 50px;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+    
+    &:hover{
+      box-shadow: colors.$container-shadow;
+    }
+  }
+
+
+  .buttonRight {
+    margin-left: 20px;
+  }
+}

@@ -22,10 +22,15 @@
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  padding: 20px;
+  
+  svg {
+    background-color: white;
+  }
   
   .footerIcon {
     width: 30px;
-    margin: 5px;;
+    margin: 20px;;
   }
 }
 
