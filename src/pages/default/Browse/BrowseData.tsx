@@ -120,42 +120,42 @@ export const browseCommoditiesColumns = [
     dataIndex: 'last',
     sorter: (a, b) => a.last - b.last,
     render: (text) => `$${text}`,
-    align: 'center'
+    align: 'center',
   },
   {
     title: 'Change',
     dataIndex: 'change',
     sorter: (a, b) => a.change - b.change,
     render: (text) => positiveNegative(text),
-    align: 'center'
+    align: 'center',
   },
   {
     title: 'Change (%)',
     dataIndex: 'change_percentage',
     sorter: (a, b) => a.change_percentage - b.change_percentage,
     render: (text) => positiveNegative(text, '%'),
-    align: 'center'
+    align: 'center',
   },
   {
     title: 'Last Close',
     dataIndex: 'last_close',
     sorter: (a, b) => a.last_close - b.last_close,
     render: (text) => `$${text}`,
-    align: 'center'
+    align: 'center',
   },
   {
     title: 'High',
     dataIndex: 'high',
     sorter: (a, b) => a.high - b.high,
     render: (text) => `$${text}`,
-    align: 'center'
+    align: 'center',
   },
   {
     title: 'Low',
     dataIndex: 'low',
     sorter: (a, b) => a.low - b.low,
     render: (text) => `$${text}`,
-    align: 'center'
+    align: 'center',
   },
   {
     title: 'Type',
@@ -164,27 +164,119 @@ export const browseCommoditiesColumns = [
     filters: [
       {
         text: 'Metals',
-        value: 'metals'
+        value: 'metals',
       },
       {
         text: 'Softs',
-        value: 'softs'
+        value: 'softs',
       },
       {
         text: 'Meats',
-        value: 'meats'
+        value: 'meats',
       },
       {
         text: 'Energy',
-        value: 'energy'
+        value: 'energy',
       },
       {
         text: 'Grains',
-        value: 'grains'
+        value: 'grains',
       },
     ],
     onFilter: (value, record) => record.type === value,
     filterSearch: true,
-
   },
 ];
+
+export const stockTickerData = [
+  {
+    description: '',
+    proName: 'AAPL',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'MSFT',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'GOOG',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'AMZN',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'TSLA',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'FB',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'JNJ',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'UNH',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'NVDA',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'V',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'XOM',
+    title: '',
+  },
+
+];
+
+export const cryptoTickerData = [
+  {
+    description: '',
+    proName: 'COINBASE:ETHUSD',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'COINBASE:BTCUSD',
+    title: '',
+  },
+  {
+    description: 'Tether',
+    proName: 'COINBASE:USDTUSD',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'COINBASE:USDCGBP',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'COINBASE:ADAUSD',
+    title: '',
+  },
+  {
+    description: '',
+    proName: 'COINBASE:BUSDUSD',
+    title: '',
+  },
+];
+

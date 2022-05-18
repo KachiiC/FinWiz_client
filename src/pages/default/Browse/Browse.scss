@@ -12,3 +12,8 @@
   width: 200px;
   text-align: center;
 }
+
+.browse-ticker {
+  pointer-events: none !important;
+  cursor: default !important;
+}
