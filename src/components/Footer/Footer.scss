@@ -10,6 +10,7 @@
   border-bottom: none; 
   border-top: colors.$headerFooterBorder; 
   box-shadow: colors.$headerShadow;
+  padding-top: 20px;
 }
 
 .footerCopyright {
@@ -22,15 +23,10 @@
   display: flex;
   justify-content: space-between;
   list-style-type: none;
-  padding: 20px;
-  
-  svg {
-    background-color: white;
-  }
   
   .footerIcon {
-    width: 30px;
-    margin: 20px;;
+    width: 50px;
+    margin: 0px 50px;;
   }
 }
 

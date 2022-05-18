@@ -13,6 +13,7 @@
     height: auto;
     vertical-align: middle;
     display: inline-block;
+    box-shadow: colors.$container-shadow;
   }
 
   /* Main CSS */
@@ -23,6 +24,7 @@
     width: 100%;
     height: 100%;
     margin-top: 5px;
+    box-shadow: colors.$container-shadow;
   }
 
   .grid-wrapper > div > a {
@@ -53,6 +55,7 @@
     }
 
   .grid-wrapper > div > a > img {
+    box-shadow: colors.$container-shadow;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -72,9 +75,11 @@
 
   .grid-wrapper .wide {
     grid-column: span 2;
+    box-shadow: colors.$container-shadow;
   }
 
   .grid-wrapper .tall {
     grid-row: span 2;
+    box-shadow: colors.$container-shadow;
   }
 }

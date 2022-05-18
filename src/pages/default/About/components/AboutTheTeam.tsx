@@ -1,35 +1,5 @@
-import Images from 'assets/images';
-
-interface SingleProductProps {
-  title: string;
-  description: string;
-  image: string;
-}
-
-const { Kachi, Nick, Tom, Silky } = Images;
-
-const teamData = [
-  {
-    title: 'Kachi Cheong',
-    description: 'Full Stack role, designed the data structure, api integrations and models',
-    image: Kachi,
-  },
-  {
-    title: 'Nick Allen',
-    description: 'Front End, desgined the UX, page structures and visual design.',
-    image: Nick,
-  },
-  {
-    title: 'Silky Ng',
-    description: 'Backend Developer, designed the schemas, controllers and ',
-    image: Silky,
-  },
-  {
-    title: 'Tom Broad',
-    description: 'Front End, designed the logic and functionality of the pages.',
-    image: Tom,
-  },
-];
+import { teamData } from '../AboutData';
+import { SingleProductProps } from '../AboutInterfaces';
 
 const SingleProductCard = ({ title, description, image }: SingleProductProps) => {
   return (
@@ -65,7 +35,7 @@ const MeetTheTeam = () => {
   return (
     <div className='about-team-container'>
       <h1>Meet The Team</h1>
-      <div className='team-list-container'>{displayImages}</div>;
+      <div className='team-list-container'>{displayImages}</div>
     </div>
   );
 };
