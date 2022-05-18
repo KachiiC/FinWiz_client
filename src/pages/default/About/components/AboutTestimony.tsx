@@ -22,7 +22,7 @@ const aboutTestimonyData = [
   {
     quote: 'In a world where everything will eventually turn into crabs, this is the one thing I trust will stay the same!',
     image: Ray,
-    person: 'Rayomd Krab',
+    person: 'Raymond Krab',
   },
 ];
 
