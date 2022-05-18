@@ -64,7 +64,7 @@ const MeetTheTeam = () => {
 
   return (
     <div className='about-team-container'>
-      <h1>About The Team</h1>
+      <h1>Meet The Team</h1>
       <div className='team-list-container'>{displayImages}</div>;
     </div>
   );

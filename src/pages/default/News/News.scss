@@ -1,7 +1,9 @@
 @use 'sassVariables/spacing.scss' as spacing;
+@use 'sassVariables/colors.scss' as colors;
 
 .mItem img {
   width: 100%;
+  box-shadow: colors.$container-shadow;
 }
 
 .masonry {

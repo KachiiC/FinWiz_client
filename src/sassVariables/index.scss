@@ -24,6 +24,7 @@ body {
   padding: spacing.$desktopContainerPadding;
     
   .genericInnerContainer {
+    animation: fadeIn 2s;
     width: spacing.$desktopContainerWidth;
   }
 }
