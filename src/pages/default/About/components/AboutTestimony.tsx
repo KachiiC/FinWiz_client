@@ -1,3 +1,5 @@
+import { SingleTestimonyProps } from '../AboutInterfaces';
+
 const aboutTestimonyData = [
   {
     quote:
@@ -24,12 +26,6 @@ const aboutTestimonyData = [
     person: 'Tim Bread',
   },
 ];
-
-interface SingleTestimonyProps {
-  quote: string;
-  image: string;
-  person: string;
-}
 
 const SingleTestimony = ({ quote, image, person }: SingleTestimonyProps) => {
   return (
