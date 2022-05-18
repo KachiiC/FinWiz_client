@@ -115,7 +115,7 @@ export const commodityColumns = [
     render: (text) => `$${text}`
   },
   {
-    title: 'Market Value Per Crypto',
+    title: 'Market Value Per Commodity',
     dataIndex: 'marketValuePerCommodity',
     sorter: (a, b) => a.marketValuePerCommodity - b.marketValuePerCommodity,
   },
@@ -129,7 +129,7 @@ export const commodityColumns = [
   {
     title: 'Update Investment',
     dataIndex: 'updateInvestments',
-    render: (text, record) => <Link to={`/updateInvestment/crypto/${record.symbol}/${record.quantityOfCrypto}`}>Update Commodity</Link>,
+    render: (text, record) => <Link to={`/updateInvestment/commodity/${record.name}/${record.quantityOfCommoditiy}`}>Update Commodity</Link>,
     align: 'center'
   },
 ];

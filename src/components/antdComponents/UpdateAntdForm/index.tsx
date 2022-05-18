@@ -11,15 +11,17 @@ import { userApi } from 'redux/store';
 
 const UpdateAntdForm = ({ data, params }: AntdFormProps) => {
   // Here we need to import redux services for buy and sell
-  const { useUpdateUserCryptoMutation, useUpdateUserStockMutation } = userApi;
+  const { useUpdateUserCryptoMutation, useUpdateUserStockMutation, useUserUpdateCommodityMutation } = userApi;
   const [userUpdateCrypto] = useUpdateUserCryptoMutation();
   const [userUpdateStock] = useUpdateUserStockMutation();
+  const [userUpdateCommodity] = useUserUpdateCommodityMutation();
 
   const { user } = useAuth0();
   const navigate = useNavigate();
 
   // Inside this function we call api service.
   const onSubmit = (values) => {
+
     const { numberOfShares, marketValuePerShare, date, select } = values;
 
     if(select === 'buy' || select === 'sell' && numberOfShares <= params.quantity) {
@@ -34,17 +36,30 @@ const UpdateAntdForm = ({ data, params }: AntdFormProps) => {
         sub: user?.sub,
       };
 
+      const commodityAsset = {
+        boughtOrSold: select === 'buy' ? true : false,
+        name: params.symbol,
+        quantity: numberOfShares,
+        price: marketValuePerShare,
+        date: date._d,
+        sub: user?.sub,
+      };
+
+      console.log('asset', commodityAsset);
+
       // TODO add in redux functions for all 4 cases 
       if (params.asset === 'stock') {
         userUpdateStock(asset);
       } else if (params.asset === 'crypto') {
         userUpdateCrypto(asset);
+      } else if (params.asset === 'commodity') {
+        userUpdateCommodity(commodityAsset);
       }
 
       // redirect
       navigate('/profile');
     } else {
-      alert('You cannot sell more stocks than you own');
+      alert(`You cannot sell more assets than you own. You own ${params.quantity} ${params.symbol}`);
     }
   };
 

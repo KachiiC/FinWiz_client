@@ -64,6 +64,7 @@ const Profile = () => {
 
   // if user or profile is loading display the spinner
   if (!user || !profile) return <Spinner />;
+  console.log(profile);
 
   return (
     <>
