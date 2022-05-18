@@ -22,12 +22,12 @@ const teamData = [
   {
     title: 'Silky Ng',
     description: 'Backend Developer, designed the schemas, controllers and ',
-    image: Tom,
+    image: Silky,
   },
   {
     title: 'Tom Broad',
     description: 'Front End, designed the logic and functionality of the pages.',
-    image: Silky,
+    image: Tom,
   },
 ];
 
