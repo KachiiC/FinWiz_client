@@ -1,5 +1,5 @@
 // COMPONENTS
-import { PageCompanyProfile, StockChart, StockTicker } from './components/DetailComponents';
+import { PageCompanyProfile, StockChart, StockFundamental, StockTicker } from './components/DetailComponents';
 import { useParams } from 'react-router-dom';
 // STYLES
 import './Details.css';
@@ -9,9 +9,10 @@ const Details = () => {
 
   return (
     <div className='company-details-grid'>
+      <StockChart symbol={symbol} />
       <PageCompanyProfile symbol={symbol} />
       <StockTicker symbol={symbol} />
-      <StockChart symbol={symbol} />
+      <StockFundamental symbol={symbol} />
     </div>
   );
 };
