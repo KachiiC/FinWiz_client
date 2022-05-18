@@ -1,46 +1,49 @@
 @use 'sassVariables/colors.scss' as colors;
 
-.landingSectionOneContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  .landingSectionOneLeft {
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 50px;
-    .landingLoginButton {
-      background-color: transparent;
-      border: 1px solid white;
-      text-align: center;
-      transition: all .3s cubic-bezier(.645,.045,.355,1);
-      height: 32px;
-      width: fit-content;
-      padding: 4px 15px;
-      font-size: 14px;
-      border-radius: 2px;
-      line-height: 1.5715;
-      position: relative;
-      display: inline-block;
-      font-weight: 400;
-      color: colors.$textPrimary;
-    }
-    .landingLoginButton:hover {
+.landingContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  text-align: center;
+  background-color: colors.$backgroundDark1;
+
+  .landingCenter {
+    padding: 30px;
+    width: 60%;
+  }
+
+  .landingLogo {
+    width: 80%;
+  }
+
+  h2{
+    color: colors.$textPrimary;
+    font-size: 3em;
+  }
+
+  h3 {
+    color: colors.$textSecondary;
+    margin-top: 20px;
+  }
+
+  .landingButton {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 10px 50px;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+    
+    &:hover{
       box-shadow: colors.$container-shadow;
-      cursor: pointer;
     }
   }
-}
 
-.landingSectionOneRight {
-  display: none;
-}
 
-@media only screen and (max-width: 850px) {
-  .landingSectionOneRight {
-    display: none;
-  }
-  .landingSectionOneContainer {
-    grid-template-columns: 1fr;
+  .buttonRight {
+    margin-left: 20px;
   }
 }
