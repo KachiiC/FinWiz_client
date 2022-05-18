@@ -2,6 +2,7 @@
 import { IUserProfile } from 'interfaces/user/IUserProfile';
 import { IUserNewInvestment } from 'interfaces/investments/IUserNewInvestment';
 import { IUpdateUserAsset } from 'interfaces/investments/IUpdateUserAsset';
+import { IUserNews } from 'interfaces/user/IUserNews';
 // REDUX
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
@@ -11,10 +12,11 @@ export const userApi = createApi({
   tagTypes: ['User'],
   refetchOnMountOrArgChange: 300,
   endpoints: (builder) => ({
-    getTestUser: builder.query<IUserProfile, void>({
-      query() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    getUserNews: builder.query<IUserNews[], string>({
+      query(symbols) {
         return {
-          url: 'test-user',
+          url: `user-news/${symbols}`,
           method: 'GET'
         };
       },
