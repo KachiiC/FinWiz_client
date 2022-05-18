@@ -1,12 +1,12 @@
 import Icons from 'assets/icons';
 
-const { GitHub, LinkedIn } = Icons;
+const { GitHub, LinkedIn, Youtube } = Icons;
 
 export const footerData = [
   {
     type: 'Youtube',
-    link: 'https://www.linkedin.com/feed/',
-    icon: LinkedIn,
+    link: 'https://www.youtube.com',
+    icon: Youtube,
   },
   {
     type: 'Github',
@@ -17,10 +17,5 @@ export const footerData = [
     type: 'LinkedIn',
     link: 'https://www.linkedin.com/feed/',
     icon: LinkedIn,
-  },
-  {
-    type: 'Contact',
-    link: 'https://www.linkedin.com/feed/',
-    icon: GitHub,
   },
 ];

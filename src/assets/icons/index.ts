@@ -11,6 +11,7 @@ import NewsImg from './iconsList/news.svg';
 import ProfileImg from './iconsList/profile.svg';
 import SiteLogo from './iconsList/finwiz-logo.png';
 import SiteLogoSvg from './iconsList/finwiz_logo.svg';
+import Youtube from './iconsList/youtube.svg';
 
 const Icons = {
   AboutImg,
@@ -25,7 +26,8 @@ const Icons = {
   NewsImg,
   ProfileImg,
   SiteLogo,
-  SiteLogoSvg
+  SiteLogoSvg,
+  Youtube
 };
 
 export default Icons;
