@@ -6,3 +6,7 @@ export interface IUserDetails {
   user: IAuth0User;
   profile: IUserProfile;
 }
+
+export interface IUserProfileProps {
+  profile: IUserProfile;
+}
