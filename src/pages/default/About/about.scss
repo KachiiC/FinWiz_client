@@ -302,3 +302,110 @@
     width: 90vw;
   }
 }
+
+.about-description-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 600px;
+  overflow: hidden;
+  padding: 30px 0px;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.about-description-component .hero {
+  display: grid;
+  grid-template-columns: 4fr 1fr 4fr;
+  grid-template-rows: 1fr 6fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.about-description-text {
+  grid-area: 1 / 1 / 3 / 3;
+  border: 10px solid #09111A;
+  padding: 30px;
+  background-color: #111D2C;
+  color: white;
+  position: relative;
+  width: 100%;
+}
+
+.about-description-text h1 {
+  text-transform: uppercase;
+  font-size: clamp(20px, 5vw, 40px);
+  font-weight: 700;
+  margin: auto;
+}
+
+.about-description-text p {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  font-size: 16px;
+}
+
+.about-description-text a {
+  padding: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #d3d3d3;
+  color: #d3d3d3;
+  font-weight: 700;
+}
+
+.about-description-text a:hover {
+  color: #d3d3d3;
+  background-color: #09111A;
+}
+
+.about-description-image {
+  grid-area: 2 / 2 / 4 / 4;
+  border: 10px solid #09111A;
+  z-index: -1;
+  position: relative;
+}
+
+.about-description-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-description-text::before,
+.about-description-image::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  width: 50vw;
+  background: #09111A;
+}
+
+.about-description-text::before {
+  left: 0;
+  transform: translateY(-50%) translateX(-100%);
+}
+
+.about-description-image::before {
+  right: 0;
+  transform: translateY(-50%) translateX(100%);
+}
+
+@media screen and (max-width: 450px) {
+  .about-description-component .hero {
+      grid-template-rows: 6fr 1fr 6fr;
+  }
+
+  .about-description-text {
+      grid-area: 1 / 1 / 3 / 4;
+  }
+
+  .about-description-image {
+      grid-area: 2 / 1 / 4 / 4
+  }
+}

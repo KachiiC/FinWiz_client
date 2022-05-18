@@ -1,18 +1,18 @@
 // IMAGES
-// import Images from 'assets/images';
 // STYLES
 import './About.scss';
 import MeetTheTeam from './components/AboutTheTeam';
-import AboutHero from './components/AboutHero';
 import AboutTestimony from './components/AboutTestimony';
+import AboutDescription from './components/AboutDescription';
+import { AboutDesc1, AboutDesc2 } from './AboutData';
 
 const About = () => {
-  // const { StocksGraph, StocksTable, PieChart } = Images;
 
   return (
     <div className='about-container'>
-      <AboutHero />
+      <AboutDescription {...AboutDesc1}/>
       <AboutTestimony />
+      <AboutDescription {...AboutDesc2}/>
       <MeetTheTeam />
     </div>
   );
