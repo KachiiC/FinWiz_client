@@ -1,7 +1,7 @@
 // COMPONENTS
 import AntdTabs from 'components/antdComponents/AntdTabs';
 import AntdTable from 'components/antdComponents/AntdTable';
-import { cryptoColumns, stocksColumns } from './components/profileColumns';
+import { cryptoColumns, stocksColumns, commodityColumns } from './components/profileColumns';
 import GraphContainer from 'components/siteComponents/GraphContainer';
 import Spinner from 'components/antdComponents/AntdSpinner';
 import UserDetails from 'components/siteComponents/UserDetails';
@@ -12,7 +12,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { IUserProfile } from 'interfaces/user/IUserProfile';
 // REDUX
 import { userApi } from 'redux/store';
-import { cryptoDataHelper, stockDataHelpers } from 'helpers/profileHelpers';
+import { cryptoDataHelper, stockDataHelpers, commodityDataHelpers } from 'helpers/profileHelpers';
 
 const Profile = () => {
   // get user data from auth0
@@ -30,10 +30,11 @@ const Profile = () => {
 
     if (!profileLoading) profile = userProfile;
   }
-
+  
   // get stocks and crypto values or set as empty array
   const stocksData = profile?.stocks ? profile.stocks.userStock : [];
   const cryptoData = profile?.cryptos ? profile.cryptos.cryptoList : [];
+  const commodityData = profile?.commodities ? profile.commodities.commoditiesList : [];
 
   const investmentsData = [
     {
@@ -48,8 +49,8 @@ const Profile = () => {
     },
     {
       title: 'Commodities',
-      data: cryptoDataHelper(cryptoData),
-      columns: cryptoColumns,
+      data: commodityDataHelpers(commodityData),
+      columns: commodityColumns,
     },
   ];
 

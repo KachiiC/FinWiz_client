@@ -89,3 +89,48 @@ export const cryptoColumns = [
     align: 'center'
   },
 ];
+
+export const commodityColumns = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+  },
+  {
+    title: 'Type',
+    dataIndex: 'type',
+    align: 'center',
+    render: (text) => `${text.charAt(0).toUpperCase() + text.slice(1)}`
+  },
+  {
+    title: 'Quantity',
+    dataIndex: 'quantityOfCommoditiy',
+    sorter: (a, b) => a.quantityOfCommoditiy - b.quantityOfCommoditiy,
+    align: 'center'
+  },
+  {
+    title: 'Average Buy Price',
+    dataIndex: 'averageBuyPrice',
+    sorter: (a, b) => a.averageBuyPrice - b.averageBuyPrice,
+    align: 'center',
+    render: (text) => `$${text}`
+  },
+  {
+    title: 'Market Value Per Crypto',
+    dataIndex: 'marketValuePerCommodity',
+    sorter: (a, b) => a.marketValuePerCommodity - b.marketValuePerCommodity,
+  },
+  {
+    title: 'Total Value',
+    dataIndex: 'totalCommodityValue',
+    sorter: (a, b) => a.totalCommodityValue - b.totalCommodityValue,
+    render: (text) => `${currencyConverter(text)}`,
+    align: 'center'
+  },
+  {
+    title: 'Update Investment',
+    dataIndex: 'updateInvestments',
+    render: (text, record) => <Link to={`/updateInvestment/crypto/${record.symbol}/${record.quantityOfCrypto}`}>Update Commodity</Link>,
+    align: 'center'
+  },
+];
+

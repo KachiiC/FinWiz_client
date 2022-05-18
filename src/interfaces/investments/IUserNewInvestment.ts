@@ -1,5 +1,6 @@
 export interface IUserNewInvestment {
-  symbol: string;
+  symbol?: string;
+  name?: string;
   quantity: number;
   buyCost: number;
   date: string;

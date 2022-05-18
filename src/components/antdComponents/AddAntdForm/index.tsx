@@ -37,12 +37,20 @@ const AddAntdForm = ({ data }: AntdFormProps) => {
       sub: user?.sub,
     };
 
+    const commodityAsset = {
+      name: symbolVal,
+      quantity: numberOfShares,
+      buyCost: marketValuePerShare,
+      date: date._d,
+      sub: user?.sub,
+    };
+
     if (select === 'stock') {
       userAddStock(asset);
     } else if (select === 'crypto') {
       userAddCrypto(asset);
     } else if (select === 'commodity') {
-      userAddCommodity(asset);
+      userAddCommodity(commodityAsset);
     }
 
     // redirect
@@ -52,7 +60,7 @@ const AddAntdForm = ({ data }: AntdFormProps) => {
   const formValues = {
     stock: stockFormValues,
     crypto: cryptoFormValues,
-    commodity: commoditiesFormValues
+    commodity: commoditiesFormValues,
   };
 
   return (

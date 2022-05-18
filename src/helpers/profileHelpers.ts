@@ -33,3 +33,22 @@ export const stockDataHelpers = (data) => {
     };
   });
 };
+
+export const commodityDataHelpers = (data) => {
+  return data.map((commodity) => {
+
+    const { quantityOfCommoditiy, details, totalCommodityValue, averageBuyPrice } = commodity;
+    // eslint-disable-next-line camelcase
+    const { name, type, last_close } = details;
+
+    return {
+      name,
+      type,
+      quantityOfCommoditiy,
+      totalCommodityValue,
+      averageBuyPrice,
+      // eslint-disable-next-line camelcase
+      marketValuePerCommodity: last_close
+    };
+  });
+};
