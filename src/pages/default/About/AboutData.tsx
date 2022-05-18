@@ -19,22 +19,22 @@ export const AboutDesc2 = {
 export const teamData = [
   {
     title: 'Kachi Cheong',
-    description: 'Full Stack role, designed the data structure, api integrations and models',
+    description: 'Full Stack Developer: designed the data structures, api integrations and models',
     image: Kachi,
   },
   {
     title: 'Nick Allen',
-    description: 'Front End, designed the UX, page structures and visual design.',
+    description: 'Frontend Developer: designed the UX, page structures and visual design.',
     image: Nick,
   },
   {
     title: 'Silky Ng',
-    description: 'Backend Developer, designed the schemas, controllers and ',
+    description: 'Backend Developer: designed the schemas, controllers and routes.',
     image: Silky,
   },
   {
     title: 'Tom Broad',
-    description: 'Front End, designed the logic and functionality of the pages.',
+    description: 'Frontend Developer: created the logic and designed the page functionalities.',
     image: Tom,
   },
 ];
