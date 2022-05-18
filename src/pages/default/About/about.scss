@@ -352,7 +352,6 @@
 
 .about-description-text a {
   padding: 10px;
-  text-transform: uppercase;
   text-decoration: none;
   border: 2px solid #d3d3d3;
   color: #d3d3d3;
@@ -361,6 +360,7 @@
 
 .about-description-text a:hover {
   color: #d3d3d3;
+  box-shadow: colors.$container-shadow;
   background-color: #09111A;
 }
 
