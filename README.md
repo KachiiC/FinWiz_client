@@ -1,7 +1,7 @@
 # FinWiz_client
 
 ## Overview
-FinWiz is financial portfolio tracker that allows users to to perform a number of tasks including:
+FinWiz is financial portfolio tracker that allows users to perform a number of tasks including:
 
 * Browse realtime stock/crypto/commodity/forex data.
 * Browse the latest market news.
